@@ -6,16 +6,11 @@
 /*   By: rarias-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 16:52:34 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/10/17 19:08:27 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/10/17 19:51:45 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-
-void	ft_printchar(char c)
-{
-	write(1, &c, 1);
-}
 
 void	ft_print_pt4(char c)
 {
@@ -81,7 +76,7 @@ void	ft_print_pt2(char c)
 
 void	ft_print_nonprint(char c)
 {
-	write(1, '\\',1);
+	write(1, '\\', 1);
 	if (c == 0)
 		write(1, "00", 2);
 	if (c == 1)
@@ -104,7 +99,6 @@ void	ft_print_nonprint(char c)
 		write(1, "09", 2);
 	if (c > 9)
 		ft_print_pt2(c);
-
 }
 
 void	ft_putstr_non_printable(char *str)
@@ -114,12 +108,12 @@ void	ft_putstr_non_printable(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if ((str[i] => 0 && str[i] < 32) ||  str[i] == 127)
+		if ((str[i] >= 0 && str[i] < 32) || str[i] == 127)
 		{
 			ft_print_nonprint(str[i]);
 		}
-		else 
-			ft_printchar(str[i]);
+		else
+			write(1, &str[i], 1);
 		i++;
 	}
 }
