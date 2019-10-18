@@ -6,7 +6,7 @@
 /*   By: rarias-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 16:52:34 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/10/17 19:51:45 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/10/18 12:01:50 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	ft_print_pt2(char c)
 
 void	ft_print_nonprint(char c)
 {
-	write(1, '\\', 1);
+	write(1, "\\", 1);
 	if (c == 0)
 		write(1, "00", 2);
 	if (c == 1)
