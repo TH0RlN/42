@@ -6,7 +6,7 @@
 /*   By: rarias-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 11:38:01 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/10/18 11:58:52 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/10/19 12:00:08 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 		dest[i] = src[i];
 		i++;
 	}
-	while (i <= n)
+	while (i < n)
 	{
 		dest[i] = '\0';
 		i++;
