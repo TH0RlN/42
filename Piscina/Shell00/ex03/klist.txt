@@ -1,0 +1,6 @@
+Credentials cache: API:4575
+        Principal: rarias-p@42MADRID.COM
+
+  Issued                Expires               Principal
+Oct  3 09:30:14 2019  Oct  3 19:30:14 2019  krbtgt/42MADRID.COM@42MADRID.COM
+Oct  3 09:30:15 2019  Oct  3 19:30:14 2019  HTTP/student-storage.42madrid.com@42MADRID.COM
