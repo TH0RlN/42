@@ -6,11 +6,11 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 13:17:12 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/06 16:56:06 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/10 11:15:32 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
 	return (c >= 0 && c < 128) ? 1 : 0;
 }

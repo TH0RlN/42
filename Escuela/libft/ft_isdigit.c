@@ -6,13 +6,13 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 11:07:55 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/06 17:04:39 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/10 11:12:27 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    return ((c > 47 && c < 58)? 1 : 0);
+	return ((c > 47 && c < 58) ? 1 : 0);
 }
