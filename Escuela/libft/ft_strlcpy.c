@@ -6,12 +6,11 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 11:22:56 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/10 10:29:32 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/10 10:37:13 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
