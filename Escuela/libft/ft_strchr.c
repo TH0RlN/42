@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 10:37:11 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/06 17:28:38 by rarias-p         ###   ########.fr       */
+/*   Created: 2019/11/06 17:48:55 by rarias-p          #+#    #+#             */
+/*   Updated: 2019/11/06 18:11:03 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-void	*memset(void *s, int c, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	int		i;
-	char	*aux;
+	int i;
 
-	aux = (char *)s;
 	i = 0;
-	while (i < n)
+	while (s[i] != '\0')
 	{
-		aux[i] = c;
+		if (s[i] == (char)c)
+			return ((char *)s + i);
 		i++;
 	}
-	return (s);
+	if (s[i] == (char)c)
+			return ((char *)s + i);
+	return (0);
 }

@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 10:37:11 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/06 17:28:38 by rarias-p         ###   ########.fr       */
+/*   Created: 2019/11/07 10:24:43 by rarias-p          #+#    #+#             */
+/*   Updated: 2019/11/10 10:06:15 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
-void	*memset(void *s, int c, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int		i;
-	char	*aux;
+	int i;
 
-	aux = (char *)s;
 	i = 0;
-	while (i < n)
+	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
 	{
-		aux[i] = c;
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
 		i++;
 	}
-	return (s);
+	return (0);
 }
