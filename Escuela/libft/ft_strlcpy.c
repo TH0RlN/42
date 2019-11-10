@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 11:22:56 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/10 10:06:15 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/10 10:13:35 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,13 @@
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	
+	int	i;
+
+	i = 0;
+	while (i < size - 1 && src[i] != '\0')
+	{
+		dest[i] = src[i];
+	}
+	dest[i] = '\0';
+	return (sizeof(src));
 }
