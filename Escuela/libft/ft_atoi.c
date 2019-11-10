@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/10 10:38:32 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/10 17:32:55 by rarias-p         ###   ########.fr       */
+/*   Created: 2019/10/24 12:07:48 by rarias-p          #+#    #+#             */
+/*   Updated: 2019/11/10 17:45:24 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <stdlib.h>
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+int	ft_atoi(char *str)
 {
-	int	i;
-	int	j;
+	int i;
+	int negcheck;
+	int a;
 
 	i = 0;
-	while (dest[i] != '\0')
+	a = 0;
+	negcheck = 1;
+	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' ||
+			str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
 		i++;
-	j = 0;
-	while (j < size - 1 && src[j] != '\0')
+	if (str[i] == '-')
+		negcheck *= -1;
+	i++;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		dest[i] = src[j];
+		a = a * 10 + (str[i] - '0');
 		i++;
-		j++;
 	}
-	dest[i] = '\0';
-	return (i + j);
+	return (a * negcheck);
 }
