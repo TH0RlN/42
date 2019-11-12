@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/11 11:13:52 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/12 17:01:19 by rarias-p         ###   ########.fr       */
+/*   Created: 2019/11/12 16:37:51 by rarias-p          #+#    #+#             */
+/*   Updated: 2019/11/12 17:05:02 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 size_t	ft_strlen(const char *str)
 {
@@ -23,12 +23,42 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-char	*strdup(const char *s)
+char	**ft_split(char const *s, char c)
 {
-	char *ret;
+	char	**tab;
+	int		i;
+	int		j;
+	int		k;
 
-	if (!(ret = malloc(ft_strlen(s) * sizeof(char))))
-		return (0);
-	ret = (char*)s;
-	return (ret);
+	tab = malloc(ft_strlen(s) * sizeof(char));
+	i = 0;
+	while (s[i] != '\0')
+	{
+		while (s[i] != c)
+		{
+			tab[j][k] = s[i];
+			i++;
+		}
+		i++;
+		j++;
+	}
+	return (tab);
+}
+
+
+int main()
+{
+	// ver varios espacios
+	char *k = "Juan alberto es una persona que vive en su casa";
+	char **c;
+	int j;
+
+	j = 0;
+	c = ft_split(k, ' ');
+	while (j < 9)
+	{
+		printf("%s", c[j]);
+		j++;
+	}
+	return (0);
 }
