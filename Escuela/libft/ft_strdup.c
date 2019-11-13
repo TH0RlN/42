@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 11:13:52 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/12 17:01:19 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/12 17:35:34 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-char	*strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
 	char *ret;
 

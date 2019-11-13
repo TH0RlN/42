@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 16:37:51 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/12 17:05:02 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/13 08:38:44 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,21 +30,15 @@ char	**ft_split(char const *s, char c)
 	int		j;
 	int		k;
 
-	tab = malloc(ft_strlen(s) * sizeof(char));
 	i = 0;
 	while (s[i] != '\0')
 	{
 		while (s[i] != c)
 		{
-			tab[j][k] = s[i];
-			i++;
+			
 		}
-		i++;
-		j++;
 	}
-	return (tab);
 }
-
 
 int main()
 {
