@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 16:37:51 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/13 08:54:21 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/13 11:43:37 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,27 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-char	**maker(char **tab)
+char	**maker(char **tab, char *s, char c)
 {
-	
+	int i;
+	int j;
+	int k;
+
+	i = 0;
+	j = 0;
+	k = 0;
+	while (s[i] != '\0')
+	{
+		while (s[i] != c)
+		{
+			tab[j][k] = s[i];
+			i++;
+			k++;
+		}
+		k = 0;
+		j++;
+	}
+	return (tab);
 }
 
 char	**ft_split(char const *s, char c)
@@ -49,7 +67,7 @@ char	**ft_split(char const *s, char c)
 			return (0);
 		k++;
 	}
-	return (maker(tab));
+	return (maker(tab, s, c));
 }
 
 int main()
