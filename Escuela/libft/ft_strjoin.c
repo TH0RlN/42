@@ -6,11 +6,10 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 12:43:19 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/12 13:12:47 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/13 09:11:03 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
@@ -19,7 +18,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		j;
 	char	*s3;
 
-	s3 = malloc((ft_strlen(s1) + ft_strlen(s2)) * sizeof(char));
+	if (!(s3 = malloc((ft_strlen(s1) + ft_strlen(s2)) * sizeof(char))))
+		return (0);
+	i = 0;
+	j = 0;
 	while (s1[i] != '\0')
 	{
 		s3[j] = s1[i];
@@ -33,5 +35,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		i++;
 		j++;
 	}
+	s3[j] = '\0';
 	return (s3);
 }
