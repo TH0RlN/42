@@ -6,21 +6,29 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 16:37:51 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/13 11:44:31 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/13 12:40:26 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 
-size_t	ft_strlen(const char *str)
+char	**alloc_counter(char **tab, char *s, char c)
 {
 	int i;
+	int j;
 
 	i = 0;
-	while (str[i] != '\0')
+	j = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+			j++;
 		i++;
-	return (i);
+	}
+	if (!(tab = malloc(i * sizeof(char*))))
+		return (0);
+	return (tab);
 }
 
 char	**maker(char **tab, char *s, char c)
@@ -55,6 +63,7 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	k = 0;
+	tab = alloc_counter(tab, (char *)s, c);
 	while (s[i] != '\0')
 	{
 		j = 0;
