@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 16:37:51 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/13 11:43:37 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/13 11:44:31 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ char	**ft_split(char const *s, char c)
 			return (0);
 		k++;
 	}
-	return (maker(tab, s, c));
+	return (maker(tab, (char*)s, c));
 }
 
 int main()
