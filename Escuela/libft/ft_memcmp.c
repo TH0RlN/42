@@ -6,11 +6,11 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 09:19:54 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/06 17:05:00 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/15 09:24:14 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int	memcmp(const void *s1, const void *s2, size_t n)
 {

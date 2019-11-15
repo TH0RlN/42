@@ -6,12 +6,11 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 11:13:52 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/13 17:14:50 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/15 09:23:45 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *str)
 {

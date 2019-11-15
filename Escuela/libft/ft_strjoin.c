@@ -6,11 +6,11 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 12:43:19 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/13 09:11:03 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/15 09:23:41 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

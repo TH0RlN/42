@@ -6,12 +6,11 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 16:37:51 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/13 16:54:53 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/15 09:24:00 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
 char	**alloc_counter(char **tab, char *s, char c)
 {

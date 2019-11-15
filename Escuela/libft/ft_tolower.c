@@ -6,11 +6,11 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 16:57:02 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/10 11:16:53 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/15 09:23:01 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

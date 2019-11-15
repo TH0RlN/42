@@ -6,11 +6,11 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 11:11:26 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/06 17:05:02 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/15 09:24:11 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*memcpy(void *dest, const void *src, size_t n)
 {

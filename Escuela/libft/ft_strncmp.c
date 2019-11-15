@@ -6,12 +6,11 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 10:24:43 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/10 11:16:42 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/15 09:23:26 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

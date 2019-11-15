@@ -6,9 +6,11 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 17:48:55 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/10 11:16:26 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/15 09:23:53 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

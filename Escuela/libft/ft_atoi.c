@@ -6,12 +6,11 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 12:07:48 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/10 17:52:51 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/15 09:24:39 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 int	ft_atoi(char *str)
 {
