@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 11:04:44 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/15 13:29:06 by rarias-p         ###   ########.fr       */
+/*   Created: 2019/11/15 10:34:56 by rarias-p          #+#    #+#             */
+/*   Updated: 2019/11/15 12:12:40 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*bzero(void *s, size_t n)
+int	number_len(int n)
 {
-	size_t	i;
-	char	*aux;
+	int len;
 
-	aux = (char *)s;
-	i = 0;
-	while (i < n)
+	len = 1;
+	while (n /= 10 > 10)
+		len++;
+	len++;
+	return (len);
+}
+
+char	*ft_itoa(int n)
+{
+	int nlen;
+	int negcheck;
+
+	if (n < 0)
 	{
-		aux[i] = '\0';
-		i++;
+		negcheck *= -1;
+		n *= -1;
 	}
-	return (s);
+	nlen = number_len(n);
 }
