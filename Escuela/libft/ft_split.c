@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 16:37:51 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/15 09:49:11 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/15 10:21:48 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,13 +83,14 @@ char	**ft_split(char const *s, char c)
 
 int	main(void)
 {
-	char	*k = "Juan alberto es una persona que vive en su casa";
+	char	*k = "1 2 3 4 5 6 7 8 9 10 11 12";
 	char	**c;
 	int		j;
 
+	//no funciona con descomposicion 3
 	j = 0;
 	c = ft_split(k, 32);
-	while (j < 10)
+	while (j < 12)
 	{
 		printf("%s\n", c[j]);
 		j++;
