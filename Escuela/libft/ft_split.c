@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 16:37:51 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/15 09:24:00 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/15 09:34:11 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,11 @@ char	**alloc_counter(char **tab, char *s, char c)
 	j = 0;
 	while (s[i] != '\0')
 	{
-		write(1, 'c', 1);
-		printf("counter");
 		if (s[i] == c)
 			j++;
 		i++;
 	}
-	if (!(tab = malloc(i * sizeof(char*))))
+	if (!(tab = malloc(j * sizeof(char*))))
 		return (0);
 	return (tab);
 }
@@ -43,14 +41,13 @@ char	**maker(char **tab, char *s, char c)
 	k = 0;
 	while (s[i] != '\0')
 	{
-		printf("maker fuera");
 		while (s[i] != c)
 		{
-			printf("maker dentro");
 			tab[j][k] = s[i];
 			i++;
 			k++;
 		}
+		tab[j][k] = '\0';
 		k = 0;
 		j++;
 	}
@@ -72,7 +69,6 @@ char	**ft_split(char const *s, char c)
 		j = 0;
 		while (s[i] != c && s[i] != '\0')
 		{
-			printf("split %i %i", i, j);
 			i++;
 			j++;
 		}
@@ -91,7 +87,6 @@ int main()
 	int j;
 
 	j = 0;
-	write(1, 'm', 1);
 	c = ft_split(k, 32);
 	while (j < 9)
 	{

@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 17:08:02 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/15 09:02:10 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/15 09:27:25 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #	define LIBFT_H
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
 
 int		ft_atoi(char *str);
 void	bzero(void *s, size_t n);
