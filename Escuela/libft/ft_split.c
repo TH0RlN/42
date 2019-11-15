@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 16:37:51 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/15 09:34:11 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/15 09:44:01 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ char	**maker(char **tab, char *s, char c)
 		tab[j][k] = '\0';
 		k = 0;
 		j++;
+		i++;
 	}
 	return (tab);
 }
@@ -75,22 +76,22 @@ char	**ft_split(char const *s, char c)
 		if (!(tab[k] = malloc(j * sizeof(char))))
 			return (0);
 		k++;
+		i++;
 	}
 	return (maker(tab, (char*)s, c));
 }
 
-int main()
+int	main(void)
 {
-	// ver varios espacios
-	char *k = "Juan alberto es una persona que vive en su casa";
-	char **c;
-	int j;
+	char	*k = "Juan alberto es una persona que vive en su casa";
+	char	**c;
+	int		j;
 
 	j = 0;
 	c = ft_split(k, 32);
-	while (j < 9)
+	while (j < 10)
 	{
-		printf("%s", c[j]);
+		printf("%s\n", c[j]);
 		j++;
 	}
 	return (0);
