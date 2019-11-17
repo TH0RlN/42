@@ -6,13 +6,13 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 11:04:44 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/15 13:29:06 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/15 15:36:34 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*bzero(void *s, size_t n)
+void	*ft_bzero(void *s, size_t n)
 {
 	size_t	i;
 	char	*aux;

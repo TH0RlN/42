@@ -6,13 +6,13 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 10:37:11 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/15 09:24:04 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/17 13:17:39 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	int		i;
 	char	*aux;
