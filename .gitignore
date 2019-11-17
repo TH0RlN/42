@@ -3,3 +3,4 @@ Escuela/libft/test
 .DS_Store
 Escuela/libft/a.out
 Escuela/libft-unit-tests/*
+Escuela/libft-unit-tests/assets/tmp/ft_memcpy.o
