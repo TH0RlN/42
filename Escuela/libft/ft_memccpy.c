@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 11:34:53 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/17 13:17:17 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/17 13:50:44 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	int		i;
+	size_t	i;
 	char	*auxdest;
 	char	*auxsrc;
 

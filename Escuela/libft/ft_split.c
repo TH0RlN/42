@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 16:37:51 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/15 10:21:48 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/17 13:56:06 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ char	**ft_split(char const *s, char c)
 	int		j;
 	int		k;
 
+	tab = NULL;
 	i = 0;
 	k = 0;
 	tab = alloc_counter(tab, (char *)s, c);

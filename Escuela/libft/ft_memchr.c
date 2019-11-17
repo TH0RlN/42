@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 09:09:20 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/15 09:24:17 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/17 13:51:14 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int		i;
+	size_t	i;
 	char	*auxs;
 
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 09:19:54 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/17 13:17:23 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/17 13:52:05 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int		i;
+	size_t	i;
 	char	*aux1;
 	char	*aux2;
 
 	aux1 = (char *)s1;
 	aux2 = (char *)s2;
+	i = 0;
 	while (i < n)
 	{
 		if (aux1[i] != aux2[i])
