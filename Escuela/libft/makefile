@@ -6,7 +6,7 @@
 #    By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/13 16:56:52 by rarias-p          #+#    #+#              #
-#    Updated: 2019/11/15 12:25:55 by rarias-p         ###   ########.fr        #
+#    Updated: 2019/11/17 14:07:13 by rarias-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,9 @@ all: $(NAME)
 
 clean:
 		$(RM) $(OBJ)
+
+fclean: clean
+		$(RM) $(NAME)
 
 re: fclean all
 

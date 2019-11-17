@@ -6,13 +6,13 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 10:34:56 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/17 13:39:14 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/17 14:11:10 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	number_len(int n)
+int		number_len(int n)
 {
 	int len;
 
