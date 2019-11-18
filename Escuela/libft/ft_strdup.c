@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 11:13:52 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/17 14:20:02 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/18 10:27:21 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,19 @@
 
 char	*ft_strdup(const char *s)
 {
-	char *ret;
+	char	*ret;
+	int		i;
+	int		len;
 
-	if (!(ret = malloc(ft_strlen(s) * sizeof(char))))
+	len = ft_strlen(s);
+	if (!(ret = malloc(len * sizeof(char) + 1)))
 		return (0);
-	ret = (char*)s;
+	i = 0;
+	while (i < len)
+	{
+		ret[i] = s[i];
+		i++;
+	}
+	ret[i] = '\0';
 	return (ret);
 }

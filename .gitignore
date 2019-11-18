@@ -4,3 +4,8 @@ Escuela/libft/test
 Escuela/libft/a.out
 Escuela/libft-unit-tests/*
 Escuela/libft-unit-tests/assets/tmp/ft_memcpy.o
+Escuela/libft-unit-tests/assets/tmp/ft_strlcat.o
+Escuela/libft-unit-tests/assets/tmp/ft_strdup.o
+Escuela/libft-unit-tests/assets/tmp/ft_memcmp.o
+Escuela/libft-unit-tests/assets/tmp/ft_memccpy.o
+Escuela/libft-unit-tests/assets/tmp/ft_calloc.o
