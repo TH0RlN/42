@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 17:08:02 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/20 12:36:07 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/20 12:49:48 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,9 @@ int		ft_toupper(int c);
 char	*ft_itoa(int n);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-void ft_putchar_fd(char c, int fd);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 #	endif
