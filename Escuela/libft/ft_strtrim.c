@@ -6,11 +6,15 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/20 09:08:23 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/20 10:12:54 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/20 11:39:57 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/* ************************************************************************** */
+/*                              NO FUNCIONA: BIG F                            */
+/* ************************************************************************** */
 
 static int	comparator(char c, char const *set)
 {
@@ -44,6 +48,7 @@ static char	*hacedor(char const *s1, char const *set, char *newstr)
 		newstr[i] = s1[min + i];
 		i++;
 	}
+	newstr[i] = '\0';
 	return (newstr);
 }
 
@@ -58,9 +63,9 @@ static int	sizer(char const *s1, char const *set)
 	max = ft_strlen(s1) - 1;
 	while (comparator(s1[max], set) == 1 && max >= 0)
 		max--;
-	while (comparator(s1[i], set) == 1 && i <= max)
+	while (comparator(s1[i], set) == 1 && i <= max && s1[i] != '\0')
 		i++;
-	while (comparator(s1[i], set) == 0 && i <= max)
+	while (comparator(s1[i], set) == 0 && i <= max && s1[i] != '\0')
 	{
 		i++;
 		size++;
@@ -74,7 +79,8 @@ char		*ft_strtrim(char const *s1, char const *set)
 	char	*newstr;
 
 	size = sizer(s1, set);
-	newstr = malloc(size * sizeof(char));
+	if (!(newstr = malloc((size + 1) * sizeof(char))))
+		return (0);
 	newstr = hacedor(s1, set, newstr);
 	return (newstr);
 }
