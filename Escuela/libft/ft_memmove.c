@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 13:33:26 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/17 13:54:22 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/19 13:23:10 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	auxdest = (char *)dest;
 	auxsrc = (char *)src;
 	i = 0;
+	if (dest == '\0' || src == '\0')
+		return (0);
 	while (i < n)
 	{
 		aux[i] = auxsrc[i];

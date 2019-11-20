@@ -6,13 +6,13 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 16:37:51 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/17 13:56:06 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/20 09:59:17 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**alloc_counter(char **tab, char *s, char c)
+char		**alloc_counter(char **tab, char *s, char c)
 {
 	int i;
 	int j;
@@ -25,12 +25,12 @@ char	**alloc_counter(char **tab, char *s, char c)
 			j++;
 		i++;
 	}
-	if (!(tab = malloc(j * sizeof(char*))))
+	if (!(tab = malloc((j + 1) * sizeof(char*))))
 		return (0);
 	return (tab);
 }
 
-char	**maker(char **tab, char *s, char c)
+static char	**maker(char **tab, char *s, char c)
 {
 	int i;
 	int j;
@@ -52,10 +52,11 @@ char	**maker(char **tab, char *s, char c)
 		j++;
 		i++;
 	}
+	tab[j] = NULL;
 	return (tab);
 }
 
-char	**ft_split(char const *s, char c)
+char		**ft_split(char const *s, char c)
 {
 	char	**tab;
 	int		i;
@@ -80,21 +81,4 @@ char	**ft_split(char const *s, char c)
 		i++;
 	}
 	return (maker(tab, (char*)s, c));
-}
-
-int	main(void)
-{
-	char	*k = "1 2 3 4 5 6 7 8 9 10 11 12";
-	char	**c;
-	int		j;
-
-	//no funciona con descomposicion 3
-	j = 0;
-	c = ft_split(k, 32);
-	while (j < 12)
-	{
-		printf("%s\n", c[j]);
-		j++;
-	}
-	return (0);
 }

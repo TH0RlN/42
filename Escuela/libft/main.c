@@ -1,38 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/24 12:07:48 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/18 12:48:54 by rarias-p         ###   ########.fr       */
+/*   Created: 2019/11/18 16:12:38 by rarias-p          #+#    #+#             */
+/*   Updated: 2019/11/20 10:04:35 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+int	main(void)
 {
-	int i;
-	int negcheck;
-	int a;
-
-	i = 0;
-	a = 0;
-	negcheck = 1;
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' ||
-			str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
-		i++;
-	if (str[i] == '-')
-	{
-		negcheck *= -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		a = a * 10 + (str[i] - '0');
-		i++;
-	}
-	return (a * negcheck);
+	char *papel = ".-+tortillas++..-";
+	char *tijeras = ".-+";
+	
+	printf("%s\n", ft_strtrim(papel, tijeras));
+	return (0);
 }

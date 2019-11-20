@@ -6,24 +6,23 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 10:34:56 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/17 14:11:10 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/18 18:44:29 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		number_len(int n)
+int		number_len(long n)
 {
 	int len;
 
 	len = 1;
-	while ((n /= 10) > 10)
+	while ((n /= 10) > 0)
 		len++;
-	len++;
 	return (len);
 }
 
-char	*desmembrator(int n, char *cnumber, int len)
+char	*desmembrator(long n, char *cnumber, int len)
 {
 	int i;
 	int divisor;
@@ -47,23 +46,37 @@ char	*desmembrator(int n, char *cnumber, int len)
 	return (cnumber);
 }
 
+char	*little(long n)
+{
+	char	*littlen;
+
+	littlen = malloc(sizeof(char) * 2);
+	littlen[0] = n + '0';
+	littlen[1] = '\0';
+	return (littlen);
+}
+
 char	*ft_itoa(int n)
 {
 	int		negcheck;
+	long	nn;
 	char	*cnumber;
-	char	neg[2];
+	char	*neg;
 
-	neg[0] = '-';
-	neg[1] = '\0';
+	nn = (long)n;
+	neg = "-0";
 	negcheck = 1;
-	if (n < 0)
+	if (nn < 0)
 	{
 		negcheck *= -1;
-		n *= -1;
+		nn *= -1;
 	}
-	if (!(cnumber = malloc(number_len(n) * sizeof(char))))
+	if (!(cnumber = malloc(number_len(nn) * sizeof(char))))
 		return (0);
-	cnumber = desmembrator(n, cnumber, number_len(n));
+	if (n < 10)
+		cnumber = little(nn);
+	else
+		cnumber = desmembrator(nn, cnumber, number_len(nn));
 	if (negcheck < 0)
 		cnumber = ft_strjoin(neg, cnumber);
 	return (cnumber);
