@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 11:19:58 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/18 16:08:17 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/21 17:59:53 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 			j = 0;
 			if (haystack[i] == needle[j])
 			{
-				while (haystack[i + j] == needle[j] && (i + j) < len)
+				while (haystack[i + j] == needle[j] && (i + j) < len
+				&& haystack[i + j] != '\0' && needle[j] != '\0')
 					j++;
 				if (needle[j] == '\0')
 					return ((char *)haystack + i);

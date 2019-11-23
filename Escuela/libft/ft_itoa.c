@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 10:34:56 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/18 18:44:29 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/21 10:13:58 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,16 +64,16 @@ char	*ft_itoa(int n)
 	char	*neg;
 
 	nn = (long)n;
-	neg = "-0";
+	neg = "-";
 	negcheck = 1;
 	if (nn < 0)
 	{
 		negcheck *= -1;
 		nn *= -1;
 	}
-	if (!(cnumber = malloc(number_len(nn) * sizeof(char))))
+	if (!(cnumber = malloc((number_len(nn) + 1) * sizeof(char))))
 		return (0);
-	if (n < 10)
+	if (nn < 10)
 		cnumber = little(nn);
 	else
 		cnumber = desmembrator(nn, cnumber, number_len(nn));

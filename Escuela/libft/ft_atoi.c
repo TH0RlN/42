@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 12:07:48 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/18 12:48:54 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/23 18:47:24 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	ft_atoi(char *str)
 	negcheck = 1;
 	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' ||
 			str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+		i++;
+	if (str[i] == '+')
 		i++;
 	if (str[i] == '-')
 	{

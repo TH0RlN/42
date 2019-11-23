@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 12:43:19 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/15 09:23:41 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/21 11:54:25 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		j;
 	char	*s3;
 
-	if (!(s3 = malloc((ft_strlen(s1) + ft_strlen(s2)) * sizeof(char))))
+	if (!(s3 = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char))))
 		return (0);
 	i = 0;
 	j = 0;
