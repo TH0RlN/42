@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 17:08:02 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/23 19:57:23 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/24 12:47:22 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
+
+typedef struct s_list
+{
+void *content;
+struct s_list *next;
+} t_list;
 
 int		ft_atoi(char *str);
 void	*ft_bzero(void *s, size_t n);
