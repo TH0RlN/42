@@ -6,11 +6,18 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 16:12:38 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/24 11:43:36 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/24 15:48:08 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 int  main()
 {
+	char *data = "hello, i'm a data\0";
+	t_list *l = ft_lstnew(data);
+	while (l)
+	{
+		printf("%s", l->content);
+		l = l->next;
+	}
 }

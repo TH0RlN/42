@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/20 12:42:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/20 12:47:21 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/24 13:09:43 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,7 @@ void	ft_putendl_fd(char *s, int fd)
 	int i;
 
 	i = 0;
-	while (s[i])
-	{
-		write(fd, &s[i], 1);
-		i++;
-	}
+	if (s)
+		ft_putstr_fd(s, fd);
 	write(fd, "\n", 1);
 }
