@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 11:45:47 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/19 12:06:41 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/24 16:58:17 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	len2;
 
 	real_len = 0;
+	if (!s)
+		return (0);
 	while (s[start + real_len] != '\0')
 		real_len++;
 	len2 = (len <= real_len) ? len : real_len;
