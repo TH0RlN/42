@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 17:08:02 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/24 17:27:21 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/26 13:06:37 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,7 @@ void			ft_putnbr_fd(int n, int fd);
 t_list			*ft_lstnew(void const *content);
 void			ft_lstadd_front(t_list **alst, t_list *new);
 void			ft_lstadd_back(t_list **alst, t_list *new);
+int				ft_lstsize(t_list *lst);
+t_list			*ft_lstlast(t_list *lst);
 
 #	endif

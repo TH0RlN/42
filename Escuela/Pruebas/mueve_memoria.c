@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   mueve_memoria.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/18 16:12:38 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/25 11:29:53 by rarias-p         ###   ########.fr       */
+/*   Created: 2019/11/25 12:52:03 by rarias-p          #+#    #+#             */
+/*   Updated: 2019/11/25 13:04:56 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft/libft.h"
 
-int  main()
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	t_list *data = NULL;
-	data->content = malloc(6);
-	data->content = "Pepelu";
-	data->next = NULL;
-	t_list *act_data = data;
-	t_list *data2 = NULL;
-	data2->content = "Lo que tu quieras";
-	data2->next = NULL;
-	ft_lstadd_back(&data2 ,data);
-	while (act_data)
-	{
-		printf("%s", act_data->content);
-		act_data = act_data->next;
-	}
+	unsigned char	*p;
+	unsigned char	*j;
+	unsigned int	i;
+	p = dst;
+	j = (unsigned char *)src;
+	i = -1;
+	if (dst == 0 && src == 0)
+		return (0);
+	if (p > j)
+		while ((int)(--len) >= 0)
+			p[len] = j[len];
+	else
+		while (++i < len)
+			p[i] = j[i];
+	return (dst);
 }

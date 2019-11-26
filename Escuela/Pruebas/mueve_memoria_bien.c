@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   mueve_memoria_bien.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/18 16:12:38 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/25 11:29:53 by rarias-p         ###   ########.fr       */
+/*   Created: 2019/11/25 12:55:53 by rarias-p          #+#    #+#             */
+/*   Updated: 2019/11/25 13:04:47 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft/libft.h"
 
-int  main()
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	t_list *data = NULL;
-	data->content = malloc(6);
-	data->content = "Pepelu";
-	data->next = NULL;
-	t_list *act_data = data;
-	t_list *data2 = NULL;
-	data2->content = "Lo que tu quieras";
-	data2->next = NULL;
-	ft_lstadd_back(&data2 ,data);
-	while (act_data)
+	size_t	i;
+	char	aux[n];
+	char	*auxdest;
+	char	*auxsrc;
+
+	auxdest = (char *)dest;
+	auxsrc = (char *)src;
+	i = 0;
+	if (dest == NULL && src == NULL && n)
+		return (0);
+	while (i < n)
 	{
-		printf("%s", act_data->content);
-		act_data = act_data->next;
+		aux[i] = auxsrc[i];
+		i++;
 	}
+	i = 0;
+	while (i < n)
+	{
+		auxdest[i] = aux[i];
+		i++;
+	}
+	return (dest);
 }

@@ -7,5 +7,9 @@
 			"path": "Pruebas"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.associations": {
+			"libft.h": "c"
+		}
+	}
 }
