@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/18 16:12:38 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/25 11:29:53 by rarias-p         ###   ########.fr       */
+/*   Created: 2019/11/26 13:05:20 by rarias-p          #+#    #+#             */
+/*   Updated: 2019/11/28 10:57:28 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int  main()
+t_list	*ft_lstlast(t_list *lst)
 {
-	t_list *data = NULL;
-	data->content = malloc(6);
-	data->content = "Pepelu";
-	data->next = NULL;
-	t_list *act_data = data;
-	t_list *data2 = NULL;
-	data2->content = "Lo que tu quieras";
-	data2->next = NULL;
-	ft_lstadd_back(&data2 ,data);
-	while (act_data)
-	{
-		printf("%s", act_data->content);
-		act_data = act_data->next;
-	}
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

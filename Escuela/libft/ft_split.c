@@ -6,79 +6,92 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 16:37:51 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/22 18:06:16 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/27 18:58:21 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		**alloc_counter(char **tab, char *s, char c)
+static int			get_nword(char const *s, char c)
 {
-	int i;
-	int j;
+	unsigned char		*str;
+	unsigned int		i;
+	unsigned int		j;
 
 	i = 0;
 	j = 0;
-	while (s[i] != '\0')
+	str = (unsigned char *)s;
+	while (str[i] != '\0')
 	{
-		if (s[i] == c)
-			j++;
-		i++;
-	}
-	if (!(tab = malloc((j + 1) * sizeof(char*))))
-		return (0);
-	return (tab);
-}
-
-static char	**maker(char **tab, char *s, char c)
-{
-	int i;
-	int j;
-	int k;
-
-	i = 0;
-	j = 0;
-	k = 0;
-	while (s[i] != '\0')
-	{
-		while (s[i] != c)
-		{
-			tab[j][k] = s[i];
+		while (str[i] == c && str[i])
 			i++;
-			k++;
-		}
-		tab[j][k] = '\0';
-		k = 0;
-		j++;
-		i++;
+		if (str[i])
+			j++;
+		while (str[i] != c && str[i])
+			i++;
 	}
-	tab[j] = NULL;
-	return (tab);
+	return (j);
 }
 
-char		**ft_split(char const *s, char c)
+static int			get_len(char const *s, char c, char **str)
 {
-	char	**tab;
-	int		i;
-	int		j;
-	int		k;
+	unsigned int	i;
+	unsigned int	j;
+	unsigned int	k;
 
-	tab = NULL;
 	i = 0;
 	k = 0;
-	tab = alloc_counter(tab, (char *)s, c);
-	while (s[i] != '\0')
+	while (s[i])
 	{
 		j = 0;
-		while (s[i] != c && s[i] != '\0')
+		if (s[i] != c && s[i])
 		{
-			i++;
-			j++;
+			while (s[i] != c && s[i])
+			{
+				j++;
+				i++;
+			}
+			if (!(str[k] = malloc(sizeof(char) * j + 1)))
+				return (0);
+			k++;
 		}
-		if (!(tab[k] = malloc(j * sizeof(char))))
-			return (0);
-		k++;
-		i++;
+		else
+			i++;
 	}
-	return (maker(tab, (char*)s, c));
+	return (1);
+}
+
+static void			init(unsigned int *i, unsigned int *j)
+{
+	*i = 0;
+	*j = 0;
+}
+
+char				**ft_split(char const *s, char c)
+{
+	char			**str;
+	unsigned int	i;
+	unsigned int	j;
+	unsigned int	k;
+
+	if (s == 0)
+		return (0);
+	init(&i, &j);
+	if (!(str = (char**)malloc(sizeof(char*) * (get_nword(s, c) + 1))))
+		return (0);
+	if (!(get_len(s, c, str)))
+		return (NULL);
+	while (s[i] == c)
+		i++;
+	while (s[i])
+	{
+		k = 0;
+		while (s[i] != c && s[i])
+			str[j][k++] = s[i++];
+		str[j++][k] = '\0';
+		while (s[i] == c)
+			i++;
+	}
+	str[j] = 0;
+	return (str);
 }

@@ -6,13 +6,13 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 11:19:58 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/21 17:59:53 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/28 10:11:43 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		test(int len, char *haystack)
+static int	test(int len, char *haystack)
 {
 	if (len < 1)
 		return (0);
@@ -22,7 +22,7 @@ int		test(int len, char *haystack)
 		return (1);
 }
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char		*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t i;
 	size_t j;

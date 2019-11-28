@@ -6,13 +6,13 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/27 16:35:51 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/27 16:38:53 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/27 16:59:48 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_checkset(char c, char *set)
+int	ft_checkset(char c, const char *set)
 {
 	int i;
 

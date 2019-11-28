@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/26 13:05:20 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/26 16:42:20 by rarias-p         ###   ########.fr       */
+/*   Created: 2019/11/24 12:53:49 by rarias-p          #+#    #+#             */
+/*   Updated: 2019/11/28 10:57:25 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+t_list	*ft_lstnew(void const *content)
 {
-	if (!lst)
-		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	t_list *new_list;
+
+	new_list = NULL;
+	if (!(new_list = malloc(sizeof(t_list))))
+		return (0);
+	new_list->content = (void *)content;
+	new_list->next = NULL;
+	return (new_list);
 }

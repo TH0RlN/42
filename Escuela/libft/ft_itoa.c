@@ -6,13 +6,13 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 10:34:56 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/21 10:13:58 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/28 10:38:42 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		number_len(long n)
+static int		number_len(long n)
 {
 	int len;
 
@@ -22,7 +22,7 @@ int		number_len(long n)
 	return (len);
 }
 
-char	*desmembrator(long n, char *cnumber, int len)
+static char		*desmembrator(long n, char *cnumber, int len)
 {
 	int i;
 	int divisor;
@@ -46,7 +46,7 @@ char	*desmembrator(long n, char *cnumber, int len)
 	return (cnumber);
 }
 
-char	*little(long n)
+static char		*little(long n)
 {
 	char	*littlen;
 
@@ -56,7 +56,7 @@ char	*little(long n)
 	return (littlen);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	int		negcheck;
 	long	nn;

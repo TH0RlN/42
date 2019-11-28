@@ -23,3 +23,7 @@ Escuela/libft-unit-tests/assets/tmp/ft_strlcpy.o
 Escuela/libft-unit-tests/assets/tmp/ft_atoi.o
 Escuela/libft-unit-tests/assets/tmp/ft_strjoin.o
 Escuela/libft-unit-tests/assets/tmp/ft_substr.o
+Escuela/libft-unit-tests/assets/tmp/ft_itoa.o
+Escuela/libft-unit-tests/assets/tmp/ft_split.o
+Escuela/libft-unit-tests/assets/tmp/ft_strnstr.o
+Escuela/libft-unit-tests/assets/tmp/ft_substr.o
