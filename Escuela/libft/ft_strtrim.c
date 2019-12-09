@@ -3,74 +3,103 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abarral- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/20 09:08:23 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/28 10:14:06 by rarias-p         ###   ########.fr       */
+/*   Created: 2019/11/17 12:31:15 by abarral-          #+#    #+#             */
+/*   Updated: 2019/11/25 17:07:31 by abarral-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int			lenther(char const *s1, char const *set)
+static int		ft_start(char const *s1, char const *set)
 {
-	int i;
-	int j;
-	int len;
-	int ttl_len;
+	int		i;
+	int		j;
+	char	boolean;
 
-	i = 0;
-	j = ft_strlen(s1) - 1;
-	ttl_len = ft_strlen(s1);
-	while (ft_checkset(s1[i], (char *)set) == 1 && s1)
-		i++;
-	while (j >= 0 && ft_checkset(s1[j], (char *)set) == 1)
+	i = -1;
+	boolean = 'T';
+	while (boolean == 'T')
 	{
-		j--;
+		boolean = 'F';
 		i++;
+		j = 0;
+		while (set[j])
+		{
+			if (s1[i] == set[j])
+				boolean = 'T';
+			j++;
+		}
 	}
-	len = ttl_len - i;
-	if (len < 0)
-		len = 0;
-	return (len);
+	return (i);
 }
 
-static char			*filler(char *trim, char const *s1, char const *set)
+static int		ft_end(char const *s1, char const *set, int start)
 {
-	int len;
-	int i;
-	int j;
+	int		i;
+	int		j;
+	char	boolean;
 
-	len = ft_strlen(s1) - 1;
 	i = 0;
-	j = 0;
-	while (ft_checkset(s1[len], set) == 1 && len >= 0)
-		len--;
-	len++;
-	while (ft_checkset(s1[i], set) == 1 && s1[i])
+	while (s1[i])
 		i++;
-	while (i < len && s1[i])
+	i = i == 0 ? 0 : i - 1;
+	boolean = 'T';
+	while (start < i && boolean == 'T')
 	{
-		trim[j] = s1[i];
+		boolean = 'F';
+		j = 0;
+		while (set[j])
+		{
+			if (s1[i] == set[j])
+			{
+				i--;
+				boolean = 'T';
+			}
+			j++;
+		}
+	}
+	return (i);
+}
+
+static char		*ft_trim(char const *s1, int start, int end)
+{
+	char	*trimmed;
+	int		i;
+	int		j;
+
+	if (!(trimmed = malloc(sizeof(char) * (end - start + 2))))
+		return (NULL);
+	i = start;
+	j = 0;
+	while (i <= end)
+	{
+		trimmed[j] = s1[i];
 		i++;
 		j++;
 	}
-	trim[j] = '\0';
-	return (trim);
+	trimmed[j] = '\0';
+	return (trimmed);
 }
 
-char				*ft_strtrim(char const *s1, char const *set)
+char			*ft_strtrim(char const *s1, char const *set)
 {
-	char	*trim;
-	int		lenth;
+	int		start;
+	int		end;
+	char	*trimmed;
 
-	if (!s1 || !set)
+	if (s1 == NULL || set == NULL)
 		return (NULL);
-	lenth = lenther(s1, set);
-	if (lenth <= 0)
-		return (ft_strdup(""));
-	if (!(trim = malloc(lenth + 1)))
-		return (NULL);
-	trim = filler(trim, (char *)s1, (char *)set);
-	return (trim);
+	if (s1[0] == '\0')
+	{
+		if (!(trimmed = malloc(sizeof(char) * 1)))
+			return (NULL);
+		trimmed[0] = '\0';
+		return (trimmed);
+	}
+	start = ft_start(s1, set);
+	end = ft_end(s1, set, start);
+	trimmed = ft_trim(s1, start, end);
+	return (trimmed);
 }

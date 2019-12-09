@@ -6,13 +6,13 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/24 12:53:49 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/28 10:57:25 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/12/01 13:40:10 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void const *content)
+t_list	*ft_lstnew(void *content)
 {
 	t_list *new_list;
 

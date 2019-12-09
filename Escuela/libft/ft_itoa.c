@@ -3,81 +3,61 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abarral- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/15 10:34:56 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/28 10:38:42 by rarias-p         ###   ########.fr       */
+/*   Created: 2019/11/17 18:15:39 by abarral-          #+#    #+#             */
+/*   Updated: 2019/11/25 18:20:49 by abarral-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		number_len(long n)
+static char	*itoa_string(int n, char *s, int i)
 {
-	int len;
-
-	len = 1;
-	while ((n /= 10) > 0)
-		len++;
-	return (len);
+	s += i + 2;
+	*--s = '\0';
+	if (n < 0)
+	{
+		while (n != 0)
+		{
+			*--s = '0' + ((-n) % 10);
+			n /= 10;
+		}
+		*--s = '-';
+		return (s);
+	}
+	if (n >= 0)
+	{
+		*--s = '\0';
+		while (n != 0)
+		{
+			*--s = '0' + (n % 10);
+			n /= 10;
+		}
+	}
+	return (s);
 }
 
-static char		*desmembrator(long n, char *cnumber, int len)
+char		*ft_itoa(int n)
 {
-	int i;
-	int divisor;
+	char	*s;
+	int		i;
+	int		n1;
 
-	divisor = 1;
 	i = 0;
-	while (i < len - 1)
+	n1 = (long int)n;
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	while (n1 != 0)
 	{
-		divisor *= 10;
+		n1 /= 10;
 		i++;
 	}
-	i = 0;
-	while (i < len)
-	{
-		cnumber[i] = (n / divisor) + '0';
-		n %= divisor;
-		divisor /= 10;
-		i++;
-	}
-	cnumber[i] = '\0';
-	return (cnumber);
-}
-
-static char		*little(long n)
-{
-	char	*littlen;
-
-	littlen = malloc(sizeof(char) * 2);
-	littlen[0] = n + '0';
-	littlen[1] = '\0';
-	return (littlen);
-}
-
-char			*ft_itoa(int n)
-{
-	int		negcheck;
-	long	nn;
-	char	*cnumber;
-	char	*neg;
-
-	nn = (long)n;
-	neg = "-";
-	negcheck = 1;
-	if (nn < 0)
-	{
-		negcheck *= -1;
-		nn *= -1;
-	}
-	if (!(cnumber = malloc((number_len(nn) + 1) * sizeof(char))))
-		return (0);
-	if (nn < 10)
-		cnumber = little(nn);
-	else
-		cnumber = desmembrator(nn, cnumber, number_len(nn));
-	if (negcheck < 0)
-		cnumber = ft_strjoin(neg, cnumber);
-	return (cnumber);
+	s = malloc(i + 2);
+	if (s == NULL)
+		return (NULL);
+	if (n == 0)
+		return (ft_strdup("0"));
+	itoa_string(n, s, i);
+	return (s);
 }

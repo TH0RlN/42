@@ -3,32 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: abarral- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/20 12:49:15 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/20 13:19:49 by rarias-p         ###   ########.fr       */
+/*   Created: 2019/11/19 12:13:43 by abarral-          #+#    #+#             */
+/*   Updated: 2019/11/24 12:25:09 by abarral-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long int	m;
-	long int	i;
-	long int	j;
+	long int	n2;
+	char		c;
 
-	m = n;
-	i = 0;
-	if (m >= 0)
-		i = m;
-	if (m < 0)
+	n2 = (long int)n;
+	if (n2 < 0)
 	{
-		i = m * -1;
-		ft_putchar_fd('-', fd);
+		n2 = -n2;
+		write(fd, "-", 1);
 	}
-	if (i >= 10)
-		ft_putnbr_fd(i / 10, fd);
-	j = i % 10 + '0';
-	write(fd, &j, 1);
+	if (n2 > 9)
+		ft_putnbr_fd(n2 / 10, fd);
+	c = (n2 % 10) + '0';
+	write(fd, &c, 1);
 }

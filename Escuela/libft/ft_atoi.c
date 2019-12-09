@@ -6,13 +6,13 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 12:07:48 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/11/24 11:31:11 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/11/28 17:38:56 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int i;
 	int negcheck;
