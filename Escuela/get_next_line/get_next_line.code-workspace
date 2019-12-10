@@ -2,6 +2,14 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "/Users/rarias-p/GitHubExterno/42/Escuela/Pruebas"
 		}
-	]
+	],
+	"settings": {
+		"files.associations": {
+			"get_next_line.h": "c"
+		}
+	}
 }

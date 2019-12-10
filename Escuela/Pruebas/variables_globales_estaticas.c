@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   variables_globales_estaticas.c                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/09 09:52:48 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/12/10 16:36:03 by rarias-p         ###   ########.fr       */
+/*   Created: 2019/12/09 10:05:23 by rarias-p          #+#    #+#             */
+/*   Updated: 2019/12/09 10:24:25 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../libft/libft.h"
 
-int		get_next_line(int fd, char **line)
+int rock = 42; //comenta esta línea para compilar con "-D rock=xx" (donde de xx es un valor para una variable tipo int)
+
+int main()
 {
-	int test;
-	//int i;
-	
-	test = read(fd, *line, BUFFER_SIZE);
-	printf("%d      %s\n", test, *line);
+	printf("%d", rock);
 	return (0);
 }
