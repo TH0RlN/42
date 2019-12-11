@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 09:52:48 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/12/11 10:31:18 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/12/11 12:35:36 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,18 @@
 int		get_next_line(int fd, char **line)
 {
 	int test;
-	char prueba[999];
-	
-	//test = read(fd, *line, BUFFER_SIZE);
-	//printf("%s || %d\n", *line, test);
+	char buff[30];
+	static char *prueba[999];
+
 	line = NULL;
-	test = read(fd, prueba, 1);
-	prueba[ft_strlen(prueba)] = '\0';
-	printf("%s || %d\n", prueba, test);
+	buff[0] = '\0';
+	test = read(fd, buff, 10);
+	buff[test] = '\0';
+	ft_memccpy(buff, buff, '\n', BUFFER_SIZE);
+	if (!*prueba)
+		*prueba = ft_strdup(buff);
+	else
+		*prueba = ft_strjoin(*prueba, buff);
+	printf("%s || %d\n", *prueba, test);
 	return (test);
 }
