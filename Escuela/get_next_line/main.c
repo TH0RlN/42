@@ -6,12 +6,12 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 10:22:15 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/12/11 10:41:38 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/12/11 17:05:48 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
+#include "../libft/libft.h"
 int main()
 {
 	int             fd;
