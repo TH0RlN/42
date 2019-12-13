@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 09:52:48 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/12/12 20:32:13 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/12/13 02:39:50 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ int		get_next_line(int fd, char **line)
 	*line = NULL;
 	if (!(test = read(fd, buff, BUFFER_SIZE)))
 		return (-1);
-	
+	return(test);
 }
