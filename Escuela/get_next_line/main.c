@@ -6,19 +6,20 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 10:22:15 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/12/16 09:16:26 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/12/16 10:25:19 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include "../libft/libft.h"
-int main()
+
+int	main(void)
 {
-	int             fd;
-	int             i;
-	int             j;
-	char    		*line = 0;
-	char			*lineadress[66];
+	int		fd;
+	int		i;
+	int		j;
+	char	*line = 0;
+	char	*lineadress[66];
 
 	j = 1;
 	if (!(fd = open("texto.txt", O_RDONLY)))
