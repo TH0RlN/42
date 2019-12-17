@@ -6,19 +6,41 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 09:52:48 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/12/16 11:04:11 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/12/17 16:28:08 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
+int		check_for_nl(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] = '\n')
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
 int		get_next_line(int fd, char **line)
 {
-	static char	rest[BUFFER_SIZE];
-	char		*buff;
+	static char	*rest[4096];
+	char		buff[BUFFER_SIZE];
 	int			test;
 
-	buff = malloc(BUFFER_SIZE);
-	free(buff);
-	return (0);
+	while ((test = read(fd, buff, BUFFER_SIZE) > 0))
+	{
+		buff[BUFFER_SIZE] = '\0';
+		if (!(rest[fd]))
+			rest[fd] = ft_strdup(buff);
+		else
+			rest[fd] = ft_strjoin(rest[fd], buff);
+		if (check_for_nl(rest[fd]) == 1)
+			break ;
+	}
+	fill(rest);
 }
