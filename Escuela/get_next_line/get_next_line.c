@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 09:52:48 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/12/19 10:40:23 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/12/19 11:19:23 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,10 @@ void	fill(char *rest, char *line)
 	size_t pos_line;
 	size_t pos_rest;
 
-	pos_line = ft_strlen(line);
+	if (line)
+		pos_line = ft_strlen(line);
+	else
+		pos_line = 0;
 	pos_rest = 0;
 	while (rest[pos_rest] != '\n' && rest[pos_rest] != '\0')
 	{
