@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 09:52:48 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/12/17 16:46:23 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/12/19 09:16:33 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		check_for_nl(char *s)
 	i = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] = '\n')
+		if (s[i] == '\n')
 			return (1);
 		i++;
 	}
@@ -32,17 +32,28 @@ void	fill(char *rest, char *line)
 	int pos_rest;
 
 	pos_line = ft_strlen(line);
-	
+	pos_rest = 0;
+	while (rest[pos_rest] != '\n' && rest[pos_rest] != '\0')
+	{
+		line[pos_line] = rest[pos_rest];
+		pos_line++;
+		pos_rest++;
+	}
+	line[pos_line] = '\0';
 }
 
 int		get_next_line(int fd, char **line)
 {
 	static char	*rest[4096];
-	char		buff[BUFFER_SIZE];
+	char		buff[BUFFER_SIZE + 1];
 	int			test;
 
+	if (!fd || !line || !BUFFER_SIZE || fd < 0)
+		return (-1);
 	while ((test = read(fd, buff, BUFFER_SIZE) > 0))
 	{
+		if (test < 0)
+			return (-1);
 		buff[BUFFER_SIZE] = '\0';
 		if (!(rest[fd]))
 			rest[fd] = ft_strdup(buff);
@@ -52,4 +63,5 @@ int		get_next_line(int fd, char **line)
 			break ;
 	}
 	fill(rest[fd], *line);
+	return (test == BUFFER_SIZE ? 1 : 0);
 }
