@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 09:52:48 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/12/19 11:19:23 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/12/19 12:07:34 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,12 @@ int		check_for_nl(char *s)
 
 void	fill(char *rest, char *line)
 {
-	size_t pos_line;
-	size_t pos_rest;
+	int i;
 
-	if (line)
-		pos_line = ft_strlen(line);
-	else
-		pos_line = 0;
-	pos_rest = 0;
-	while (rest[pos_rest] != '\n' && rest[pos_rest] != '\0')
-	{
-		line[pos_line] = rest[pos_rest];
-		pos_line++;
-		pos_rest++;
-	}
-	line[pos_line] = '\0';
+	i = 0;
+	while (rest[i] != '\n' && rest[i] != '\0')
+		i++;
+	line = ft_substr(rest, 0, i);
 }
 
 int		get_next_line(int fd, char **line)

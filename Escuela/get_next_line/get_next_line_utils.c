@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 09:53:16 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/12/19 11:04:04 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/12/19 11:55:04 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (s);
 }
 
-size_t	ft_strlen(const char *str)
+size_t		ft_strlen(const char *str)
 {
 	size_t i;
 
@@ -44,7 +44,7 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-char	*ft_strdup(const char *s)
+char		*ft_strdup(const char *s)
 {
 	char	*ret;
 	int		i;
@@ -63,7 +63,7 @@ char	*ft_strdup(const char *s)
 	return (ret);
 }
 
-char	*ft_strchr(const char *s, int c)
+char		*ft_strchr(const char *s, int c)
 {
 	int i;
 
@@ -77,4 +77,27 @@ char	*ft_strchr(const char *s, int c)
 	if (s[i] == (char)c)
 		return ((char *)s + i);
 	return (0);
+}
+
+char		*ft_substr(char const *s, unsigned int start, int len)
+{
+	char	*dest;
+	int		i;
+
+	if (!s)
+		return (0);
+	if (start > ft_strlen(s))
+		return (ft_strdup(""));
+	dest = (char *)malloc(((int)len + 1) * sizeof(char));
+	if (dest == '\0')
+		return (dest);
+	i = start;
+	while (s[i] && len > 0)
+	{
+		dest[i - start] = s[i];
+		i++;
+		len--;
+	}
+	dest[i - start] = '\0';
+	return (dest);
 }
