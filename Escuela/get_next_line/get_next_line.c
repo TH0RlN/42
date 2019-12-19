@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 09:52:48 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/12/19 09:30:23 by rarias-p         ###   ########.fr       */
+/*   Updated: 2019/12/19 10:40:23 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int		check_for_nl(char *s)
 
 void	fill(char *rest, char *line)
 {
-	int pos_line;
-	int pos_rest;
+	size_t pos_line;
+	size_t pos_rest;
 
 	pos_line = ft_strlen(line);
 	pos_rest = 0;
