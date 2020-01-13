@@ -1,6 +1,6 @@
 Escuela/.vscode/launch.json
 Escuela/libft/test
-.DS_Store
+*/.DS_Store
 Escuela/libft/a.out
 Escuela/libft-unit-tests/*
 Escuela/libft-unit-tests/assets/tmp/ft_memcpy.o
@@ -27,3 +27,5 @@ Escuela/libft-unit-tests/assets/tmp/ft_itoa.o
 Escuela/libft-unit-tests/assets/tmp/ft_split.o
 Escuela/libft-unit-tests/assets/tmp/ft_strnstr.o
 Escuela/libft-unit-tests/assets/tmp/ft_substr.o
+Escuela/get_next_line/test.dSYM/Contents/Resources/DWARF/test
+Escuela/get_next_line/test
