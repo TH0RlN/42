@@ -26,12 +26,12 @@ int		check_for_nl(char *s)
 	return (0);
 }
 
-void	fill(char **rest, char **line)
+void	fill(char **rest, char **line, int fd)
 {
 	int i;
 
-	i = 8;
-	while (*rest[i] != '\n' && *rest[i] != '\0')
+	i = 0;
+	while (rest[fd][i] != '\n' && rest[fd][i] != '\0')
 		i++;
 	*line = ft_substr(*rest, 0, i);
 }
@@ -56,7 +56,7 @@ int		get_next_line(int fd, char **line)
 	}
 	if (test < 0)
 		return (-1);
-	fill(&rest[fd], line);
+	fill(&rest[fd], line, fd);
 	rest[fd] = ft_strchr(buff, '\n') + 1;
 	return (test == BUFFER_SIZE ? 1 : 0);
 }
