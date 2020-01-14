@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 10:22:15 by rarias-p          #+#    #+#             */
-/*   Updated: 2019/12/17 10:32:11 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/01/14 17:21:32 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,7 @@ int	main(void)
 		return (0);
 	}
 	while ((i = get_next_line(fd, &line)) > 0)
-	{
 		printf("%s\n", line);
-		lineadress[j - 1] = line;
-		j++;
-	}
 /*
 ** 	printf("%s\n", line);
 */
