@@ -31,7 +31,7 @@
 				"${fileDirname}/get_next_line.c",
 				"${fileDirname}/../libft/libft.a",
 				"-o",
-				"${fileDirname}/test"
+				"${fileDirname}/test",
 			],
 			"options": {
 				"cwd": "/usr/bin"
