@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 09:52:48 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/01/14 16:50:43 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/01/14 16:55:42 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ int		check_for_nl(char *s)
 	return (0);
 }
 
-void	fill(char **rest, char **line, int fd)
+void	fill(char **rest, char **line)
 {
 	int i;
 
 	i = 0;
-	while (rest[fd][i] != '\n' && rest[fd][i] != '\0')
+	while ((*rest)[i] != '\n' && (*rest)[i] != '\0')
 		i++;
 	*line = ft_substr(*rest, 0, i);
 }
@@ -56,7 +56,7 @@ int		get_next_line(int fd, char **line)
 	}
 	if (test < 0)
 		return (-1);
-	fill(&rest[fd], line, fd);
+	fill(&rest[fd], line);
 	rest[fd] = ft_strchr(buff, '\n') + 1;
 	return (test == BUFFER_SIZE ? 1 : 0);
 }
