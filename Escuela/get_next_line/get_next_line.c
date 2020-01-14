@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 09:52:48 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/01/14 10:23:26 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/01/14 10:57:12 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	fill(char **rest, char **line)
 {
 	int i;
 
-	i = 0;
+	i = 8;
 	while (*rest[i] != '\n' && *rest[i] != '\0')
 		i++;
 	*line = ft_substr(*rest, 0, i);
