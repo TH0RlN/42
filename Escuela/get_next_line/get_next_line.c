@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 09:52:48 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/01/14 17:25:59 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/01/14 17:35:48 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int		get_next_line(int fd, char **line)
 	if (test < 0)
 		return (-1);
 	fill(&rest[fd], line);
+	rest[fd][BUFFER_SIZE] = '\0';
 	rest[fd] = ft_strchr(buff, '\n') + 1;
-	rest[fd] = 0;
 	return (test == BUFFER_SIZE ? 1 : 0);
 }
