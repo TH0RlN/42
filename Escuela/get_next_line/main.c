@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 10:22:15 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/01/14 17:21:32 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/01/15 11:49:38 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	main(void)
 	int		i;
 	int		j;
 	char	*line = 0;
-	char	*lineadress[66];
 
 	j = 1;
 	if (!(fd = open("texto.txt", O_RDONLY)))
@@ -29,11 +28,7 @@ int	main(void)
 	}
 	while ((i = get_next_line(fd, &line)) > 0)
 		printf("%s\n", line);
-/*
-** 	printf("%s\n", line);
-*/
+
 	free(line);
 	close(fd);
-	while (--j > 0)
-		free(lineadress[j - 1]);
 }
