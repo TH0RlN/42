@@ -5,13 +5,13 @@
 	"tasks": [
 		{
 			"type": "shell",
-			"label": "gcc build active file",
+			"label": "uno",
 			"command": "/usr/bin/gcc",
 			"args": [
 				"-g",
 				"${file}",
 				"-o",
-				"${fileDirname}/${fileBasenameNoExtension}"
+				"${fileDirname}/a.out"
 			],
 			"options": {
 				"cwd": "/usr/bin"
@@ -23,7 +23,25 @@
 		},
 		{
 			"type": "shell",
-			"label": "la guena",
+			"label": "todos",
+			"command": "/usr/bin/gcc",
+			"args": [
+				"-g",
+				"${fileDirname}/*.c",
+				"-o",
+				"${fileDirname}/a.out"
+			],
+			"options": {
+				"cwd": "/usr/bin"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
+		},
+		{
+			"type": "shell",
+			"label": "get next line",
 			"command": "/usr/bin/gcc",
 			"args": [
 				"-g",

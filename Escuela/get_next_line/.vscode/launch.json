@@ -5,6 +5,32 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
+			"name": "Actual",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/a.out.",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "lldb",
+			"preLaunchTask": "uno"
+		},
+		{
+			"name": "*.c",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/a.out.",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "lldb",
+			"preLaunchTask": "todos"
+		},
+		{
 			"name": "get next line",
 			"type": "cppdbg",
 			"request": "launch",
@@ -15,7 +41,7 @@
 			"environment": [],
 			"externalConsole": false,
 			"MIMode": "lldb",
-			"preLaunchTask": "la guena"
+			"preLaunchTask": "get next line"
 		}
 	]
 }
