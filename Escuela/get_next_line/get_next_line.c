@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 09:52:48 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/01/16 10:25:00 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/01/16 12:06:00 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,10 @@ void	fill(char **rest, char **line)
 int		get_next_line(int fd, char **line)
 {
 	static char	*rest[4096];
-	char		*buff;
+	char		buff[BUFFER_SIZE + 1];
 	int			test;
 
 	if (!fd || !line || !BUFFER_SIZE || fd < 0)
-		return (-1);
-	if (!(buff = (malloc((BUFFER_SIZE + 1)))))
 		return (-1);
 	while ((test = read(fd, buff, BUFFER_SIZE)) > 0)
 	{
@@ -58,9 +56,8 @@ int		get_next_line(int fd, char **line)
 	}
 	if (test < 0)
 		return (-1);
-	fill(&rest[fd], line);
+	fill(&rest[fd], &*line);
 	rest[fd][BUFFER_SIZE] = '\0';
 	rest[fd] = ft_strchr(buff, '\n') + 1;
-	free(buff);
 	return (test == BUFFER_SIZE ? 1 : 0);
 }
