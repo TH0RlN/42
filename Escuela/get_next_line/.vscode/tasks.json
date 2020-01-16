@@ -47,7 +47,7 @@
 				"-g",
 				"${fileDirname}/main.c",
 				"${fileDirname}/get_next_line.c",
-				"${fileDirname}/../libft/libft.a",
+				"${fileDirname}/get_next_line_utils.c",
 				"-o",
 				"${fileDirname}/test",
 			],
