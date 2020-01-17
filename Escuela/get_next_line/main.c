@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 10:22:15 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/01/17 10:27:17 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/01/17 12:32:13 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,19 @@
 #include <stdlib.h>
 #include "get_next_line.h"
 
-int	main (void)
+int	main(void)
 {
-	int fd;
-	char *prueba;
-	int x;
+	int		fd;
+	char	*prueba;
+	int		x;
+
 	fd = open("ANewHope.txt", O_RDONLY);
 	do
-	{
+		{
 	x = get_next_line(fd, &prueba);
 	printf("%d %s\n", x, prueba);
-	free (prueba);
+	free(prueba);
 	}
-	while (x > 0);
+		while (x > 0);
 	return (0);
 }
