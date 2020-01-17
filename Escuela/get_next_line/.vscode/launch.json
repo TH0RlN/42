@@ -34,7 +34,7 @@
 			"name": "get next line",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${fileDirname}/test",
+			"program": "${fileDirname}/test.out",
 			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",

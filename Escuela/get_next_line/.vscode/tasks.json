@@ -49,7 +49,7 @@
 				"${fileDirname}/get_next_line.c",
 				"${fileDirname}/get_next_line_utils.c",
 				"-o",
-				"${fileDirname}/test",
+				"${fileDirname}/test.out",
 			],
 			"options": {
 				"cwd": "/usr/bin"

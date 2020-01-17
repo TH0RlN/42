@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 10:22:15 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/01/16 09:54:51 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/01/16 13:00:07 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ int	main (void)
 	char *prueba;
 	int x;
 	fd = open("texto.txt", O_RDONLY);
-	do {
+	do
+	{
 	x = get_next_line(fd, &prueba);
 	printf("%d %s\n", x, prueba);
 	free (prueba);
-	} while (x > 0);
+	}
+	while (x > 0);
 	return (0);
-
 }
-
