@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 10:22:15 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/01/21 12:47:14 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/01/21 13:10:33 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,14 @@
 int	main(void)
 {
 	int		k;
-	//int		fd;
+	int		fd;
 	char	*line;
 
-	//fd = open("Prueba", O_RDONLY);
-	while ((k = get_next_line(1, &line)))
+	fd = open("vacio", O_RDONLY);
+	while ((k = get_next_line(fd, &line)))
 		printf("%d %s\n", k, line);
 	printf("%d %s\n", k, line);
-	//getchar();
+	getchar();
 	return (0);
 }
 
