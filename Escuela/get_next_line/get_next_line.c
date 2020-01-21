@@ -6,13 +6,13 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 09:52:48 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/01/21 09:54:01 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/01/21 12:24:28 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int		check_for_nl(char *s)
+/*int		check_for_nl(char *s)
 {
 	int	i;
 
@@ -24,19 +24,31 @@ int		check_for_nl(char *s)
 		i++;
 	}
 	return (0);
-}
+}*/
 
-int		fill(char **rest, char **line)
+int		fill(char **rrest, char **line, int fd)
 {
-	int i;
+	int		i;
+	char	*aux;
 
 	i = 0;
-	while ((*rest)[i] != '\n' && (*rest)[i] != '\0')
+	while (rrest[fd][i] != '\n' && rrest[fd][i] != '\0')
 		i++;
-	*line = ft_substr(*rest, 0, i);
-	if ((*rest)[i] == '\n')
+	if (rrest[fd][i] == '\n')
+	{
+		*line = ft_substr(rrest[fd], 0, i);
+		aux = ft_strdup((&((rrest[fd])[i + 1])));
+		free(rrest[fd]);
+		rrest[fd] = aux;
 		return (1);
-	return (0);
+	}
+	else
+	{
+		*line = ft_strdup(rrest[fd]);
+		free(rrest[fd]);
+		rrest[fd] = 0;
+		return (0);
+	}
 }
 
 int		get_next_line(int fd, char **line)
@@ -50,19 +62,16 @@ int		get_next_line(int fd, char **line)
 	while ((test = read(fd, buff, BUFFER_SIZE)) > 0)
 	{
 		buff[test] = '\0';
-		if ((!(rest[fd])))
+		if (!(rest[fd]))
 			rest[fd] = ft_strdup(buff);
 		else
 			rest[fd] = ft_strjoin(rest[fd], buff);
-		if (check_for_nl(rest[fd]) == 1)
+		if (ft_strchr(rest[fd], '\n'))
 			break ;
 	}
-	if (test < BUFFER_SIZE)
-		ft_strjoin(rest[fd], "\n");
+	//if (test < BUFFER_SIZE)
+	//	ft_strjoin(rest[fd], "\n");
 	if (test < 0)
 		return (-1);
-	test = fill(&rest[fd], line);
-	if (check_for_nl(rest[fd]))
-		rest[fd] = ft_strchr(rest[fd], '\n') + 1;
-	return (test);
+	return (fill(rest, line, fd));
 }
