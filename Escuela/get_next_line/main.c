@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 10:22:15 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/01/22 09:07:13 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/01/22 12:59:18 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,40 +33,40 @@
 //	close(fd);
 //}
 
-//#include <stdio.h>
-//#include <fcntl.h>
-//#include <stdlib.h>
-//#include "get_next_line.h"
-//
-//int	main(void)
-//{
-//	int		k;
-//	int		fd;
-//	char	*line;
-//
-//	fd = open("ANewHope.txt", O_RDONLY);
-//	while ((k = get_next_line(fd, &line)))
-//		printf("%d %s\n", k, line);
-//	printf("%d %s\n", k, line);
-//	//getchar();
-//	return (0);
-//}
-
 #include <stdio.h>
 #include <fcntl.h>
 #include <stdlib.h>
 #include "get_next_line.h"
 
-int	main (void)
+int	main(void)
 {
-	int fd;
-	char *prueba;
-	int x;
-	fd = open("big_file", O_RDONLY);
-	do {
-	x = get_next_line(fd, &prueba);
-	printf("%d %s\n", x, prueba);
-	free(prueba);
-	} while (x > 0);
+	int		k;
+	//int		fd;
+	char	*line;
+
+	//fd = open("ANewHope.txt", O_RDONLY);
+	while ((k = get_next_line(1, &line)))
+		printf("%d %s\n", k, line);
+	printf("%d %s\n", k, line);
+	//getchar();
 	return (0);
 }
+
+//#include <stdio.h>
+//#include <fcntl.h>
+//#include <stdlib.h>
+//#include "get_next_line.h"
+//
+//int	main (void)
+//{
+//	int fd;
+//	char *prueba;
+//	int x;
+//	fd = open("big_file", O_RDONLY);
+//	do {
+//	x = get_next_line(fd, &prueba);
+//	printf("%d %s\n", x, prueba);
+//	free(prueba);
+//	} while (x > 0);
+//	return (0);
+//}
