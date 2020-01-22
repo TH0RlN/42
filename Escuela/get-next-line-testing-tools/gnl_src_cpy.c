@@ -6,34 +6,41 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 09:52:48 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/01/20 10:05:56 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/01/21 12:57:29 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include GNL_HEADER_CPY
 
-int		check_for_nl(char *s)
+int		fill(char **rrest, char **line, int fd)
 {
-	int	i;
+	int		i;
+	char	*aux;
 
 	i = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == '\n')
-			return (1);
+	while (rrest[fd][i] != '\n' && rrest[fd][i] != '\0')
 		i++;
+	if (rrest[fd][i] == '\n')
+	{
+		*line = ft_substr(rrest[fd], 0, i);
+		aux = ft_strdup((&((rrest[fd])[i + 1])));
+		free(rrest[fd]);
+		rrest[fd] = aux;
+		return (1);
 	}
-	return (0);
+	else
+	{
+		*line = ft_strdup(rrest[fd]);
+		free(rrest[fd]);
+		rrest[fd] = 0;
+		return (0);
+	}
 }
 
-void	fill(char **rest, char **line)
+int		empty(char **line)
 {
-	int i;
-
-	i = 0;
-	while ((*rest)[i] != '\n' && (*rest)[i] != '\0')
-		i++;
-	*line = ft_substr(*rest, 0, i);
+	*line = ft_strdup("");
+	return (0);
 }
 
 int		get_next_line(int fd, char **line)
@@ -41,22 +48,25 @@ int		get_next_line(int fd, char **line)
 	static char	*rest[4096];
 	char		buff[BUFFER_SIZE + 1];
 	int			test;
+	char		*aux;
 
 	if (!fd || !line || !BUFFER_SIZE || fd < 0)
 		return (-1);
 	while ((test = read(fd, buff, BUFFER_SIZE)) > 0)
 	{
 		buff[test] = '\0';
-		if ((!(rest[fd])))
+		if (!(rest[fd]))
 			rest[fd] = ft_strdup(buff);
 		else
-			rest[fd] = ft_strjoin(rest[fd], buff);
-		if (check_for_nl(rest[fd]) == 1)
+		{
+			aux = ft_strjoin(rest[fd], buff);
+			free(rest[fd]);
+			rest[fd] = aux;
+		}
+		if (ft_strchr(rest[fd], '\n'))
 			break ;
 	}
 	if (test < 0)
 		return (-1);
-	fill(&rest[fd], line);
-	rest[fd] = ft_strchr(rest[fd], '\n') + 1;
-	return (test == BUFFER_SIZE ? 1 : 0);
+	return (!rest[fd] && test == 0 ? empty(line) : fill(rest, line, fd));
 }
