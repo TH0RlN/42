@@ -5,68 +5,71 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/09 09:52:48 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/01/22 08:59:47 by rarias-p         ###   ########.fr       */
+/*   Created: 2019/12/04 12:37:00 by rarias-p          #+#    #+#             */
+/*   Updated: 2020/01/28 11:11:13 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
-int		fill(char **rrest, char **line, int fd)
+int		get_next_line(int fd, char **line)
 {
-	int		i;
-	char	*aux;
+	int			ret;
+	char		*buffer;
+	static char	*file[4096];
+	char		*acc;
 
-	i = 0;
-	while (rrest[fd][i] != '\n' && rrest[fd][i] != '\0')
-		i++;
-	if (rrest[fd][i] == '\n')
+	if (!(buffer = malloc((BUFFER_SIZE + 1) * sizeof(char))) || fd < 0
+	|| line == NULL)
+		return (-1);
+	while ((ret = read(fd, buffer, BUFFER_SIZE)) > 0)
 	{
-		*line = ft_substr(rrest[fd], 0, i);
-		aux = ft_strdup((&((rrest[fd])[i + 1])));
-		free(rrest[fd]);
-		rrest[fd] = aux;
-		return (1);
+		buffer[ret] = '\0';
+		if (file[fd] == NULL)
+			file[fd] = ft_strdup(buffer);
+		else
+		{
+			acc = ft_strjoin(file[fd], buffer);
+			free(file[fd]);
+			file[fd] = acc;
+		}
+		if (ft_strchr(file[fd], '\n'))
+			break ;
 	}
-	else
-	{
-		*line = ft_strdup(rrest[fd]);
-		free(rrest[fd]);
-		rrest[fd] = 0;
-		return (0);
-	}
+	free(buffer);
+	return ((ret == 0 && !file[fd]) ? ft_aux(line)
+	: ft_checker(fd, line, file, ret));
 }
 
-int		empty(char **line)
+int		ft_aux(char **line)
 {
 	*line = ft_strdup("");
 	return (0);
 }
 
-int		get_next_line(int fd, char **line)
+int		ft_checker(int fd, char **line, char **file, int ret)
 {
-	static char	*rest[4096];
-	char		buff[BUFFER_SIZE + 1];
-	int			test;
-	char		*aux;
+	int		i;
+	char	*temp;
 
-	if (!fd || !line || !BUFFER_SIZE || fd < 0)
+	if (ret == -1)
 		return (-1);
-	while ((test = read(fd, buff, BUFFER_SIZE)) > 0)
+	i = 0;
+	while (file[fd][i] && file[fd][i] != '\n')
+		i++;
+	if (file[fd][i] == '\n')
 	{
-		buff[test] = '\0';
-		if (!(rest[fd]))
-			rest[fd] = ft_strdup(buff);
-		else
-		{
-			aux = ft_strjoin(rest[fd], buff);
-			free(rest[fd]);
-			rest[fd] = aux;
-		}
-		if (ft_strchr(rest[fd], '\n'))
-			break ;
+		*line = ft_substr(file[fd], 0, i);
+		temp = ft_strdup(&((file[fd])[i + 1]));
+		free(file[fd]);
+		file[fd] = temp;
 	}
-	if (test < 0)
-		return (-1);
-	return (!rest[fd] && test == 0 ? empty(line) : fill(rest, line, fd));
+	else
+	{
+		*line = ft_strdup(file[fd]);
+		free(file[fd]);
+		file[fd] = 0;
+		return (0);
+	}
+	return (1);
 }

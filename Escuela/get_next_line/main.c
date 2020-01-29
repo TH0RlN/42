@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 10:22:15 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/01/22 12:59:18 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/01/28 09:04:02 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,18 @@
 int	main(void)
 {
 	int		k;
-	//int		fd;
+	int		fd;
 	char	*line;
 
-	//fd = open("ANewHope.txt", O_RDONLY);
-	while ((k = get_next_line(1, &line)))
+	fd = open("ANewHope.txt", O_RDONLY);
+	while ((k = get_next_line(fd, &line)))
+	{
 		printf("%d %s\n", k, line);
+		//free(line);
+	}
 	printf("%d %s\n", k, line);
-	//getchar();
+	//free(line);
+	getchar();
 	return (0);
 }
 

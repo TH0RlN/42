@@ -46,7 +46,7 @@
 			"args": [
 				"-g",
 				"${fileDirname}/main.c",
-				"${fileDirname}/get_next_line.c",
+				"${fileDirname}/get_next_line1.c",
 				"${fileDirname}/get_next_line_utils.c",
 				"-o",
 				"${fileDirname}/test.out",
