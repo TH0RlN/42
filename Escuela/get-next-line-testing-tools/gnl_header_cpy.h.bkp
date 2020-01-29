@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 09:53:34 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/01/20 10:11:52 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/01/22 09:10:24 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ char	*ft_substr(char const *s, unsigned int start, int len);
 #endif
 
 #	ifndef BUFFER_SIZE
-#	define BUFFER_SIZE 21
+#	define BUFFER_SIZE 2
 #	endif

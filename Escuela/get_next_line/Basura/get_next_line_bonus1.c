@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus1.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 09:52:48 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/01/21 12:57:29 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/01/28 10:57:28 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 int		fill(char **rrest, char **line, int fd)
 {
@@ -68,5 +68,6 @@ int		get_next_line(int fd, char **line)
 	}
 	if (test < 0)
 		return (-1);
+	free(buff);
 	return (!rest[fd] && test == 0 ? empty(line) : fill(rest, line, fd));
 }
