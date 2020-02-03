@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 15:32:51 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/01/30 17:05:06 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/03 16:40:38 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,29 +25,18 @@ int	printer(const char *to_print)
 	return (i);
 }
 
-int	its_flag(char *s, int i)
-{
-	if (ft_strchr(s, '%'))
-	{
-		
-	}
-	return (1);
-	return (0);
-}
-
 int	ft_printf(const char *s, ...)
 {
 	int		nprint;
 	int		i;
 	void	*aux;
 	va_list	chismas;
+	t_rasa	*tab;
 
 	i = 0;
 	va_start(chismas, s);
 	while (s[i] != '\0')
 	{
-		if (its_flg(s, i) == 1)
-			aux = va_arg(chismas, void *);
 		i = !i ? !i * !i : i + !!i;
 	}
 	nprint = printer(s);
