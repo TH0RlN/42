@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 15:34:05 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/03 16:52:53 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/04 18:47:08 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,21 @@ typedef struct	s_rasa
 	t_flags		*tab;
 	va_list		list;
 }				t_rasa;
-
-char			*ft_strchr(const char *s, int c);
-size_t			ft_strlen(const char *str);
+/*
+**			printf
+*/
+int				ft_printf	(const char *format, ...);
+int				printer		(const char *to_print);
+void			ft_pzero(int d, int num, t_rasa *tab);
+/*
+**			libft
+*/
+char			*ft_itoa	(int n);
+static char		*itoa_string(int n, char *s, int i);
+char			*ft_strchr	(const char *s, int c);
+char			*ft_strdup	(const char *s);
+char			*ft_strjoin	(char const *s1, char const *s2);
+size_t			ft_strlen	(const char *str);
+char			*ft_substr	(char const *s, unsigned int start, int len);
 
 #endif
