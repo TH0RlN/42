@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 15:34:05 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/04 18:47:08 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/04 18:59:12 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ typedef struct	s_rasa
 */
 int				ft_printf	(const char *format, ...);
 int				printer		(const char *to_print);
-void			ft_pzero(int d, int num, t_rasa *tab);
+void			ft_pzero	(int d, int num, t_rasa *tab);
+void			ft_pminus	(int d, int num, t_rasa *tab);
 /*
 **			libft
 */
