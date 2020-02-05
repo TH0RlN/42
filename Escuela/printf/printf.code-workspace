@@ -6,5 +6,10 @@
 		{
 			"path": "/Users/rarias-p/GitHubExterno/42/Escuela/libft"
 		}
-	]
+	],
+	"settings": {
+		"files.associations": {
+			"ft_printf.h": "c"
+		}
+	}
 }

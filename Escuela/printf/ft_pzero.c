@@ -6,18 +6,16 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 18:08:25 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/04 18:38:31 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/05 09:11:15 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_pzero(int d, int num, t_rasa *tab)
+void	ft_pzero(char *s, int num, t_rasa *tab)
 {
-	char	*s;
 	int		i;
 
-	s = ft_itoa(d);
 	i = ft_strlen(s);
 	while (i < num)
 	{
