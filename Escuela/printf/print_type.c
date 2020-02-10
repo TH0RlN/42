@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   print_type.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 12:41:06 by abarral-          #+#    #+#             */
-/*   Updated: 2020/02/10 17:12:24 by rarias-p         ###   ########.fr       */
+/*   Created: 2020/02/10 17:18:37 by rarias-p          #+#    #+#             */
+/*   Updated: 2020/02/10 17:34:46 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char		*ft_substr(char const *s, unsigned int start, int len)
+void	print_type(t_rasa *tab)
 {
-	char	*dest;
-	int		i;
-
-	if (!s)
-		return (0);
-	if (start > ft_strlen(s))
-		return (ft_strdup(""));
-	dest = (char *)malloc(((int)len + 1) * sizeof(char));
-	if (dest == '\0')
-		return (dest);
-	i = start;
-	while (s[i] && len > 0)
-	{
-		dest[i - start] = s[i];
-		i++;
-		len--;
-	}
-	dest[i - start] = '\0';
-	return (dest);
+	if (tab->type == 'c')
+		print_c(tab);
+	else if (tab->type == 's')
+		print_s(tab);
+	else if (tab->type == 'p')
+		print_p(tab);
+	else if (tab->type == 'd')
+		print_d(tab);
+	else if (tab->type == 'i')
+		print_i(tab);
+	else if (tab->type == 'u')
+		print_u(tab);
+	else if (tab->type == 'x')
+		print_x(tab);
+	else if (tab->type == 'X')
+		print_mx(tab);
 }

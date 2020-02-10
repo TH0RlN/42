@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/06 11:33:49 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/10 09:51:46 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/10 17:18:14 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,11 @@
 
 void	checker(t_rasa *tab)
 {
-	tab->type = search_type(tab);
+	tab->type = get_type(tab);
+	flagger(tab);
+	va_arg(tab->list, void *);
+	get_width(tab);
+	if (tab->flags->dot)
+		get_precision(tab);
+	print_type(tab);
 }

@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   search_type.c                                      :+:      :+:    :+:   */
+/*   get_type.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 09:51:59 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/10 09:59:49 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/10 17:14:30 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	search_type(t_rasa *tab)
+char	get_type(t_rasa *tab)
 {
 	int i;
 
-	i = 0;
-	while (tab->format[i] != " ")
+	i = tab->pos;
+	while (tab->format[i] != ' ' && tab->format[i] != '\0')
 	{
 		if (tab->format[i] == 'c')
 			return ('c');

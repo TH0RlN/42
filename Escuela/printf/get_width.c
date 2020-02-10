@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   get_width.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 12:41:06 by abarral-          #+#    #+#             */
-/*   Updated: 2020/02/10 17:12:24 by rarias-p         ###   ########.fr       */
+/*   Created: 2020/02/10 16:33:59 by rarias-p          #+#    #+#             */
+/*   Updated: 2020/02/10 16:48:40 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char		*ft_substr(char const *s, unsigned int start, int len)
+void	get_width(t_rasa *tab)
 {
-	char	*dest;
-	int		i;
+	int	i;
 
-	if (!s)
-		return (0);
-	if (start > ft_strlen(s))
-		return (ft_strdup(""));
-	dest = (char *)malloc(((int)len + 1) * sizeof(char));
-	if (dest == '\0')
-		return (dest);
-	i = start;
-	while (s[i] && len > 0)
-	{
-		dest[i - start] = s[i];
-		i++;
-		len--;
-	}
-	dest[i - start] = '\0';
-	return (dest);
+	i = tab->pos;
+	while (tab->format[i] >= '0' && tab->format[i] <= '9')
+		tab->flags->width = tab->flags->width * 10 + (tab->format[i++] - '0');
 }
