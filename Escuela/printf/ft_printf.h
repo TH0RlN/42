@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 15:34:05 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/05 13:20:03 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/10 10:02:18 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,10 @@ typedef struct	s_rasa
 **									printf
 ** **************************************************************************
 */
-int				ft_printf				(const char *format, ...);
+void			checker					(t_rasa *tab);
 int				printer					(const char *to_print);
+char			search_type				(t_rasa *tab);
+int				ft_printf				(const char *format, ...);
 void			ft_pwidth				(char *s, int num, t_rasa *tab);
 void			ft_pzero				(char *s, int num, t_rasa *tab);
 void			ft_pminus				(char *s, int num, t_rasa *tab);
@@ -56,6 +58,7 @@ void			ft_pprecision_string	(char *s, int num, t_rasa *tab);
 ** **************************************************************************
 */
 int				ft_atoi					(const char *str);
+int				ft_isspace				(int c);
 char			*ft_itoa				(int n);
 static char		*itoa_string			(int n, char *s, int i);
 char			*ft_strchr				(const char *s, int c);

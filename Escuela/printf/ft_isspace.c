@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pprecision_int.c                                :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/05 09:33:58 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/10 09:00:01 by rarias-p         ###   ########.fr       */
+/*   Created: 2019/11/23 19:53:35 by rarias-p          #+#    #+#             */
+/*   Updated: 2020/02/10 09:02:03 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_pprecision_int(char *s, int num, t_rasa *tab)
+int	ft_isspace(int c)
 {
-	int i;
-
-	i = ft_strlen(s);
-	while (i < num)
-	{
-		write(1, "0", 1);
-		tab->len++;
-		i = !i ? !i * !i : i + !!i;
-	}
-	tab->len += printer(s);
+	if (c == ' ' || c == '\n' || c == '\t' ||
+		c == '\v' || c == '\f' || c == '\r')
+		return (1);
+	return (0);
 }

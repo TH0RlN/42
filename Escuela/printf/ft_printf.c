@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 15:32:51 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/05 13:22:06 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/10 09:39:13 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,22 +45,19 @@ int		ft_printf(const char *format, ...)
 
 	if (!(tab = malloc(sizeof(t_rasa))))
 		return (-1);
-	init(tab, format);
+	init(tab, (char *)format);
 	va_start(tab->list, format);
-	tab->format = format;
 	while (tab->format[tab->pos] != '\0')
 	{
 		if (tab->format[tab->pos] == '%')
 		{
 			if (!(tab->format[tab->pos + 1] == '%'))
-			{
-				va_arg(tab->list, void *);
 				checker(tab);
-			}
+			else
+				tab->pos++;
 		}
-		write(1, &tab->format[tab->pos], 1);
+		write(1, &tab->format[tab->pos++], 1);
 	}
-
 	return (tab->len);
 }
 
@@ -68,7 +65,7 @@ int		main(void)
 {
 	int i;
 
-	i = ft_printf("1234567890  alo");
+	i = ft_printf("1234567890");
 	printf("  -->>  %d\n", i);
 	return (0);
 }

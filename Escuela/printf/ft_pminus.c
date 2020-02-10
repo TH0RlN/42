@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 18:50:07 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/05 09:10:48 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/10 08:59:15 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_pminus(char *s, int num, t_rasa *tab)
 	tab->len += printer(s);
 	while (i < num)
 	{
-		write(1, ' ', 1);
+		write(1, " ", 1);
 		tab->len++;
 		i = !i ? !i * !i : i + !!i;
 	}

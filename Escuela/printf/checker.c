@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pprecision_int.c                                :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/05 09:33:58 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/10 09:00:01 by rarias-p         ###   ########.fr       */
+/*   Created: 2020/02/06 11:33:49 by rarias-p          #+#    #+#             */
+/*   Updated: 2020/02/10 09:51:46 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_pprecision_int(char *s, int num, t_rasa *tab)
+void	checker(t_rasa *tab)
 {
-	int i;
-
-	i = ft_strlen(s);
-	while (i < num)
-	{
-		write(1, "0", 1);
-		tab->len++;
-		i = !i ? !i * !i : i + !!i;
-	}
-	tab->len += printer(s);
+	tab->type = search_type(tab);
 }

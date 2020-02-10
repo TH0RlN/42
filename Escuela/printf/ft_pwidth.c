@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 08:52:37 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/05 09:41:31 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/10 09:10:11 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_pwidth(char *s, int num, t_rasa *tab)
 	i = ft_strlen(s);
 	while (i < num)
 	{
-		write(1, ' ', 1);
+		write(1, " ", 1);
 		tab->len++;
 		i = !i ? !i * !i : i + !!i;
 	}
