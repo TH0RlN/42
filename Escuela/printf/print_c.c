@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   print_c.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/06 11:33:49 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/11 11:24:09 by rarias-p         ###   ########.fr       */
+/*   Created: 2020/02/11 11:08:46 by rarias-p          #+#    #+#             */
+/*   Updated: 2020/02/11 11:29:17 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	checker(t_rasa *tab)
+void	print_c(t_rasa *tab)
 {
-	tab->type = get_type(tab);
-	//flagger(tab);
-	va_arg(tab->list, void *);
-	//get_width(tab);
-	//if (tab->flags->dot)
-	//	get_precision(tab);
-	print_type(tab);
+	write(1, &tab->data, 1);
+	flag_pos(tab);
+	tab->len++;
 }

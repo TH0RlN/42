@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 15:34:05 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/10 17:14:49 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/11 11:32:49 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ typedef struct	s_rasa
 	char		*format;
 	int			pos;
 	int			len;
+	int			f_len;
 	char		type;
+	void		*data;
 	t_flags		*flags;
 	va_list		list;
 }				t_rasa;
@@ -44,12 +46,15 @@ typedef struct	s_rasa
 ** **************************************************************************
 */
 void			checker					(t_rasa *tab);
+void			flag_pos				(t_rasa *tab);
 void			flagger					(t_rasa *tab);
 void			get_precision			(t_rasa *tab);
 char			get_type				(t_rasa *tab);
 void			get_width				(t_rasa *tab);
 void			init					(t_rasa *tab, char *format);
 void			init_flags				(t_rasa *tab);
+void			print_type				(t_rasa *tab);
+void			print_c					(t_rasa *tab);
 int				printer					(const char *to_print);
 int				ft_printf				(const char *format, ...);
 void			ft_pwidth				(char *s, int num, t_rasa *tab);
