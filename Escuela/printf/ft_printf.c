@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 15:32:51 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/11 11:24:53 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/12 09:15:00 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,17 @@ void	init(t_rasa *tab, char *format)
 	tab->pos = 0;
 	tab->len = 0;
 	tab->type = 0;
-	init_flags(tab);
+	init_flags(tab->flags);
 }
 
-void	init_flags(t_rasa *tab)
+void	init_flags(t_flags *flags)
 {
-	tab->flags->minus = 0;
-	tab->flags->zero = 0;
-	tab->flags->width = 0;
-	tab->flags->dot = 0;
-	tab->flags->ast = 0;
-	tab->flags->precision = 0;
+	flags->minus = 0;
+	flags->zero = 0;
+	flags->width = 0;
+	flags->dot = 0;
+	flags->ast = 0;
+	flags->precision = 0;
 }
 
 int		ft_printf(const char *format, ...)
@@ -49,6 +49,8 @@ int		ft_printf(const char *format, ...)
 	t_rasa	*tab;
 
 	if (!(tab = malloc(sizeof(t_rasa))))
+		return (-1);
+	if (!(tab->flags = malloc(sizeof(t_flags))))
 		return (-1);
 	init(tab, (char *)format);
 	va_start(tab->list, format);

@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 15:34:05 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/11 11:32:49 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/12 09:18:41 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void			get_precision			(t_rasa *tab);
 char			get_type				(t_rasa *tab);
 void			get_width				(t_rasa *tab);
 void			init					(t_rasa *tab, char *format);
-void			init_flags				(t_rasa *tab);
+void			init_flags				(t_flags *flags);
 void			print_type				(t_rasa *tab);
 void			print_c					(t_rasa *tab);
 int				printer					(const char *to_print);
@@ -70,7 +70,7 @@ void			ft_pprecision_string	(char *s, int num, t_rasa *tab);
 int				ft_atoi					(const char *str);
 int				ft_isspace				(int c);
 char			*ft_itoa				(int n);
-static char		*itoa_string			(int n, char *s, int i);
+//static char		*itoa_string			(int n, char *s, int i);
 char			*ft_strchr				(const char *s, int c);
 char			*ft_strdup				(const char *s);
 char			*ft_strjoin				(char const *s1, char const *s2);
