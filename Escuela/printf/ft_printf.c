@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 15:32:51 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/12 13:08:26 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/12 17:36:20 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,12 @@ int		ft_printf(const char *format, ...)
 			else
 				tab->pos++;
 		}
-		write(1, &tab->format[tab->pos++], 1);
-		tab->len++;
+		else
+		{
+			write(1, &tab->format[tab->pos], 1);
+			tab->len++;
+		}
+		tab->pos++;
 	}
 	return (tab->len);
 }
@@ -76,8 +80,8 @@ int		main(void)
 {
 	int i;
 
-	i = ft_printf("1234567%-20.3s890", "Pepinillos");
+	i = ft_printf("%*.*s", 20, 3, "Pepinillos");
 	printf("  -->>  %d\n", i);
-	printf("  -->>  %d\n", printf("1234567%-20.3s890", "Pepinillos"));
+	printf("  -->>  %d\n", printf("%20.3s", "Pepinillos"));
 	return (0);
 }
