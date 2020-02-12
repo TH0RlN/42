@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 15:34:05 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/12 09:18:41 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/12 10:44:34 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void			init					(t_rasa *tab, char *format);
 void			init_flags				(t_flags *flags);
 void			print_type				(t_rasa *tab);
 void			print_c					(t_rasa *tab);
+void			print_s					(t_rasa *tab);
 int				printer					(const char *to_print);
 int				ft_printf				(const char *format, ...);
 void			ft_pwidth				(char *s, int num, t_rasa *tab);

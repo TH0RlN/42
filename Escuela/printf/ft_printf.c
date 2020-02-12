@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 15:32:51 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/12 09:35:07 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/12 11:45:07 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int		main(void)
 {
 	int i;
 
-	i = ft_printf("1234567%c890", 'k');
+	i = ft_printf("1234567%.6s890", "Pepinillos");
 	printf("  -->>  %d\n", i);
 	return (0);
 }
