@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 15:34:05 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/12 10:44:34 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/12 12:16:18 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ typedef struct	s_flags
 {
 	int			minus;
 	int			dot;
-	int			ast;
+	int			astp;
+	int			astw;
 	int			zero;
 	int			width;
 	int			precision;

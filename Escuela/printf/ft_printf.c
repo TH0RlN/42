@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 15:32:51 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/12 11:45:07 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/12 13:08:26 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ void	init_flags(t_flags *flags)
 	flags->zero = 0;
 	flags->width = 0;
 	flags->dot = 0;
-	flags->ast = 0;
+	flags->astp = 0;
+	flags->astw = 0;
 	flags->precision = 0;
 }
 
@@ -75,7 +76,8 @@ int		main(void)
 {
 	int i;
 
-	i = ft_printf("1234567%.6s890", "Pepinillos");
+	i = ft_printf("1234567%-20.3s890", "Pepinillos");
 	printf("  -->>  %d\n", i);
+	printf("  -->>  %d\n", printf("1234567%-20.3s890", "Pepinillos"));
 	return (0);
 }
