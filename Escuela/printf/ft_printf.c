@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 15:32:51 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/12 09:15:00 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/12 09:35:07 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	init(t_rasa *tab, char *format)
 	tab->pos = 0;
 	tab->len = 0;
 	tab->type = 0;
+	tab->data = 0;
+	tab->f_len = 0;
 	init_flags(tab->flags);
 }
 
@@ -64,6 +66,7 @@ int		ft_printf(const char *format, ...)
 				tab->pos++;
 		}
 		write(1, &tab->format[tab->pos++], 1);
+		tab->len++;
 	}
 	return (tab->len);
 }
