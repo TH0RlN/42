@@ -6,13 +6,13 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 11:08:57 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/13 13:04:40 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/13 17:05:07 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	print_num_precision_minus(t_rasa *tab, char *num)
+void	print_num_precision_min(t_rasa *tab, char *num)
 {
 	int num_len;
 	int i;
@@ -116,7 +116,7 @@ void	print_num(t_rasa *tab)
 	c = tab->flags->zero > 0 ? '0' : ' ';
 	num = ft_itoa((int)tab->data);
 	if (tab->flags->dot > 0 && tab->flags->minus > 0)
-		print_num_precision_minus(tab, num);
+		print_num_precision_min(tab, num);
 	else if (tab->flags->minus > 0)
 		print_num_minus(tab, num);
 	else if (tab->flags->dot > 0)
