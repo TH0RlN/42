@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/11 11:08:46 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/11 11:29:17 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/13 10:16:07 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,29 @@
 
 void	print_c(t_rasa *tab)
 {
-	write(1, &tab->data, 1);
+	int i;
+
+	i = 0;
+	if (tab->flags->minus > 0)
+	{
+		write(1, &tab->data, 1);
+		while (i < tab->flags->width - 1)
+		{
+			write(1, " ", 1);
+			i++;
+			tab->len++;
+		}
+	}
+	else
+	{
+		while (i < tab->flags->width - 1)
+		{
+			write(1, " ", 1);
+			i++;
+			tab->len++;
+		}
+		write(1, &tab->data, 1);
+	}
 	flag_pos(tab);
 	tab->len++;
 }

@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 15:32:51 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/12 17:36:20 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/13 13:04:59 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,7 @@ int		ft_printf(const char *format, ...)
 
 int		main(void)
 {
-	int i;
-
-	i = ft_printf("%*.*s", 20, 3, "Pepinillos");
-	printf("  -->>  %d\n", i);
-	printf("  -->>  %d\n", printf("%20.3s", "Pepinillos"));
+	printf("  -->>  %d\n", ft_printf("%-24d", 5106));
+	printf("  -->>  %d\n", printf("%-24d", 5106));
 	return (0);
 }
