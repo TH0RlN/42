@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 16:49:32 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/13 17:01:54 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/14 09:26:22 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,3 @@ char		*ft_itoabase(int n, char *base)
 	ft_putnbrbase(a, n, ptr, base);
 	return (a);
 }
-
-//int	main(void)
-//{
-//	printf("%s", ft_itoabase(61725, "0123456789abcdef"));
-//}

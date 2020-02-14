@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 17:18:37 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/13 17:08:52 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/14 09:23:50 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	print_type(t_rasa *tab)
 		print_c(tab);
 	else if (tab->type == 's')
 		print_s(tab);
-	//else if (tab->type == 'p')
-	//	print_p(tab);
+	else if (tab->type == 'p')
+		print_p(tab);
 	else if (tab->type == 'u')
 		print_num(tab);
 	else if (tab->type == 'd' || tab->type == 'i')

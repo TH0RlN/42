@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_width.c                                        :+:      :+:    :+:   */
+/*   print_p.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/10 16:33:59 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/14 10:37:12 by rarias-p         ###   ########.fr       */
+/*   Created: 2020/02/14 09:13:21 by rarias-p          #+#    #+#             */
+/*   Updated: 2020/02/14 10:28:57 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	get_width(t_rasa *tab)
+void	print_p(t_rasa *tab)
 {
-	int	i;
+	char *num;
 
-	if (tab->flags->astw > 0)
-	{
-		tab->flags->width = (int)tab->data;
-		tab->data = va_arg(tab->list, void *);
-	}
+	num = itoa_hex((unsigned long int)tab->data);
+	num = ft_strjoin("0x", num);
+	if (tab->flags->minus > 0)
+		print_num_minus(tab, num);
 	else
-	{
-		i = tab->pos;
-		while (!(tab->format[i] >= '1' && tab->format[i] <= '9')
-		&& tab->format[i] != tab->type)
-			i++;
-		while (tab->format[i] >= '0' && tab->format[i] <= '9')
-			tab->flags->width = tab->flags->width * 10
-			+ (tab->format[i++] - '0');
-	}
+		print_num2(tab, num, ' ');
+	free(num);
+	flag_pos(tab);
 }
