@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 11:26:29 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/12 12:25:03 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/14 09:00:04 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	flagger(t_rasa *tab)
 			tab->flags->dot++;
 		if (tab->format[i] == '*')
 		{
-			if (tab->flags->dot++ > 0)
+			if (tab->flags->dot > 0)
 				tab->flags->astp++;
 			else
 				tab->flags->astw++;

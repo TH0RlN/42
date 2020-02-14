@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 15:32:51 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/13 17:11:28 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/14 09:00:43 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int		ft_printf(const char *format, ...)
 
 int		main(void)
 {
-	printf("  -->>  %u\n", ft_printf("%0*X", 14, 5106));
-	printf("  -->>  %u\n", printf("%0*X", 14, 5106));
+	printf("  -->>  %u\n", ft_printf("%0*x", 14, 5106));
+	printf("  -->>  %u\n", printf("%0*x", 14, 5106));
 	return (0);
 }
