@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 17:18:37 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/14 09:23:50 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/14 17:12:08 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	print_type(t_rasa *tab)
 		print_p(tab);
 	else if (tab->type == 'u')
 		print_num(tab);
+	else if (tab->type == '%')
+		print_perc(tab);
 	else if (tab->type == 'd' || tab->type == 'i')
 		print_num(tab);
 	else if (tab->type == 'x' || tab->type == 'X')

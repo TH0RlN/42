@@ -1,28 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flag_pos.c                                         :+:      :+:    :+:   */
+/*   print_perc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/11 11:27:28 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/14 18:31:47 by rarias-p         ###   ########.fr       */
+/*   Created: 2020/02/14 12:51:55 by rarias-p          #+#    #+#             */
+/*   Updated: 2020/02/14 13:10:05 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	flag_pos(t_rasa *tab)
+void	print_perc(t_rasa *tab)
 {
-	tab->pos++;
-	while (tab->format[tab->pos] != '%' &&
-			tab->format[tab->pos] != 'c' &&
-			tab->format[tab->pos] != 's' &&
-			tab->format[tab->pos] != 'p' &&
-			tab->format[tab->pos] != 'd' &&
-			tab->format[tab->pos] != 'i' &&
-			tab->format[tab->pos] != 'u' &&
-			tab->format[tab->pos] != 'x' &&
-			tab->format[tab->pos] != 'X')
-		tab->pos++;
+	int i;
+
+	i = 0;
+	if (tab->flags->minus > 0)
+	{
+		write(1, "%", 1);
+		while (i < tab->flags->width - 1)
+		{
+			write(1, " ", 1);
+			i++;
+			tab->len++;
+		}
+	}
+	else
+	{
+		while (i < tab->flags->width - 1)
+		{
+			write(1, " ", 1);
+			i++;
+			tab->len++;
+		}
+		write(1, "%", 1);
+	}
+	flag_pos(tab);
+	tab->len++;
 }

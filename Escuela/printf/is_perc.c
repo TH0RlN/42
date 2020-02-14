@@ -1,28 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flag_pos.c                                         :+:      :+:    :+:   */
+/*   is_perc.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/11 11:27:28 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/14 18:31:47 by rarias-p         ###   ########.fr       */
+/*   Created: 2020/02/14 17:15:52 by rarias-p          #+#    #+#             */
+/*   Updated: 2020/02/14 17:26:27 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-void	flag_pos(t_rasa *tab)
-{
-	tab->pos++;
-	while (tab->format[tab->pos] != '%' &&
-			tab->format[tab->pos] != 'c' &&
-			tab->format[tab->pos] != 's' &&
-			tab->format[tab->pos] != 'p' &&
-			tab->format[tab->pos] != 'd' &&
-			tab->format[tab->pos] != 'i' &&
-			tab->format[tab->pos] != 'u' &&
-			tab->format[tab->pos] != 'x' &&
-			tab->format[tab->pos] != 'X')
-		tab->pos++;
-}

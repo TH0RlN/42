@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 15:32:51 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/14 11:03:40 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/14 18:25:39 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,7 @@ int		ft_printf(const char *format, ...)
 	while (tab->format[tab->pos] != '\0')
 	{
 		if (tab->format[tab->pos] == '%')
-		{
-			if (!(tab->format[tab->pos + 1] == '%'))
-				checker(tab);
-			else
-				tab->pos++;
-		}
+			checker(tab);
 		else
 		{
 			write(1, &tab->format[tab->pos], 1);
@@ -73,6 +68,8 @@ int		ft_printf(const char *format, ...)
 		}
 		tab->pos++;
 	}
+	va_end(tab->list);
+	free(tab);
 	return (tab->len);
 }
 
@@ -81,7 +78,7 @@ int		ft_printf(const char *format, ...)
 //	void *p;
 //
 //	p = malloc(2);
-//	printf("  -->>  %u\n", ft_printf("%p", p));
-//	printf("  -->>  %u\n", printf("%p", p));
+//	printf("  -->>  %u\n", ft_printf("%%"));
+//	printf("  -->>  %u\n", printf("%%"));
 //	return (0);
 //}
