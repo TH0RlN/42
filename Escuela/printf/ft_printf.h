@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 15:34:05 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/14 17:43:35 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/15 18:19:58 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void			print_c					(t_rasa *tab);
 void			print_num				(t_rasa *tab);
 void			print_num2				(t_rasa *tab, char *num, char c);
 void			print_num_minus			(t_rasa *tab, char *num);
+void			print_num_neg			(t_rasa *tab, char *num, char c);
 void			print_num_precision		(t_rasa *tab, char *num);
 void			print_num_precision_min	(t_rasa *tab, char *num);
 void			print_p					(t_rasa *tab);

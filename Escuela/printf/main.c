@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flag_pos.c                                         :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/11 11:27:28 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/15 17:00:01 by rarias-p         ###   ########.fr       */
+/*   Created: 2020/02/15 17:28:29 by rarias-p          #+#    #+#             */
+/*   Updated: 2020/02/15 17:58:11 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	flag_pos(t_rasa *tab)
+int		main(void)
 {
-	while (tab->format[tab->pos] != '%' &&
-			tab->format[tab->pos] != 'c' &&
-			tab->format[tab->pos] != 's' &&
-			tab->format[tab->pos] != 'p' &&
-			tab->format[tab->pos] != 'd' &&
-			tab->format[tab->pos] != 'i' &&
-			tab->format[tab->pos] != 'u' &&
-			tab->format[tab->pos] != 'x' &&
-			tab->format[tab->pos] != 'X')
-		tab->pos++;
+	void *p;
+
+	p = malloc(2);
+	printf("  -->>  %u\n", ft_printf("%%d Lydie == |%d|", 'L'+'y'+'d'+'i'+'e'));
+	printf("  -->>  %u\n",    printf("%%d Lydie == |%d|", 'L'+'y'+'d'+'i'+'e'));
+	return (0);
 }

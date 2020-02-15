@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 09:56:18 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/12 17:24:43 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/15 17:13:11 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void	print_s(t_rasa *tab)
 	char	*s;
 	int		i;
 
-	s = (char *)tab->data;
+	s = !(char *)tab->data ? "(null)" : (char *)tab->data;
 	i = 0;
 	if (tab->flags->minus > 0 && tab->flags->dot > 0)
 		print_s_minus_precision(tab, i, s);

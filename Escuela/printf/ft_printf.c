@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 15:32:51 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/14 18:25:39 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/15 17:28:11 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,13 +72,3 @@ int		ft_printf(const char *format, ...)
 	free(tab);
 	return (tab->len);
 }
-
-//int		main(void)
-//{
-//	void *p;
-//
-//	p = malloc(2);
-//	printf("  -->>  %u\n", ft_printf("%%"));
-//	printf("  -->>  %u\n", printf("%%"));
-//	return (0);
-//}
