@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   print_unum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/15 17:28:29 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/15 22:04:54 by rarias-p         ###   ########.fr       */
+/*   Created: 2020/02/15 20:46:45 by rarias-p          #+#    #+#             */
+/*   Updated: 2020/02/15 20:57:34 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		main(void)
+void	print_unum(t_rasa *tab)
 {
-	void *p;
+	char	*num;
+	char	c;
 
-	p = malloc(2);
-	printf("  -->>  %u\n", ft_printf("%10.7i", -1234));
-	printf("  -->>  %u\n",    printf("%10.7i", -1234));
-	return (0);
+	c = tab->flags->zero > 0 ? '0' : ' ';
+	num = ft_utoa((unsigned int)tab->data);
+	if (tab->flags->dot > 0 && tab->flags->minus > 0)
+		print_num_precision_min(tab, num);
+	else if (tab->flags->minus > 0)
+		print_num_minus(tab, num);
+	else if (tab->flags->dot > 0)
+		print_num_precision(tab, num);
+	else
+		print_num2(tab, num, c);
+	flag_pos(tab);
 }

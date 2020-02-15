@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 15:34:05 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/15 18:19:58 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/15 20:57:06 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void			print_num_minus			(t_rasa *tab, char *num);
 void			print_num_neg			(t_rasa *tab, char *num, char c);
 void			print_num_precision		(t_rasa *tab, char *num);
 void			print_num_precision_min	(t_rasa *tab, char *num);
+void			print_unum				(t_rasa *tab);
 void			print_p					(t_rasa *tab);
 void			print_perc				(t_rasa *tab);
 void			print_s					(t_rasa *tab);
@@ -83,7 +84,8 @@ void			ft_pprecision_string	(char *s, int num, t_rasa *tab);
 */
 int				ft_atoi					(const char *str);
 int				ft_isspace				(int c);
-char			*ft_itoa				(int n);
+char			*ft_itoa				(long int n);
+char			*ft_utoa				(unsigned int n);
 char			*ft_strchr				(const char *s, int c);
 char			*ft_strdup				(const char *s);
 char			*ft_strjoin				(char const *s1, char const *s2);

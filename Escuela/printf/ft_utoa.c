@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_utoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/17 18:15:39 by abarral-          #+#    #+#             */
-/*   Updated: 2020/02/15 20:53:17 by rarias-p         ###   ########.fr       */
+/*   Created: 2020/02/15 20:53:27 by rarias-p          #+#    #+#             */
+/*   Updated: 2020/02/15 20:56:51 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static char	*itoa_string(int n, char *s, int i)
+static char	*utoa_string(unsigned int n, char *s, int i)
 {
 	s += i + 2;
 	*--s = '\0';
@@ -38,16 +38,14 @@ static char	*itoa_string(int n, char *s, int i)
 	return (s);
 }
 
-char		*ft_itoa(long int n)
+char		*ft_utoa(unsigned int n)
 {
-	char	*s;
-	int		i;
-	int		n1;
+	char			*s;
+	unsigned int	i;
+	unsigned int	n1;
 
 	i = 0;
-	n1 = (long int)n;
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
+	n1 = (unsigned int)n;
 	while (n1 != 0)
 	{
 		n1 /= 10;
@@ -58,6 +56,6 @@ char		*ft_itoa(long int n)
 		return (NULL);
 	if (n == 0)
 		return (ft_strdup("0"));
-	itoa_string(n, s, i);
+	utoa_string(n, s, i);
 	return (s);
 }

@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 11:08:57 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/15 18:21:23 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/15 20:30:37 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,9 +115,9 @@ void	print_num(t_rasa *tab)
 
 	c = tab->flags->zero > 0 ? '0' : ' ';
 	num = ft_itoa((int)tab->data);
-	//if ((int)tab->data < 0)
-	//	print_num_neg(tab, num, c);
-	/*else*/ if (tab->flags->dot > 0 && tab->flags->minus > 0)
+	if ((int)tab->data < 0)
+		print_num_neg(tab, num, c);
+	else if (tab->flags->dot > 0 && tab->flags->minus > 0)
 		print_num_precision_min(tab, num);
 	else if (tab->flags->minus > 0)
 		print_num_minus(tab, num);
