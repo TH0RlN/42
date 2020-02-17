@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 09:56:18 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/15 17:13:11 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/17 09:14:09 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,14 +79,14 @@ int		print_s_minus_precision(t_rasa *tab, int i, char *s)
 	return (len_prt);
 }
 
-void	print_s2(t_rasa *tab, int i, char *s)
+void	print_s2(t_rasa *tab, int i, char *s, char c)
 {
 	int len_prt;
 
 	len_prt = 0;
 	while ((int)ft_strlen(s) + len_prt < tab->flags->width)
 	{
-		write(1, " ", 1);
+		write(1, &c, 1);
 		len_prt++;
 		tab->len++;
 	}
@@ -100,9 +100,11 @@ void	print_s2(t_rasa *tab, int i, char *s)
 void	print_s(t_rasa *tab)
 {
 	char	*s;
+	char	c;
 	int		i;
 
 	s = !(char *)tab->data ? "(null)" : (char *)tab->data;
+	c = tab->flags->zero > 0 ? '0' : ' ';
 	i = 0;
 	if (tab->flags->minus > 0 && tab->flags->dot > 0)
 		print_s_minus_precision(tab, i, s);
@@ -111,6 +113,6 @@ void	print_s(t_rasa *tab)
 	else if (tab->flags->dot > 0)
 		print_s_precision(tab, i, s);
 	else
-		print_s2(tab, i, s);
+		print_s2(tab, i, s, c);
 	flag_pos(tab);
 }

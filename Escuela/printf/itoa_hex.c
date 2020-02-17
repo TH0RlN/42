@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 09:40:47 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/14 17:34:13 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/17 12:19:09 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		num_len(unsigned long int num)
 	return (i);
 }
 
-char	*get_string(char *a, unsigned long int num, int *ptr)
+char	*get_string(char *a, unsigned long int num, int *ptr, t_rasa *tab)
 {
 	char base[17];
 
@@ -39,20 +39,20 @@ char	*get_string(char *a, unsigned long int num, int *ptr)
 	base[7] = '7';
 	base[8] = '8';
 	base[9] = '9';
-	base[10] = 'a';
-	base[11] = 'b';
-	base[12] = 'c';
-	base[13] = 'd';
-	base[14] = 'e';
-	base[15] = 'f';
+	base[10] = tab->type == 'X' ? 'A' : 'a';
+	base[11] = tab->type == 'X' ? 'B' : 'b';
+	base[12] = tab->type == 'X' ? 'C' : 'c';
+	base[13] = tab->type == 'X' ? 'D' : 'd';
+	base[14] = tab->type == 'X' ? 'E' : 'e';
+	base[15] = tab->type == 'X' ? 'F' : 'f';
 	if (num >= 16)
-		get_string(a, num / 16, ptr);
+		get_string(a, num / 16, ptr, tab);
 	*ptr = *ptr + 1;
 	a[*ptr] = base[num % 16];
 	return (a);
 }
 
-char	*itoa_hex(unsigned long int num)
+char	*itoa_hex(unsigned long int num, t_rasa *tab)
 {
 	char	*s;
 	int		i;
@@ -61,7 +61,7 @@ char	*itoa_hex(unsigned long int num)
 	i = -1;
 	ptr = &i;
 	s = malloc(num_len(num));
-	s = get_string(s, num, ptr);
+	s = get_string(s, num, ptr, tab);
 	return (s);
 }
 

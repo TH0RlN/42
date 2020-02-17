@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 11:08:57 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/15 20:30:37 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/17 12:01:22 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,14 @@ void	print_num_precision_min(t_rasa *tab, char *num)
 	int num_len;
 	int i;
 
+	if (!(tab->flags->precision > 0))
+		return ;
 	num_len = (int)ft_strlen(num) > tab->flags->precision ?
 	(int)ft_strlen(num) : tab->flags->precision;
 	i = 0;
-	while (i + (int)ft_strlen(num) < tab->flags->precision)
+	while (i++ + (int)ft_strlen(num) < tab->flags->precision)
 	{
 		write(1, "0", 1);
-		i++;
 		tab->len++;
 	}
 	i = 0;
@@ -33,10 +34,9 @@ void	print_num_precision_min(t_rasa *tab, char *num)
 		tab->len++;
 	}
 	i = 0;
-	while (i + num_len < tab->flags->width)
+	while (i++ + num_len < tab->flags->width)
 	{
 		write(1, " ", 1);
-		i++;
 		tab->len++;
 	}
 }
@@ -46,20 +46,20 @@ void	print_num_precision(t_rasa *tab, char *num)
 	int num_len;
 	int i;
 
+	if (!(tab->flags->precision > 0))
+		return ;
 	num_len = (int)ft_strlen(num) > tab->flags->precision ?
 	(int)ft_strlen(num) : tab->flags->precision;
 	i = 0;
-	while (i + num_len < tab->flags->width)
+	while (i++ + num_len < tab->flags->width)
 	{
 		write(1, " ", 1);
-		i++;
 		tab->len++;
 	}
 	i = 0;
-	while (i + (int)ft_strlen(num) < tab->flags->precision)
+	while (i++ + (int)ft_strlen(num) < tab->flags->precision)
 	{
 		write(1, "0", 1);
-		i++;
 		tab->len++;
 	}
 	i = 0;
@@ -116,7 +116,10 @@ void	print_num(t_rasa *tab)
 	c = tab->flags->zero > 0 ? '0' : ' ';
 	num = ft_itoa((int)tab->data);
 	if ((int)tab->data < 0)
-		print_num_neg(tab, num, c);
+		print_num_neg2(tab, num);
+	else if ((int)tab->data == 0 && tab->flags->dot > 0 &&
+	tab->flags->precision == 0)
+		print_num_zero(tab);
 	else if (tab->flags->dot > 0 && tab->flags->minus > 0)
 		print_num_precision_min(tab, num);
 	else if (tab->flags->minus > 0)

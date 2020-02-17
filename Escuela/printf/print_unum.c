@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 20:46:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/15 20:57:34 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/17 10:35:29 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ void	print_unum(t_rasa *tab)
 
 	c = tab->flags->zero > 0 ? '0' : ' ';
 	num = ft_utoa((unsigned int)tab->data);
-	if (tab->flags->dot > 0 && tab->flags->minus > 0)
+	if ((int)tab->data == 0 && tab->flags->dot > 0 &&
+	tab->flags->precision == 0)
+		print_num_zero(tab);
+	else if (tab->flags->dot > 0 && tab->flags->minus > 0)
 		print_num_precision_min(tab, num);
 	else if (tab->flags->minus > 0)
 		print_num_minus(tab, num);
