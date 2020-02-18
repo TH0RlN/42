@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 16:54:47 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/17 12:21:22 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/02/17 12:47:22 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ void	print_x(t_rasa *tab)
 
 	c = tab->flags->zero > 0 ? '0' : ' ';
 	num = itoa_hex((unsigned int)tab->data, tab);
-	if (tab->flags->dot > 0 && tab->flags->minus > 0)
+	if ((unsigned int)tab->data == 0 && tab->flags->dot > 0 &&
+	tab->flags->precision == 0)
+		print_num_zero(tab);
+	else if (tab->flags->dot > 0 && tab->flags->minus > 0)
 		print_num_precision_min(tab, num);
 	else if (tab->flags->minus > 0)
 		print_num_minus(tab, num);
