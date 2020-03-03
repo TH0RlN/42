@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 09:13:21 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/17 12:53:45 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/03/03 19:47:04 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	print_p(t_rasa *tab)
 		print_num_minus(tab, num);
 	else
 		print_num2(tab, num, ' ');
+	num = 0;
 	free(num);
 	flag_pos(tab);
 }

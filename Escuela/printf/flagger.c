@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 11:26:29 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/14 17:14:29 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/03/03 19:41:19 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	flagger(t_rasa *tab)
 
 	check = 0;
 	i = tab->pos;
-	init_flags(tab->flags);
+	init_flags(tab);
 	while (tab->format[i] != tab->type && tab->format[i] != '\0')
 	{
 		if (check == 0 && tab->format[i] == '0')
