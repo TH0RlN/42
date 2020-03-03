@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 15:34:05 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/03/03 20:28:45 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/03/03 20:34:42 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,11 +73,6 @@ void			print_x					(t_rasa *tab);
 int				printer					(const char *to_print);
 char			*itoa_hex				(unsigned long int num, t_rasa *tab);
 int				ft_printf				(const char *format, ...);
-//void			ft_pwidth				(char *s, int num, t_rasa *tab);
-//void			ft_pzero				(char *s, int num, t_rasa *tab);
-//void			ft_pminus				(char *s, int num, t_rasa *tab);
-//void			ft_pprecision_int		(char *s, int num, t_rasa *tab);
-//void			ft_pprecision_string	(char *s, int num, t_rasa *tab);
 void			write_num				(t_rasa *tab, char *num, int i);
 /*
 ** **************************************************************************
@@ -88,7 +83,6 @@ int				ft_atoi					(const char *str);
 int				ft_isspace				(int c);
 char			*ft_itoa				(long int n);
 char			*ft_utoa				(unsigned int n);
-//char			*ft_strchr				(const char *s, int c);
 char			*ft_strdup				(const char *s);
 char			*ft_strjoin				(char const *s1, char const *s2);
 size_t			ft_strlen				(const char *str);
