@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 15:34:05 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/03/03 20:34:42 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/03/04 10:21:26 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ void			write_num				(t_rasa *tab, char *num, int i);
 ** **************************************************************************
 */
 int				ft_atoi					(const char *str);
+void			*ft_bzero				(void *s, size_t n);
 int				ft_isspace				(int c);
 char			*ft_itoa				(long int n);
 char			*ft_utoa				(unsigned int n);

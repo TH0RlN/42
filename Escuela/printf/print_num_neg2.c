@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/17 10:45:54 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/17 12:35:45 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/03/04 09:28:43 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	print_num_precision_neg2(t_rasa *tab, char *num)
 	int len;
 
 	len = tab->flags->precision > (int)ft_strlen(num) ?
-	tab->flags->precision : (int)ft_strlen(num);
+	tab->flags->precision + 1 : (int)ft_strlen(num);
 	i = 0;
 	while (i < tab->flags->width - len)
 	{
@@ -81,7 +81,7 @@ void	print_num_precision_min_neg2(t_rasa *tab, char *num)
 	int len;
 
 	len = tab->flags->precision > (int)ft_strlen(num) ?
-	tab->flags->precision : (int)ft_strlen(num);
+	tab->flags->precision : (int)ft_strlen(num) - 1;
 	write(1, "-", 1);
 	tab->len++;
 	i = 0;

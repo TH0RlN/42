@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/15 17:28:29 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/03/04 10:17:12 by rarias-p         ###   ########.fr       */
+/*   Created: 2019/11/05 11:04:44 by rarias-p          #+#    #+#             */
+/*   Updated: 2020/03/04 10:20:18 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "printf.h"
 
-int		main(void)
+void	*ft_bzero(void *s, size_t n)
 {
-	void *a01;
-	void *a02;
-	void *a03;
-	void *a04;
+	size_t	i;
+	char	*aux;
 
-	a01 = malloc(2);
-	a02 = malloc(2);
-	a03 = malloc(2);
-	a04 = malloc(2);
-	printf("  -->>  %u\n", ft_printf("%p %p", &a01, &a02));
-	printf("  -->>  %u\n", printf("%p %p", &a01, &a02));
-	free(a01);
-	free(a02);
-	free(a03);
-	free(a04);
-	getchar();
-	return (0);
+	aux = (char *)s;
+	i = 0;
+	while (i < n)
+	{
+		aux[i] = '\0';
+		i++;
+	}
+	return (s);
 }

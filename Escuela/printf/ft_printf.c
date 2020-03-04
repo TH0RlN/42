@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 15:32:51 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/03/03 19:41:07 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/03/04 09:46:58 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ int		ft_printf(const char *format, ...)
 		tab->pos++;
 	}
 	va_end(tab->list);
+	free(tab->flags);
 	free(tab);
 	return (tab->len);
 }
