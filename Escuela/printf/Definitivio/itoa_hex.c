@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/14 09:40:47 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/02/18 13:06:29 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/03/04 10:34:37 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,3 @@ char	*itoa_hex(unsigned long int num, t_rasa *tab)
 	s = get_string(s, num, ptr, tab);
 	return (s);
 }
-
-//int		main(void)
-//{
-//	printf("%s", itoa_hex(15));
-//}
