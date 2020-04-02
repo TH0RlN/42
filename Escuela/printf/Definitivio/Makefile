@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+         #
+#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/14 10:53:49 by rarias-p          #+#    #+#              #
-#    Updated: 2020/03/04 10:22:12 by rarias-p         ###   ########.fr        #
+#    Updated: 2020/03/16 17:58:06 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME=libftprintf.a
 
 CC=gcc
 
-CFLAGS=-Wall -Wextra -Werror
+CFLAGS=-Wall -Wextra #-Werror
 
 RM=rm -f
 
