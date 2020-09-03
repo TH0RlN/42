@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/09 10:54:52 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/03/09 10:59:22 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/03/09 16:09:36 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ int		ft_printf(const char *format, ...);
 
 int		main(void)
 {
-	ft_printf("Ola mundo!\n");
+	ft_printf("%s", "perro");
 }

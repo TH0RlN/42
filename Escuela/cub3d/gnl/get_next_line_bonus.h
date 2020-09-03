@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 09:53:34 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/01/28 09:09:56 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/09/03 19:10:00 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ int		ft_checker(int fd, char **line, char **file, int ret);
 #endif
 
 #	ifndef BUFFER_SIZE
-#	define BUFFER_SIZE 21
+#	define BUFFER_SIZE 190
 #	endif
