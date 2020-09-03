@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/03 17:56:51 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/09/03 19:15:17 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/09/03 19:49:27 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,18 @@ void	*ft_bzero(void *s, size_t n)
 		i++;
 	}
 	return (s);
+}
+
+void	get_data(char *map)
+{
+	int		i;
+
+	i = 0;
+	while (map[i])
+	{
+		if (map[i] == 'R' && map[i + 1] == " ")
+			resolution()
+	}
 }
 
 void	get_lines(int fd)
