@@ -27,7 +27,10 @@
 			"command": "/usr/bin/gcc",
 			"args": [
 					"-g",
-					"${fileDirname}/map_reader.c ${fileDirname}/gnl/get_next_line_bonus.c ${fileDirname}/gnl/get_next_line_utils_bonus.c",
+					"${fileDirname}/file_reader.c",
+					"${fileDirname}/gnl/get_next_line_bonus.c",
+					"${fileDirname}/gnl/get_next_line_utils_bonus.c",
+					"${fileDirname}/libft.a",
 					"-o",
 					"${fileDirname}/a.out"
 			],
