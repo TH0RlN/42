@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 17:22:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/09/04 19:44:03 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/09/07 18:08:51 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,32 @@
 **									cub3d
 ** **************************************************************************
 */
+typedef	struct	s_color
+{
+	int			r;
+	int			g;
+	int			b;
+}				t_color;
+
 typedef	struct	s_data
 {
 	int			fd;
 	int			resx;
 	int			resy;
+	char		*text_no;
+	char		*text_so;
+	char		*text_we;
+	char		*text_ea;
+	char		*text_sp;
 	char		*line;
+	t_color		*ceiling;
+	t_color		*floor;
 }				t_data;
 
 void			get_data		(t_data *data);
 void			resolution		(t_data *data, int i);
+void			text			(t_data *data, char *dir, int i);
+void			color			(t_data *data, char dir, int i);
 /*
 ** **************************************************************************
 **									 GNL
@@ -53,8 +69,9 @@ int				ft_checker		(int fd, char **line, char **file, int ret);
 */
 void			*ft_bzero		(void *s, size_t n);
 int				ft_atoi			(const char *str);
+int				ft_strncmp		(const char *s1, const char *s2, size_t n);
 #endif
 
 #	ifndef BUFFER_SIZE
-#	define BUFFER_SIZE 190
+#	define BUFFER_SIZE 42
 #	endif
