@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 17:22:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/09/07 19:27:11 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/09/07 20:12:06 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef	struct	s_data
 	int			fd;
 	int			resx;
 	int			resy;
+	char		*map;
 	char		*text_no;
 	char		*text_so;
 	char		*text_we;
@@ -45,6 +46,7 @@ typedef	struct	s_data
 	t_color		*floor;
 }				t_data;
 
+void			mapper			(t_data *data);
 void			get_data		(t_data *data);
 void			resolution		(t_data *data, int i);
 void			text			(t_data *data, char *dir, int i);
