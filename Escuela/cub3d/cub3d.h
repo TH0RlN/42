@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 17:22:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/09/07 18:08:51 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/09/07 19:27:11 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void			get_data		(t_data *data);
 void			resolution		(t_data *data, int i);
 void			text			(t_data *data, char *dir, int i);
 void			color			(t_data *data, char dir, int i);
+void			color_ceiling	(t_data *data, int i);
 /*
 ** **************************************************************************
 **									 GNL
