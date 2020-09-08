@@ -31,6 +31,8 @@
 					"${fileDirname}/gnl/get_next_line_bonus.c",
 					"${fileDirname}/gnl/get_next_line_utils_bonus.c",
 					"${fileDirname}/libft.a",
+					"${fileDirname}/mapper.c",
+					"${fileDirname}/archives.c",
 					"-o",
 					"${fileDirname}/a.out"
 			],

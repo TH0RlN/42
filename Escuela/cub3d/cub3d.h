@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 17:22:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/09/07 20:12:06 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/09/08 17:09:55 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <fcntl.h>
+# include "mlx.h"
 
 /*
 ** **************************************************************************
@@ -35,7 +36,9 @@ typedef	struct	s_data
 	int			fd;
 	int			resx;
 	int			resy;
+	int			lines_map;
 	char		*map;
+	char		**matrix_map;
 	char		*text_no;
 	char		*text_so;
 	char		*text_we;
