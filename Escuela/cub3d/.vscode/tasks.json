@@ -33,6 +33,7 @@
 					"${fileDirname}/libft.a",
 					"${fileDirname}/mapper.c",
 					"${fileDirname}/archives.c",
+					"${fileDirname}/utils.c",
 					"-o",
 					"${fileDirname}/a.out"
 			],
