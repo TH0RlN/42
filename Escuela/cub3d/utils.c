@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/08 19:25:52 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/09/08 19:36:21 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/09/09 17:37:32 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ int		btwsp(t_data *data, int i)
 	chars = 0;
 	while (data->map[i] != '\n' && data->map[i++] != '\0')
 		chars++;
-	return (chars);
+	return (chars + 2);
 }
