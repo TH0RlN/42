@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 17:22:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/09/08 19:29:05 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/09/10 18:51:15 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef	struct	s_data
 	int			lines_map;
 	char		*map;
 	char		**matrix_map;
+	char		**order_map;
 	char		*text_no;
 	char		*text_so;
 	char		*text_we;
@@ -50,6 +51,8 @@ typedef	struct	s_data
 }				t_data;
 
 void			mapper			(t_data *data);
+void			check_map		(t_data *data);
+void			copy_map		(t_data *data);
 void			get_data		(t_data *data);
 void			resolution		(t_data *data, int i);
 void			text			(t_data *data, char *dir, int i);

@@ -34,6 +34,8 @@
 					"${fileDirname}/mapper.c",
 					"${fileDirname}/archives.c",
 					"${fileDirname}/utils.c",
+					"${fileDirname}/cub3d.c",
+					"${fileDirname}/map_checker.c",
 					"-o",
 					"${fileDirname}/a.out"
 			],
