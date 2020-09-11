@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 17:22:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/09/10 18:51:15 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/09/11 19:32:42 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,13 @@
 **									cub3d
 ** **************************************************************************
 */
+
+typedef struct	s_pos
+{
+	int			x;
+	int			y;
+}				t_pos;
+
 typedef	struct	s_color
 {
 	int			r;
@@ -46,10 +53,15 @@ typedef	struct	s_data
 	char		*text_ea;
 	char		*text_sp;
 	char		*line;
+	t_pos		*init_pos;
 	t_color		*ceiling;
 	t_color		*floor;
 }				t_data;
 
+void			change_to_zero	(t_data *data, int i, int j);
+void			check_1s		(t_data *data, int i, int j);
+void			get_order		(t_data *data);
+void			remove2			(t_data *data);
 void			mapper			(t_data *data);
 void			check_map		(t_data *data);
 void			copy_map		(t_data *data);

@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 20:04:14 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/09/10 19:45:31 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/09/10 20:18:41 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	string_to_matrix(t_data *data)
 	i = 0;
 	j = 0;
 	k = 0;
-	while (data->map[i] != '\0')
+	while (j < data->lines_map)
 	{
 		k = 0;
 		data->matrix_map[j] = malloc(btwsp(data, i) * sizeof(char));
