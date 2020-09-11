@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 18:28:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/09/11 19:33:50 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/09/11 19:48:24 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,14 @@ void	check_1s(t_data *data, int i, int j)
 	int ord;
 
 	ord = 0;
+	if (i < 0 || j < 0)
+		return ;
 	if (data->order_map[i][j] != '1')
 		return ;
 	if (i > 0)
 		if (data->order_map[i - 1][j] == '1')
 			ord++;
-	if (i < data->lines_map)
+	if (i < data->lines_map - 1)
 		if (data->order_map[i + 1][j] == '1')
 			ord++;
 	if (j > 0)
