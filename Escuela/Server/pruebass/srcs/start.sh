@@ -46,4 +46,6 @@ service mysql restart
 service nginx restart
 service php7.3-fpm restart
 
+export AUTOINDEX="1"
+
 bash
