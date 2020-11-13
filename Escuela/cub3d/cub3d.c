@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 17:45:40 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/09/10 18:27:54 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/11/13 18:56:15 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		main(int argc, char const *argv[])
 	}
 	data = malloc(sizeof(t_data));
 	init(data);
-	if (!(data->fd = open(argv[1], O_RDONLY)))
+	if (0 > (data->fd = open(argv[1], O_RDONLY)))
 	{
 		printf("Error\nCould not open file\n");
 		return (1);

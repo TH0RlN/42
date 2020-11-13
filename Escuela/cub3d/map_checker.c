@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 18:28:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/11/12 18:57:42 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/11/13 17:51:54 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	remove2(t_data *data)
 		{
 			if (data->order_map[i][j] == 'N' || data->order_map[i][j] == 'S'
 			|| data->order_map[i][j] == 'E' || data->order_map[i][j] == 'W'
-			|| data->order_map[i][j] == '2')
+			|| data->order_map[i][j] == '2' || data->order_map[i][j] == 32)
 				data->order_map[i][j] = '0';
 			j++;
 		}
