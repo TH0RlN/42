@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 20:04:14 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/11/13 17:44:57 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/11/17 18:13:48 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	string_to_matrix(t_data *data)
 		while (data->map[i] != '\n' && data->map[i] != '\0')
 			data->matrix_map[j][k++] = data->map[i++];
 		data->matrix_map[j][k++] = 0;
-		printf("%s\n", data->matrix_map[j]);
+		printf("%s\n", data->matrix_map[j]); //Esto hay que quitarlo
 		i++;
 		j++;
 	}

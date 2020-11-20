@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 17:45:40 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/11/13 18:56:15 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/11/18 17:01:18 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int		main(int argc, char const *argv[])
 {
 	t_data	*data;
 
-	if (argc < 2)
+	if (argc < 2 || argc > 3)
 	{
-		printf("Error\nNot enough arguments\n");
+		printf("Error\nNot enough arguments or too many arguments\n");
 		return (1);
 	}
 	data = malloc(sizeof(t_data));
