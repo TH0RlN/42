@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/08 19:25:52 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/11/13 19:02:48 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/11/20 19:37:50 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ void	copy_map(t_data *data)
 	{
 		if (data->lines_map == 0)
 			data->lines_map = 1;
-		data->order_map = malloc(sizeof(char *) * data->lines_map);
+		data->fill_map = malloc(sizeof(char *) * data->lines_map);
 	}
 	while (i < data->lines_map)
 	{
-		data->order_map[i] = ft_strdup(data->matrix_map[i]);
+		data->fill_map[i] = ft_strdup(data->matrix_map[i]);
 		i++;
 	}
 }

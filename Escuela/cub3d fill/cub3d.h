@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 17:22:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/09/11 19:32:42 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/11/20 19:36:46 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ typedef	struct	s_data
 	int			lines_map;
 	char		*map;
 	char		**matrix_map;
-	char		**order_map;
+	char		**fill_map;
 	char		*text_no;
 	char		*text_so;
 	char		*text_we;
@@ -58,9 +58,8 @@ typedef	struct	s_data
 	t_color		*floor;
 }				t_data;
 
-void			change_to_zero	(t_data *data, int i, int j);
-void			check_1s		(t_data *data, int i, int j);
-void			get_order		(t_data *data);
+int				fill			(t_data *data, int i, int j);
+int				start_fill		(t_data *data);
 void			remove2			(t_data *data);
 void			mapper			(t_data *data);
 void			check_map		(t_data *data);

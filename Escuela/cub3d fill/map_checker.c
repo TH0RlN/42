@@ -6,97 +6,94 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 18:28:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/11/18 17:15:52 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/11/20 20:05:31 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	change_to_zero(t_data *data, int i, int j)
+int		fill(t_data *data, int i, int j)
 {
-	data->order_map[i][j] = '0';
-	check_1s(data, i - 1, j);
-	check_1s(data, i + 1, j);
-	check_1s(data, i, j - 1);
-	check_1s(data, i, j + 1);
-}
-
-void	check_1s(t_data *data, int i, int j)
-{
-	int ord;
-
-	ord = 0;
-	if (i < 0 || j < 0)
-		return ;
-	if (i > data->lines_map - 1)
-		return ;
-	if (data->order_map[i][j] != '1')
-		return ;
-	if (i > 0)
-		if (data->order_map[i - 1][j] == '1')
-			ord++;
-	if (i < data->lines_map - 1)
-		if (data->order_map[i + 1][j] == '1')
-			ord++;
-	if (j > 0)
-		if (data->order_map[i][j - 1] == '1')
-			ord++;
-	if (data->order_map[i][j + 1] == '1')
-		ord++;
-	if (ord < 2)
-		change_to_zero(data, i, j);
-}
-
-void	get_order(t_data *data)
-{
-	int		i;
-	int		j;
-
-	i = 0;
-	j = 0;
-	while (i < data->lines_map)
+	if (i < 0 || j < 0 || j > (data->lines_map - 1))
+		return (1);
+	else if (data->fill_map[j][i] == '0')
 	{
-		j = 0;
-		while (data->order_map[i][j] != '\0')
-		{
-			if (data->order_map[i][j] == '1')
-				check_1s(data, i, j);
-			j++;
-		}
-		i++;
+		data->fill_map[j][i] = '.';
+		if (fill(data, i + 1, j) || fill(data, i - 1, j) ||
+			fill(data, i, j + 1) || fill(data, i, j - 1))
+			return (1);
+		else
+			return (0);
 	}
+	else if (data->fill_map[j][i] == '1' || data->fill_map[j][i] == '.')
+		return (0);
+	else if (data->fill_map[j][i] == ' ' || data->fill_map[j][i] == '\0')
+		return (1);
+	return (1);
+}
+
+int		start_fill(t_data *data)
+{
+	int i;
+	int j;
+	
+	i = data->init_pos->x;
+	j = data->init_pos->y;
+	return (fill(data, i, j));
 }
 
 void	remove2(t_data *data)
 {
 	int		i;
 	int		j;
+	int		check;
 
 	i = 0;
 	j = 0;
-	while (i < data->lines_map)
+	check = 0;
+	while (j < data->lines_map)
 	{
-		j = 0;
-		while (data->order_map[i][j] != '\0')
+		i = 0;
+		while (data->fill_map[j][i] != '\0')
 		{
-			if (data->order_map[i][j] == 'N' || data->order_map[i][j] == 'S'
-			|| data->order_map[i][j] == 'E' || data->order_map[i][j] == 'W'
-			|| data->order_map[i][j] == '2' || data->order_map[i][j] == 32)
-				data->order_map[i][j] = '0';
-			j++;
+			if (data->fill_map[j][i] == 'N' || data->fill_map[j][i] == 'S'
+			|| data->fill_map[j][i] == 'E' || data->fill_map[j][i] == 'W')
+			{
+				if (check > 0)
+				{
+					printf("Error: \nToo many start possitions");
+					return ;
+				}
+				else
+				{
+					data->init_pos->x = i;
+					data->init_pos->y = j;
+					data->fill_map[j][i] = '0';
+					check++;
+				}
+			}
+			else if(data->fill_map[j][i] == '2')
+				data->fill_map[j][i] = '0';
+			i++;
 		}
-		i++;
+		j++;
 	}
 }
 
 void	check_map(t_data *data)
 {
+	int i;
+	int check;
+	
+	i = 0;
 	copy_map(data);
 	remove2(data);
-	get_order(data);
-	int i;
-	i = 0;
+	check = start_fill(data);
 	printf("\n\n");
 	while (i < data->lines_map)
-		printf("%s\n", data->order_map[i++]);
+		printf("%s\n", data->fill_map[i++]);
+	if (check == 1)	
+		printf("\n\nMapa no válido\n");
+	else
+		printf("\n\nMapa válido\n");
 }
