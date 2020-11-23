@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/08 19:25:52 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/11/20 19:37:50 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/11/23 20:46:46 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ void	copy_map(t_data *data)
 	}
 	while (i < data->lines_map)
 	{
-		data->fill_map[i] = ft_strdup(data->matrix_map[i]);
+		if (data->matrix_map)
+			data->fill_map[i] = ft_strdup(data->matrix_map[i]);
 		i++;
 	}
 }

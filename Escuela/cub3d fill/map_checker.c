@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 18:28:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/11/20 20:05:31 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/11/23 20:58:58 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int		start_fill(t_data *data)
 {
 	int i;
 	int j;
-	
+
 	i = data->init_pos->x;
 	j = data->init_pos->y;
 	return (fill(data, i, j));

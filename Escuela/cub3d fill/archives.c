@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 19:26:09 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/09/07 19:26:42 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/11/23 18:08:46 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,15 +84,15 @@ void	text(t_data *data, char *dir, int i)
 		if (data->line[i] == '.' && data->line[i + 1] == '/')
 		{
 			if (!(ft_strncmp(dir, "NO", 2)))
-				data->text_no = &data->line[i];
+				data->text_no = ft_strdup(&data->line[i]);
 			if (!(ft_strncmp(dir, "SO", 2)))
-				data->text_so = &data->line[i];
+				data->text_so = ft_strdup(&data->line[i]);
 			if (!(ft_strncmp(dir, "WE", 2)))
-				data->text_we = &data->line[i];
+				data->text_we = ft_strdup(&data->line[i]);
 			if (!(ft_strncmp(dir, "EA", 2)))
-				data->text_ea = &data->line[i];
+				data->text_ea = ft_strdup(&data->line[i]);
 			if (!(ft_strncmp(dir, "S", 1)))
-				data->text_sp = &data->line[i];
+				data->text_sp = ft_strdup(&data->line[i]);
 			break ;
 		}
 		i++;
