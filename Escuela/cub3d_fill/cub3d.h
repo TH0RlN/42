@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 17:22:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/11/20 19:36:46 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/11/27 20:36:30 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,14 @@ typedef	struct	s_color
 	int			b;
 }				t_color;
 
+typedef struct	s_errors
+{
+	int			map;
+	int			colors;
+	int			resolution;
+	int			general;
+}				t_errors;
+
 typedef	struct	s_data
 {
 	int			fd;
@@ -56,8 +64,10 @@ typedef	struct	s_data
 	t_pos		*init_pos;
 	t_color		*ceiling;
 	t_color		*floor;
+	t_errors	*errors;
 }				t_data;
 
+void			error_numbers	(t_data *data, int i, char c);
 int				fill			(t_data *data, int i, int j);
 int				start_fill		(t_data *data);
 void			remove2			(t_data *data);

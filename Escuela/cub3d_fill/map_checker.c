@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 18:28:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/11/23 20:58:58 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/11/27 20:28:42 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	remove2(t_data *data)
 					check++;
 				}
 			}
-			else if(data->fill_map[j][i] == '2')
+			else if (data->fill_map[j][i] == '2')
 				data->fill_map[j][i] = '0';
 			i++;
 		}
@@ -84,15 +84,19 @@ void	check_map(t_data *data)
 {
 	int i;
 	int check;
-	
+
 	i = 0;
 	copy_map(data);
 	remove2(data);
-	check = start_fill(data);
+	if (check = start_fill(data))
+	{
+		data->errors->map++;
+		data->errors->general++;
+	}
 	printf("\n\n");
 	while (i < data->lines_map)
 		printf("%s\n", data->fill_map[i++]);
-	if (check == 1)	
+	if (check == 1)
 		printf("\n\nMapa no válido\n");
 	else
 		printf("\n\nMapa válido\n");

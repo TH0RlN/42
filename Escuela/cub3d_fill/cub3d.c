@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 17:45:40 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/11/25 19:13:02 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/11/27 20:36:24 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,15 @@
 void	init(t_data *data)
 {
 	data->init_pos = malloc(sizeof(t_pos));
-	data->floor = malloc(sizeof(t_color));
 	data->ceiling = malloc(sizeof(t_color));
+	data->errors = malloc(sizeof(t_errors));
+	data->floor = malloc(sizeof(t_color));
 	data->resx = 0;
 	data->resy = 0;
+	data->errors->map = 0;
+	data->errors->colors = 0;
+	data->errors->general = 0;
+	data->errors->resolution = 0;
 }
 
 int		main(int argc, char const *argv[])
