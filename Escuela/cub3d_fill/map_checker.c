@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 18:28:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/11/27 20:28:42 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/11/30 17:41:49 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,20 @@ int		start_fill(t_data *data)
 	return (fill(data, i, j));
 }
 
+void	initial_pos(t_data *data, int i, int j)
+{
+	data->init_pos->x = i;
+	data->init_pos->y = j;
+	data->fill_map[j][i] = '0';
+}
+
 void	remove2(t_data *data)
 {
 	int		i;
 	int		j;
-	int		check;
 
 	i = 0;
 	j = 0;
-	check = 0;
 	while (j < data->lines_map)
 	{
 		i = 0;
@@ -59,18 +64,10 @@ void	remove2(t_data *data)
 			if (data->fill_map[j][i] == 'N' || data->fill_map[j][i] == 'S'
 			|| data->fill_map[j][i] == 'E' || data->fill_map[j][i] == 'W')
 			{
-				if (check > 0)
-				{
-					printf("Error: \nToo many start possitions");
+				if (data->check > 0)
 					return ;
-				}
 				else
-				{
-					data->init_pos->x = i;
-					data->init_pos->y = j;
-					data->fill_map[j][i] = '0';
-					check++;
-				}
+					initial_pos(data, i, j);
 			}
 			else if (data->fill_map[j][i] == '2')
 				data->fill_map[j][i] = '0';
@@ -88,7 +85,7 @@ void	check_map(t_data *data)
 	i = 0;
 	copy_map(data);
 	remove2(data);
-	if (check = start_fill(data))
+	if ((check = start_fill(data)))
 	{
 		data->errors->map++;
 		data->errors->general++;

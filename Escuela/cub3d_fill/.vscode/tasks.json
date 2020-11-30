@@ -1,5 +1,5 @@
 {
-// Vea https://go.microsoft.com/fwlink/?LinkId=733558 
+// Vea https://go.microsoft.com/fwlink/?LinkId=733558
 	// para la documentación acerca del formato tasks.json
 	"version": "2.0.0",
 	"tasks": [
@@ -36,6 +36,7 @@
 					"${fileDirname}/utils.c",
 					"${fileDirname}/cub3d.c",
 					"${fileDirname}/map_checker.c",
+					"${fileDirname}/errors.c",
 					"-o",
 					"${fileDirname}/a.out"
 			],

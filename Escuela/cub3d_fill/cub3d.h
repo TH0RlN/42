@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 17:22:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/11/27 20:36:30 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/11/30 18:50:21 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct	s_errors
 {
 	int			map;
 	int			colors;
+	int			texture;
 	int			resolution;
 	int			general;
 }				t_errors;
@@ -51,6 +52,8 @@ typedef	struct	s_data
 	int			fd;
 	int			resx;
 	int			resy;
+	int			check;
+	int			counter;
 	int			lines_map;
 	char		*map;
 	char		**matrix_map;
@@ -80,6 +83,8 @@ void			text			(t_data *data, char *dir, int i);
 void			color			(t_data *data, char dir, int i);
 void			color_ceiling	(t_data *data, int i);
 int				btwsp			(t_data *data, int i);
+int				errors			(t_data *data);
+void			go_dark			(t_data *data);
 /*
 ** **************************************************************************
 **									 GNL

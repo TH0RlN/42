@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 19:26:09 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/11/27 20:21:59 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/11/30 19:41:57 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	error_numbers(t_data *data, int i, char c)
 				data->errors->resolution++;
 				data->errors->general++;
 			}
+			i++;
 		}
 	}
 	else if (c == 'C')
@@ -36,12 +37,14 @@ void	error_numbers(t_data *data, int i, char c)
 				data->errors->colors++;
 				data->errors->general++;
 			}
+			i++;
 		}
 	}
 }
 
 void	color_ceiling(t_data *data, int i)
 {
+	error_numbers(data, i, 'C');
 	data->ceiling->r = ft_atoi(&data->line[i]);
 	while (data->line[i] != ',' && data->line[i] != '\0')
 		i++;
@@ -60,6 +63,7 @@ void	color(t_data *data, char dir, int i)
 		{
 			if (dir == 'F')
 			{
+				error_numbers(data, i, 'C');
 				data->floor->r = ft_atoi(&data->line[i]);
 				while (data->line[i] != ',' && data->line[i] != '\0')
 					i++;
@@ -82,6 +86,7 @@ void	color(t_data *data, char dir, int i)
 
 void	resolution(t_data *data, int i)
 {
+	error_numbers(data, i + 1, 'R');
 	while (data->line[i] != '\0')
 	{
 		if (data->line[i] == ' ')
