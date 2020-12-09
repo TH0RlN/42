@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 17:22:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/11/30 18:50:21 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/12/01 19:00:08 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,8 @@ typedef	struct	s_data
 	t_errors	*errors;
 }				t_data;
 
-void			error_numbers	(t_data *data, int i, char c);
+void			error_resolution(t_data *data, int i);
+void			error_color		(t_data *data, int i);
 int				fill			(t_data *data, int i, int j);
 int				start_fill		(t_data *data);
 void			remove2			(t_data *data);

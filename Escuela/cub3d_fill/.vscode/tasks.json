@@ -37,6 +37,7 @@
 					"${fileDirname}/cub3d.c",
 					"${fileDirname}/map_checker.c",
 					"${fileDirname}/errors.c",
+					"${fileDirname}/error_numbers.c",
 					"-o",
 					"${fileDirname}/a.out"
 			],
