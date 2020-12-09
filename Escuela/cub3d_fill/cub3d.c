@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 17:45:40 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/11/30 19:25:36 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/12/09 20:40:21 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 void	init(t_data *data)
 {
-	data->init_pos = malloc(sizeof(t_pos));
+	data->init_pos = malloc(sizeof(t_vector));
 	data->ceiling = malloc(sizeof(t_color));
 	data->errors = malloc(sizeof(t_errors));
 	data->floor = malloc(sizeof(t_color));
+	data->player = malloc(sizeof(t_player));
+	data->player->position = malloc(sizeof(t_vector));
+	data->player->direction = malloc(sizeof(t_vector));
 	data->check = 0;
 	data->resx = 0;
 	data->counter = 0;
@@ -42,6 +45,9 @@ void	go_dark(t_data *data)
 	free(data->text_we);
 	free(data->text_sp);
 	free(data->map);
+	free(data->player->position);
+	free(data->player->direction);
+	free(data->player);
 	while (data->counter < data->lines_map)
 		free(data->matrix_map[data->counter++]);
 	free(data->matrix_map);
@@ -73,6 +79,6 @@ int		main(int argc, char const *argv[])
 	errors(data);
 	printf("Resolution:\n	X = %d\n	Y = %d\nTexture:\n	NO: %s\n	SO: %s\n	WE: %s\n	EA: %s\n	SP: %s\nColor:\n	C: %3d, %3d, %3d\n	F: %3d, %3d, %3d\n\nNº lines: %d\n\n\nErrors:\n\tMap: %d\n\tColors: %d\n\tTexture: %d\n\tResolution: %d\n\n\tTotal: %d",
 	data->resx, data->resy, data->text_no, data->text_so, data->text_we, data->text_ea, data->text_sp, data->ceiling->r, data->ceiling->g, data->ceiling->b, data->floor->r, data->floor->g, data->floor->b, data->lines_map, data->errors->map, data->errors->colors, data->errors->texture, data->errors->resolution, data->errors->general);
-	go_dark(data);
+	init_loop(data);
 	return (0);
 }

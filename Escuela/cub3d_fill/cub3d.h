@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 17:22:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/12/01 19:00:08 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/12/09 19:45:22 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@
 ** **************************************************************************
 */
 
-typedef struct	s_pos
+typedef struct	s_vector
 {
-	int			x;
-	int			y;
-}				t_pos;
+	float		x;
+	float		y;
+}				t_vector;
 
 typedef	struct	s_color
 {
@@ -46,6 +46,13 @@ typedef struct	s_errors
 	int			resolution;
 	int			general;
 }				t_errors;
+
+typedef struct	s_player
+{
+	t_vector	*position;
+	t_vector	*direction;
+}				t_player;
+
 
 typedef	struct	s_data
 {
@@ -64,7 +71,10 @@ typedef	struct	s_data
 	char		*text_ea;
 	char		*text_sp;
 	char		*line;
-	t_pos		*init_pos;
+	void		*mlx_ptr;
+	void		*win_ptr;
+	t_player	*player;
+	t_vector	*init_pos;
 	t_color		*ceiling;
 	t_color		*floor;
 	t_errors	*errors;
@@ -85,6 +95,7 @@ void			color			(t_data *data, char dir, int i);
 void			color_ceiling	(t_data *data, int i);
 int				btwsp			(t_data *data, int i);
 int				errors			(t_data *data);
+void			init_loop		(t_data *data);
 void			go_dark			(t_data *data);
 /*
 ** **************************************************************************

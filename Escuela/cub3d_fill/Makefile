@@ -1,0 +1,41 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/12/09 18:11:48 by rarias-p          #+#    #+#              #
+#    Updated: 2020/12/09 19:44:24 by rarias-p         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME=cub3d.out
+
+CC=gcc
+
+CFLAGS=-Wall -Wextra -Werror -I /usr/local/inlude
+
+BFLAGS=-L /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit
+
+RM=rm -f
+
+SRC= gnl/get_next_line_bonus.c gnl/get_next_line_utils_bonus.c archives.c cub3d.c errors.c file_reader.c map_checker.c mapper.c utils.c error_numbers.c start_visual.c
+
+OBJ= $(SRC:.c=.o);
+
+$(NAME):
+		@$(CC) $(CFLAGS) $(SRC) libft.a $(BFLAGS) -o $(NAME);
+
+all:
+		@$(NAME)
+
+clean:
+		@$(RM) $(OBJ)
+	
+fclean: clean
+		@$(RM) $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re

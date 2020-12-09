@@ -8,7 +8,7 @@
 			"name": "pruebas",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/a.out",
+            "program": "${workspaceFolder}/cub3d.out",
             "args": ["cosas.cub"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

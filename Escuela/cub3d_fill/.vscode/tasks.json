@@ -26,6 +26,8 @@
 			"label": "todos",
 			"command": "/usr/bin/gcc",
 			"args": [
+					"-I",
+					"/usr/local/inlude",
 					"-g",
 					"${fileDirname}/file_reader.c",
 					"${fileDirname}/gnl/get_next_line_bonus.c",
@@ -38,8 +40,16 @@
 					"${fileDirname}/map_checker.c",
 					"${fileDirname}/errors.c",
 					"${fileDirname}/error_numbers.c",
+					"${fileDirname}/start_visual.c",
+					"-L",
+					"/usr/local/lib/",
+					"-lmlx",
+					"-framework",
+					"OpenGL",
+					"-framework",
+					"AppKit",
 					"-o",
-					"${fileDirname}/a.out"
+					"${fileDirname}/cub3d.out"
 			],
 			"options": {
 					"cwd": "/usr/bin"
