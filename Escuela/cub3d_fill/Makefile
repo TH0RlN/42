@@ -6,7 +6,7 @@
 #    By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/09 18:11:48 by rarias-p          #+#    #+#              #
-#    Updated: 2020/12/09 19:44:24 by rarias-p         ###   ########.fr        #
+#    Updated: 2020/12/11 17:44:44 by rarias-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,8 +27,7 @@ OBJ= $(SRC:.c=.o);
 $(NAME):
 		@$(CC) $(CFLAGS) $(SRC) libft.a $(BFLAGS) -o $(NAME);
 
-all:
-		@$(NAME)
+all:	$(NAME)
 
 clean:
 		@$(RM) $(OBJ)
