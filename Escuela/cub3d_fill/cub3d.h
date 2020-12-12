@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 17:22:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/12/09 19:45:22 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/12/12 17:53:38 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ typedef	struct	s_data
 	int			check;
 	int			counter;
 	int			lines_map;
+	char		direction;
 	char		*map;
 	char		**matrix_map;
 	char		**fill_map;
@@ -95,7 +96,7 @@ void			color			(t_data *data, char dir, int i);
 void			color_ceiling	(t_data *data, int i);
 int				btwsp			(t_data *data, int i);
 int				errors			(t_data *data);
-void			init_loop		(t_data *data);
+void			main_loop		(t_data *data);
 void			go_dark			(t_data *data);
 /*
 ** **************************************************************************

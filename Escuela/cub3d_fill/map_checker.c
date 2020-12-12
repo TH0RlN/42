@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 18:28:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/11/30 17:41:49 by rarias-p         ###   ########.fr       */
+/*   Updated: 2020/12/12 17:57:32 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,14 @@ void	initial_pos(t_data *data, int i, int j)
 {
 	data->init_pos->x = i;
 	data->init_pos->y = j;
+	if (data->fill_map[j][i] == 'N')
+		data->direction = 'N';
+	if (data->fill_map[j][i] == 'S')
+		data->direction = 'S';
+	if (data->fill_map[j][i] == 'E')
+		data->direction = 'E';
+	if (data->fill_map[j][i] == 'W')
+		data->direction = 'W';
 	data->fill_map[j][i] = '0';
 }
 
