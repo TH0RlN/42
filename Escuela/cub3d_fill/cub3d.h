@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 17:22:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/12/12 17:53:38 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/01/25 17:23:34 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 # define CUB3D_H
 
 # include <unistd.h>
-# include <stdio.h>
 # include <stdlib.h>
+# include <stdio.h>
 # include <fcntl.h>
+# include <math.h>
 # include "mlx.h"
 
 /*
@@ -27,8 +28,8 @@
 
 typedef struct	s_vector
 {
-	float		x;
-	float		y;
+	double		x;
+	double		y;
 }				t_vector;
 
 typedef	struct	s_color
@@ -51,6 +52,16 @@ typedef struct	s_player
 {
 	t_vector	*position;
 	t_vector	*direction;
+	t_vector	*side_dist;
+	t_vector	*delta_dist;
+	double		perp_wall_dist;
+	int			step_x;
+	int			step_y;
+	int			hit;
+	int			side;
+	int			int_pos_x;
+	int			int_pos_y;
+	
 }				t_player;
 
 
@@ -74,7 +85,10 @@ typedef	struct	s_data
 	char		*line;
 	void		*mlx_ptr;
 	void		*win_ptr;
+	double		camara_x;
 	t_player	*player;
+	t_vector	*ray;
+	t_vector	*plane;
 	t_vector	*init_pos;
 	t_color		*ceiling;
 	t_color		*floor;
@@ -92,6 +106,8 @@ void			copy_map		(t_data *data);
 void			get_data		(t_data *data);
 void			resolution		(t_data *data, int i);
 void			text			(t_data *data, char *dir, int i);
+void			engine			(t_data *data, t_player *player,
+								t_vector *ray, t_vector *plane);
 void			color			(t_data *data, char dir, int i);
 void			color_ceiling	(t_data *data, int i);
 int				btwsp			(t_data *data, int i);

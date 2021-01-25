@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 18:41:52 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/12/12 18:21:00 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/01/25 16:36:57 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,5 @@ void	main_loop(t_data *data)
 	"CUB3D");
 	mlx_hook(data->win_ptr, 17, 0, salida, (void *)data);
 	mlx_loop(data->mlx_ptr);
+	engine(data, data->player, data->ray, data->plane);
 }
