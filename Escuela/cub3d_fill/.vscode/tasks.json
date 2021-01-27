@@ -41,6 +41,7 @@
 					"${fileDirname}/errors.c",
 					"${fileDirname}/error_numbers.c",
 					"${fileDirname}/start_visual.c",
+					"${fileDirname}/engine.c",
 					"-L",
 					"/usr/local/lib/",
 					"-lmlx",

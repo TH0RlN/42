@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 17:22:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/01/25 17:23:34 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/01/27 18:12:48 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ typedef struct	s_player
 	t_vector	*side_dist;
 	t_vector	*delta_dist;
 	double		perp_wall_dist;
+	int			line_height;
 	int			step_x;
 	int			step_y;
 	int			hit;
@@ -67,12 +68,15 @@ typedef struct	s_player
 
 typedef	struct	s_data
 {
+	int			x;
 	int			fd;
 	int			resx;
 	int			resy;
 	int			check;
 	int			counter;
 	int			lines_map;
+	int			draw_start;
+	int			draw_end;
 	char		direction;
 	char		*map;
 	char		**matrix_map;
@@ -90,6 +94,7 @@ typedef	struct	s_data
 	t_vector	*ray;
 	t_vector	*plane;
 	t_vector	*init_pos;
+	t_color		*act_wall;
 	t_color		*ceiling;
 	t_color		*floor;
 	t_errors	*errors;

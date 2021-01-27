@@ -6,7 +6,7 @@
 #    By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/09 18:11:48 by rarias-p          #+#    #+#              #
-#    Updated: 2020/12/11 17:44:44 by rarias-p         ###   ########.fr        #
+#    Updated: 2021/01/27 16:56:20 by rarias-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ BFLAGS=-L /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit
 
 RM=rm -f
 
-SRC= gnl/get_next_line_bonus.c gnl/get_next_line_utils_bonus.c archives.c cub3d.c errors.c file_reader.c map_checker.c mapper.c utils.c error_numbers.c start_visual.c
+SRC= gnl/get_next_line_bonus.c gnl/get_next_line_utils_bonus.c archives.c cub3d.c errors.c file_reader.c map_checker.c mapper.c utils.c error_numbers.c start_visual.c engine.c
 
 OBJ= $(SRC:.c=.o);
 
