@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 18:09:03 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/01/27 18:32:04 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/01/28 19:10:15 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ void	engine4(t_data *data, t_player *player, t_vector *ray)
 	x = 0;
 	while (x <= data->draw_end)
 	{
-		mlx_pixel_put(data->mlx_ptr, data->win_ptr, data->x, x, player->side == 1 ? 0x7777FF / 2 : 0x7777FF);
+		if (x >= data->draw_start)
+			mlx_pixel_put(data->mlx_ptr, data->win_ptr, data->x, x, player->side == 1 ? 0x7777FF / 2 : 0x7777FF);
 		x++;
 	}
 }
@@ -74,7 +75,7 @@ void	engine2(t_data *data, t_player *player, t_vector *ray)
 	else
 	{
 		player->step_x = 1;
-		player->side_dist->x = (-player->position->x + 1 + player->int_pos_x) *
+		player->side_dist->x = (player->int_pos_x + 1 - player->position->x) *
 		player->delta_dist->x;
 	}
 	if (ray->y < 0)
@@ -86,7 +87,7 @@ void	engine2(t_data *data, t_player *player, t_vector *ray)
 	else
 	{
 		player->step_y = 1;
-		player->side_dist->y = (-player->position->y + 1 + player->int_pos_y)
+		player->side_dist->y = (player->int_pos_y + 1 - player->position->y)
 		* player->delta_dist->y;
 	}
 	engine3(data, player, ray);
@@ -103,8 +104,25 @@ void	engine(t_data *data, t_player *player, t_vector *ray, t_vector *plane)
 		ray->y = player->direction->y + plane->y * data->camara_x;
 		player->int_pos_x = (int)player->position->x;
 		player->int_pos_y = (int)player->position->y;
-		player->delta_dist->x = fabs(1 / ray->x);
-		player->delta_dist->y = fabs(1 / ray->x);
+		//player->delta_dist->x = fabs(1 / ray->x);
+		//player->delta_dist->y = fabs(1 / ray->y);
+
+		if (ray->y == 0)
+		{
+			player->delta_dist->x = 0;
+			player->delta_dist->y = (ray->x == 0) ? 0 : 1;
+		}
+		else if (ray->x == 0)
+		{
+			player->delta_dist->y = 0;
+			player->delta_dist->x = 1;
+		}
+		else
+		{
+			player->delta_dist->x = fabs(1 / ray->x);
+			player->delta_dist->y = fabs(1 / ray->y);
+		}
+
 		player->hit = 0;
 		engine2(data, player, ray);
 		data->x++;

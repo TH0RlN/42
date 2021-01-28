@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 18:41:52 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/01/27 18:36:12 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/01/28 18:38:02 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,23 @@ int		salida(t_data *data)
 	exit(EXIT_SUCCESS);
 }
 
+int		drawer(t_data *data)
+{
+	engine(data, data->player, data->ray, data->plane);
+	return (0);
+}
+
 void	start_direction(t_data *data)
 {
 	if (data->direction == 'N')
 	{
-		data->player->direction->x = 0;
-		data->player->direction->y = -1;
+		data->player->direction->x = 0.0;
+		data->player->direction->y = -1.0;
 	}
 	if (data->direction == 'S')
 	{
-		data->player->direction->x = 0;
-		data->player->direction->y = 1;
+		data->player->direction->x = 0.0;
+		data->player->direction->y = 1.0;
 	}
 	if (data->direction == 'E')
 	{
@@ -37,8 +43,8 @@ void	start_direction(t_data *data)
 	}
 	if (data->direction == 'W')
 	{
-		data->player->direction->x = 0;
-		data->player->direction->y = -1;
+		data->player->direction->x = -1.0;
+		data->player->direction->y = 0.0;
 	}
 	data->player->position = data->init_pos;
 	printf("Posición inicial:\n\tX:%f\n\tY:%f\n", data->player->position->x, data->player->position->y);
@@ -51,6 +57,6 @@ void	main_loop(t_data *data)
 	data->win_ptr = mlx_new_window(data->mlx_ptr, data->resx, data->resy,
 	"CUB3D");
 	mlx_hook(data->win_ptr, 17, 0, salida, (void *)data);
-	engine(data, data->player, data->ray, data->plane);
+	mlx_loop_hook(data->mlx_ptr, drawer, data);
 	mlx_loop(data->mlx_ptr);
 }

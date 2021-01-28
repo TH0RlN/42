@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 17:45:40 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/01/27 18:56:16 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/01/28 18:58:07 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,31 @@ void	init(t_data *data)
 	data->errors->general = 0;
 	data->errors->texture = 0;
 	data->errors->resolution = 0;
+	data->player->perp_wall_dist = 0;
+	data->player->step_y = 0;
+	data->player->step_x = 0;
+	data->player->hit = 0;
+	data->player->side = 0;
+	data->player->int_pos_x = 0;
+	data->player->int_pos_y = 0;
 }
 
 void	go_dark(t_data *data)
 {
+	//ft_bzero(data->ray, sizeof(t_vector));
+	//ft_bzero(data->plane, sizeof(t_vector));
+	//ft_bzero(data->player->position, sizeof(t_vector));
+	//ft_bzero(data->player->side_dist, sizeof(t_vector));
+	//ft_bzero(data->player->direction, sizeof(t_vector));
+	//ft_bzero(data->player->delta_dist, sizeof(t_vector));
+	//ft_bzero(data->player, sizeof(t_player));
+	//free(data->ray);
+	//free(data->plane);
+	//free(data->player->position);
+	//free(data->player->side_dist);
+	//free(data->player->direction);
+	//free(data->player->delta_dist);
+	//free(data->player);
 	//free(data->init_pos);
 	//free(data->line);
 	//free(data->ceiling);
