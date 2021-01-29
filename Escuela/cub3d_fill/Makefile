@@ -6,11 +6,11 @@
 #    By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/09 18:11:48 by rarias-p          #+#    #+#              #
-#    Updated: 2021/01/27 16:56:20 by rarias-p         ###   ########.fr        #
+#    Updated: 2021/01/29 18:54:02 by rarias-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=cub3d.out
+NAME=cub3d
 
 CC=gcc
 
@@ -20,7 +20,9 @@ BFLAGS=-L /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit
 
 RM=rm -f
 
-SRC= gnl/get_next_line_bonus.c gnl/get_next_line_utils_bonus.c archives.c cub3d.c errors.c file_reader.c map_checker.c mapper.c utils.c error_numbers.c start_visual.c engine.c
+SRC= gnl/get_next_line_bonus.c gnl/get_next_line_utils_bonus.c archives.c cub3d.c errors.c file_reader.c map_checker.c keys_manage.c mapper.c utils.c error_numbers.c start_visual.c engine.c
+
+SANI= -g -fsanitize=address
 
 OBJ= $(SRC:.c=.o);
 
@@ -38,3 +40,5 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+
+#-Wall -Wextra -Werror -I /usr/local/inlude libft.a gnl/get_next_line_bonus.c gnl/get_next_line_utils_bonus.c archives.c cub3d.c errors.c keys_manage.c file_reader.c map_checker.c mapper.c utils.c error_numbers.c start_visual.c engine.c -L /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit

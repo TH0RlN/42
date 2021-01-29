@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 17:22:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/01/28 18:40:08 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/01/29 19:05:38 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,18 @@ typedef struct	s_errors
 	int			resolution;
 	int			general;
 }				t_errors;
+
+typedef	struct	s_keys
+{
+	int			a;
+	int			s;
+	int			d;
+	int			w;
+	int			rt;
+	int			lf;
+	int			esc;
+}				t_keys;
+
 
 typedef struct	s_player
 {
@@ -90,6 +102,9 @@ typedef	struct	s_data
 	void		*mlx_ptr;
 	void		*win_ptr;
 	double		camara_x;
+	double		move_speed;
+	double		roto_speed;
+	t_keys		*keys;
 	t_player	*player;
 	t_vector	*ray;
 	t_vector	*plane;
@@ -100,6 +115,9 @@ typedef	struct	s_data
 	t_errors	*errors;
 }				t_data;
 
+int				keys_released	(int key, t_data *data);
+int				keys_press		(int key, t_data *data);
+int				salida			(t_data *data);
 void			error_resolution(t_data *data, int i);
 void			error_color		(t_data *data, int i);
 int				fill			(t_data *data, int i, int j);
@@ -145,3 +163,13 @@ int				ft_strncmp		(const char *s1, const char *s2, size_t n);
 #	ifndef BUFFER_SIZE
 #	define BUFFER_SIZE 42
 #	endif
+
+#define A_KEY 0
+#define S_KEY 1
+#define D_KEY 2
+#define W_KEY 13
+#define RT_KEY 124
+#define LF_KEY 123
+#define ESC_KEY 53
+
+

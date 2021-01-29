@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 17:45:40 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/01/28 18:58:07 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/01/29 18:48:33 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	init(t_data *data)
 	data->ceiling = malloc(sizeof(t_color));
 	data->errors = malloc(sizeof(t_errors));
 	data->floor = malloc(sizeof(t_color));
+	data->keys = malloc(sizeof(t_keys));
 	data->ray = malloc(sizeof(t_vector));
 	data->plane = malloc(sizeof(t_vector));
 	data->player = malloc(sizeof(t_player));
@@ -25,6 +26,9 @@ void	init(t_data *data)
 	data->player->side_dist = malloc(sizeof(t_vector));
 	data->player->direction = malloc(sizeof(t_vector));
 	data->player->delta_dist = malloc(sizeof(t_vector));
+	data->player->line_height = 0;
+	data->plane->x = 0;
+	data->plane->y = 0;
 	data->check = 0;
 	data->resx = 0;
 	data->counter = 0;
@@ -41,6 +45,15 @@ void	init(t_data *data)
 	data->player->side = 0;
 	data->player->int_pos_x = 0;
 	data->player->int_pos_y = 0;
+	data->draw_end = 0;
+	data->draw_start = 0;
+	data->keys->a = 0;
+	data->keys->s = 0;
+	data->keys->d = 0;
+	data->keys->w = 0;
+	data->keys->rt = 0;
+	data->keys->lf = 0;
+	data->keys->esc = 0;
 }
 
 void	go_dark(t_data *data)
@@ -81,6 +94,7 @@ void	go_dark(t_data *data)
 	//	free(data->fill_map[data->counter++]);
 	//free(data->fill_map);
 	//free(data);
+	write(1, "$", 1);
 }
 
 int		main(int argc, char const *argv[])
