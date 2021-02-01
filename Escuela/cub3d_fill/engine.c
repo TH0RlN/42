@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 18:09:03 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/01/29 17:32:35 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/01 20:03:16 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,10 @@ void	engine4(t_data *data, t_player *player, t_vector *ray)
 	data->draw_end = player->line_height / 2 + data->resy / 2;
 	if (data->draw_end >= data->resy)
 		data->draw_end = data->resy - 1;
-	x = 0;
+	x = data->draw_start;
 	while (x <= data->draw_end)
 	{
-		if (x >= data->draw_start)
-			mlx_pixel_put(data->mlx_ptr, data->win_ptr, data->x, x, player->side == 1 ? 0x7777FF / 2 : 0x7777FF);
+		mlx_pixel_put(data->mlx_ptr, data->win_ptr, data->x, x, player->side == 1 ? 0x00FF00 : 0x0000FF);
 		x++;
 	}
 }
@@ -58,7 +57,8 @@ void	engine3(t_data *data, t_player *player, t_vector *ray)
 			player->int_pos_y += player->step_y;
 			player->side = 1;
 		}
-		if (data->matrix_map[player->int_pos_x][player->int_pos_y] > 0)
+		if (!(player->int_pos_x >= 0 && player->int_pos_y >= 0) ||
+		(data->int_map[player->int_pos_y][player->int_pos_x] == 1))
 			player->hit = 1;
 	}
 	engine4(data, player, ray);

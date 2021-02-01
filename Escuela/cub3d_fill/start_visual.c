@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 18:41:52 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/01/29 18:35:15 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/01 17:16:54 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int		salida(t_data *data)
 
 int		drawer(t_data *data)
 {
+	keys_change(data, data->keys);
 	engine(data, data->player, data->ray, data->plane);
 	return (0);
 }
@@ -65,8 +66,9 @@ void	main_loop(t_data *data)
 	data->mlx_ptr = mlx_init();
 	data->win_ptr = mlx_new_window(data->mlx_ptr, data->resx, data->resy,
 	"CUB3D");
+	mlx_loop_hook(data->mlx_ptr, drawer, data);
 	mlx_hook(data->win_ptr, 17, 0, salida, (void *)data);
 	mlx_hook(data->win_ptr, 2, 0, keys_press, (void *)data);
-	mlx_loop_hook(data->mlx_ptr, drawer, data);
+	mlx_hook(data->win_ptr, 3, 0, keys_released, (void *)data);
 	mlx_loop(data->mlx_ptr);
 }

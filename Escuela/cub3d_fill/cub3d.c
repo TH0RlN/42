@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 17:45:40 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/01/29 18:48:33 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/01 17:06:58 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ void	go_dark(t_data *data)
 	//	free(data->fill_map[data->counter++]);
 	//free(data->fill_map);
 	//free(data);
-	write(1, "$", 1);
+	printf("GOING DARK \n");
 }
 
 int		main(int argc, char const *argv[])

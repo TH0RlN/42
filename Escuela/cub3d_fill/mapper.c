@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 20:04:14 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/01/29 17:17:34 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/01 19:45:21 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,24 @@ void	string_to_matrix(t_data *data)
 	}
 }
 
+void	mtrx_2_imtrx(t_data *data)
+{
+	int	i;
+	int	j;
+
+	data->int_map = malloc(data->lines_map * sizeof(int *));
+	i = 0;
+	j = -1;
+	while (i < data->lines_map)
+	{
+		j = 0;
+		data->int_map[i] = malloc(ft_strlen(data->matrix_map[i]) * sizeof(int));
+		while (data->matrix_map[i][++j] != '\0')
+			data->int_map[i][j] = data->matrix_map[i][j] - 48;
+		i++;
+	}
+}
+
 void	mapper(t_data *data)
 {
 	data->lines_map = 1;
@@ -47,4 +65,5 @@ void	mapper(t_data *data)
 	data->map = ft_strjoin(data->map, data->line);
 	data->lines_map++;
 	string_to_matrix(data);
+	mtrx_2_imtrx(data);
 }

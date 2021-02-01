@@ -42,6 +42,8 @@
 					"${fileDirname}/error_numbers.c",
 					"${fileDirname}/start_visual.c",
 					"${fileDirname}/engine.c",
+					"${fileDirname}/keys_manage.c",
+					"${fileDirname}/move.c",
 					"-L",
 					"/usr/local/lib/",
 					"-lmlx",

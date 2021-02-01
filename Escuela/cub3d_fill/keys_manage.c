@@ -6,13 +6,13 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:27:34 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/01/29 19:06:22 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/01 17:39:07 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int	keys_press(int key, t_data *data)
+int		keys_press(int key, t_data *data)
 {
 	if (key == A_KEY)
 		data->keys->a = 1;
@@ -31,7 +31,7 @@ int	keys_press(int key, t_data *data)
 	return (0);
 }
 
-int	keys_released(int key, t_data *data)
+int		keys_released(int key, t_data *data)
 {
 	if (key == A_KEY)
 		data->keys->a = 0;
@@ -46,4 +46,20 @@ int	keys_released(int key, t_data *data)
 	else if (key == LF_KEY)
 		data->keys->lf = 0;
 	return (0);
+}
+
+void	keys_change(t_data *data, t_keys *keys)
+{
+	//if (keys->a == 1)
+	//	move_left();
+	if (keys->s == 1)
+		move_back(data);
+	//if (keys->d == 1)
+	//	move_right();
+	if (keys->w == 1)
+		move_fwd(data);
+	//if (keys->rt == 1)
+	//	rot_right();
+	//if (keys->lf == 1)
+	//	rot_left();
 }
