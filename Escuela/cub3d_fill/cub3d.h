@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 17:22:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/02 18:47:27 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/02 19:19:20 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,7 @@ void			move_lf			(t_data *data);
 void			move_fwd		(t_data *data);
 void			move_back		(t_data *data);
 int				salida			(t_data *data);
+void			print_errors	(t_data *data);
 void			error_resolution(t_data *data, int i);
 void			error_color		(t_data *data, int i);
 int				fill			(t_data *data, int i, int j);

@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 17:45:40 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/01 17:06:58 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/02 19:20:26 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ void	go_dark(t_data *data)
 	//	free(data->fill_map[data->counter++]);
 	//free(data->fill_map);
 	//free(data);
-	printf("GOING DARK \n");
+	write(1, "GOING DARK \n", 13);
 }
 
 int		main(int argc, char const *argv[])
@@ -103,14 +103,14 @@ int		main(int argc, char const *argv[])
 
 	if (argc < 2 || argc > 3)
 	{
-		printf("Error\nNot enough arguments or too many arguments\n");
+		write(1, "Error\nNot enough arguments or too many arguments\n", 50);
 		return (1);
 	}
 	data = malloc(sizeof(t_data));
 	init(data);
 	if (0 > (data->fd = open(argv[1], O_RDONLY)))
 	{
-		printf("Error\nCould not open file\n");
+		write(1, "Error\nCould not open file\n", 27);
 		return (1);
 	}
 	get_data(data);
@@ -119,5 +119,7 @@ int		main(int argc, char const *argv[])
 	////printf("Resolution:\n	X = %d\n	Y = %d\nTexture:\n	NO: %s\n	SO: %s\n	WE: %s\n	EA: %s\n	SP: %s\nColor:\n	C: %3d, %3d, %3d\n	F: %3d, %3d, %3d\n\nNº lines: %d\n\n\nErrors:\n\tMap: %d\n\tColors: %d\n\tTexture: %d\n\tResolution: %d\n\n\tTotal: %d",
 	////data->resx, data->resy, data->text_no, data->text_so, data->text_we, data->text_ea, data->text_sp, data->ceiling->r, data->ceiling->g, data->ceiling->b, data->floor->r, data->floor->g, data->floor->b, data->lines_map, data->errors->map, data->errors->colors, data->errors->texture, data->errors->resolution, data->errors->general);
 		main_loop(data);
+	else
+		print_errors(data);
 	return (0);
 }
