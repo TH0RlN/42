@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 18:09:03 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/01 20:03:16 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/02 17:22:52 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void	engine2(t_data *data, t_player *player, t_vector *ray)
 
 void	engine(t_data *data, t_player *player, t_vector *ray, t_vector *plane)
 {
-
+	mlx_clear_window(data->mlx_ptr, data->win_ptr);
 	data->x = 0;
 	while (data->x < data->resx)
 	{

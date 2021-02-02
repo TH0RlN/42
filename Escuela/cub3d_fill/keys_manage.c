@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:27:34 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/01 17:39:07 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/02 18:46:19 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,16 @@ int		keys_released(int key, t_data *data)
 
 void	keys_change(t_data *data, t_keys *keys)
 {
-	//if (keys->a == 1)
-	//	move_left();
+	if (keys->a == 1)
+		move_lf(data);
 	if (keys->s == 1)
 		move_back(data);
-	//if (keys->d == 1)
-	//	move_right();
+	if (keys->d == 1)
+		move_rt(data);
 	if (keys->w == 1)
 		move_fwd(data);
-	//if (keys->rt == 1)
-	//	rot_right();
-	//if (keys->lf == 1)
-	//	rot_left();
+	if (keys->rt == 1)
+		rot_rt(data);
+	if (keys->lf == 1)
+		rot_lf(data);
 }

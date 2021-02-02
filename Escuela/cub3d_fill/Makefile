@@ -6,7 +6,7 @@
 #    By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/09 18:11:48 by rarias-p          #+#    #+#              #
-#    Updated: 2021/02/01 17:44:48 by rarias-p         ###   ########.fr        #
+#    Updated: 2021/02/02 18:48:06 by rarias-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ BFLAGS=-L /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit
 
 RM=rm -f
 
-SRC= gnl/get_next_line_bonus.c gnl/get_next_line_utils_bonus.c archives.c cub3d.c errors.c file_reader.c map_checker.c keys_manage.c move.c mapper.c utils.c error_numbers.c start_visual.c engine.c
+SRC= gnl/get_next_line_bonus.c gnl/get_next_line_utils_bonus.c archives.c cub3d.c errors.c roto.c file_reader.c map_checker.c keys_manage.c move.c mapper.c utils.c error_numbers.c start_visual.c engine.c
 
 SANI= -g -fsanitize=address
 
@@ -44,4 +44,4 @@ sanitize:
 
 .PHONY: all clean fclean re
 
-#-Wall -Wextra -Werror -I /usr/local/inlude libft.a gnl/get_next_line_bonus.c gnl/get_next_line_utils_bonus.c archives.c cub3d.c errors.c keys_manage.c move.c file_reader.c map_checker.c mapper.c utils.c error_numbers.c start_visual.c engine.c -L /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit
+#-Wall -Wextra -Werror -I /usr/local/inlude libft.a gnl/get_next_line_bonus.c gnl/get_next_line_utils_bonus.c archives.c cub3d.c errors.c keys_manage.c roto.c move.c file_reader.c map_checker.c mapper.c utils.c error_numbers.c start_visual.c engine.c -L /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit

@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 17:22:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/01 19:12:48 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/02 18:47:27 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,10 @@ typedef	struct	s_data
 int				keys_released	(int key, t_data *data);
 int				keys_press		(int key, t_data *data);
 void			keys_change		(t_data *data, t_keys *keys);
+void			rot_lf			(t_data *data);
+void			rot_rt			(t_data *data);
+void			move_rt			(t_data *data);
+void			move_lf			(t_data *data);
 void			move_fwd		(t_data *data);
 void			move_back		(t_data *data);
 int				salida			(t_data *data);
