@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:27:34 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/02 18:46:19 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/03 18:46:19 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ int		keys_press(int key, t_data *data)
 {
 	if (key == A_KEY)
 		data->keys->a = 1;
-	else if (key == S_KEY)
+	else if (key == S_KEY || key == DW_KEY)
 		data->keys->s = 1;
 	else if (key == D_KEY)
 		data->keys->d = 1;
-	else if (key == W_KEY)
+	else if (key == W_KEY || key == UP_KEY)
 		data->keys->w = 1;
 	else if (key == RT_KEY)
 		data->keys->rt = 1;
@@ -35,11 +35,11 @@ int		keys_released(int key, t_data *data)
 {
 	if (key == A_KEY)
 		data->keys->a = 0;
-	else if (key == S_KEY)
+	else if (key == S_KEY || key == DW_KEY)
 		data->keys->s = 0;
 	else if (key == D_KEY)
 		data->keys->d = 0;
-	else if (key == W_KEY)
+	else if (key == W_KEY || key == UP_KEY)
 		data->keys->w = 0;
 	else if (key == RT_KEY)
 		data->keys->rt = 0;

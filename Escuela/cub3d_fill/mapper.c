@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 20:04:14 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/02 17:42:08 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/03 17:23:00 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,13 @@ void	mtrx_2_imtrx(t_data *data)
 
 	data->int_map = malloc(data->lines_map * sizeof(int *));
 	i = 0;
-	j = -1;
 	while (i < data->lines_map)
 	{
-		j = 0;
+		j = -1;
 		data->int_map[i] = malloc(ft_strlen(data->matrix_map[i]) * sizeof(int));
 		while (data->matrix_map[i][++j] != '\0')
-			data->int_map[i][j] = data->matrix_map[i][j] - 48;
+			data->int_map[i][j] = data->matrix_map[i][j] < 58 ?
+			data->matrix_map[i][j] - 48 : 0;
 		i++;
 	}
 }

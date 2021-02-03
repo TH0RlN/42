@@ -6,16 +6,34 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 18:09:03 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/02 17:22:52 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/03 19:15:33 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	engine4(t_data *data, t_player *player, t_vector *ray)
+void	engine5(t_data *data, t_player *player)
 {
 	int x;
 
+	x = -1;
+	while (++x < data->resy / 2)
+		data->info_ptr[x * data->resx + data->x] = 0x79DAF7;
+	x--;
+	while (++x < data->resy)
+		data->info_ptr[x * data->resx + data->x] = 0x87440C;
+	x = data->draw_start;
+	while (x <= data->draw_end)
+	{
+		data->info_ptr[x * data->resx + data->x] = player->side == 1 ?
+		0x00FF00 : 0x0000FF;
+		//mlx_pixel_put(data->mlx_ptr, data->win_ptr, data->x, x, player->side == 1 ? 0x00FF00 : 0x0000FF);
+		x++;
+	}
+}
+
+void	engine4(t_data *data, t_player *player, t_vector *ray)
+{
 	if (player->side == 0)
 	{
 		player->perp_wall_dist = (player->int_pos_x - player->position->x +
@@ -33,12 +51,7 @@ void	engine4(t_data *data, t_player *player, t_vector *ray)
 	data->draw_end = player->line_height / 2 + data->resy / 2;
 	if (data->draw_end >= data->resy)
 		data->draw_end = data->resy - 1;
-	x = data->draw_start;
-	while (x <= data->draw_end)
-	{
-		mlx_pixel_put(data->mlx_ptr, data->win_ptr, data->x, x, player->side == 1 ? 0x00FF00 : 0x0000FF);
-		x++;
-	}
+	engine5(data, data->player);
 }
 
 void	engine3(t_data *data, t_player *player, t_vector *ray)
@@ -96,6 +109,8 @@ void	engine2(t_data *data, t_player *player, t_vector *ray)
 void	engine(t_data *data, t_player *player, t_vector *ray, t_vector *plane)
 {
 	mlx_clear_window(data->mlx_ptr, data->win_ptr);
+	data->img_ptr = mlx_new_image(data->mlx_ptr, data->resx, data->resy);
+	data->info_ptr = (int *)mlx_get_data_addr(data->img_ptr, &data->bpp, &data->ls, &data->endian);
 	data->x = 0;
 	while (data->x < data->resx)
 	{
@@ -104,27 +119,29 @@ void	engine(t_data *data, t_player *player, t_vector *ray, t_vector *plane)
 		ray->y = player->direction->y + plane->y * data->camara_x;
 		player->int_pos_x = (int)player->position->x;
 		player->int_pos_y = (int)player->position->y;
-		//player->delta_dist->x = fabs(1 / ray->x);
-		//player->delta_dist->y = fabs(1 / ray->y);
-
-		if (ray->y == 0)
-		{
-			player->delta_dist->x = 0;
-			player->delta_dist->y = (ray->x == 0) ? 0 : 1;
-		}
-		else if (ray->x == 0)
-		{
-			player->delta_dist->y = 0;
-			player->delta_dist->x = 1;
-		}
-		else
-		{
-			player->delta_dist->x = fabs(1 / ray->x);
-			player->delta_dist->y = fabs(1 / ray->y);
-		}
-
+		player->delta_dist->x = fabs(1 / ray->x);
+		player->delta_dist->y = fabs(1 / ray->y);
 		player->hit = 0;
 		engine2(data, player, ray);
 		data->x++;
 	}
+	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img_ptr, 0, 0);
+	mlx_destroy_image(data->mlx_ptr, data->img_ptr);
 }
+
+
+		//if (ray->y == 0)
+		//{
+		//	player->delta_dist->x = 0;
+		//	player->delta_dist->y = (ray->x == 0) ? 0 : 1;
+		//}
+		//else if (ray->x == 0)
+		//{
+		//	player->delta_dist->y = 0;
+		//	player->delta_dist->x = 1;
+		//}
+		//else
+		//{
+		//	player->delta_dist->x = fabs(1 / ray->x);
+		//	player->delta_dist->y = fabs(1 / ray->y);
+		//}

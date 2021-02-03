@@ -44,6 +44,8 @@
 					"${fileDirname}/engine.c",
 					"${fileDirname}/keys_manage.c",
 					"${fileDirname}/move.c",
+					"${fileDirname}/roto.c",
+					"${fileDirname}/print_errors.c",
 					"-L",
 					"/usr/local/lib/",
 					"-lmlx",

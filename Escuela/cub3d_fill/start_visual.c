@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 18:41:52 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/02 17:28:58 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/03 17:22:40 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,32 +27,32 @@ int		drawer(t_data *data)
 
 void	start_direction(t_data *data)
 {
-	if (data->direction == 'N')
+	if (data->direction == 'W')
 	{
 		data->player->direction->x = -1.0;
-		data->player->direction->y = 0.0;
-		data->plane->x = 0.0;
-		data->plane->y = 0.66;
-	}
-	else if (data->direction == 'S')
-	{
-		data->player->direction->x = 1.0;
 		data->player->direction->y = 0.0;
 		data->plane->x = 0.0;
 		data->plane->y = -0.66;
 	}
 	else if (data->direction == 'E')
 	{
+		data->player->direction->x = 1.0;
+		data->player->direction->y = 0.0;
+		data->plane->x = 0.0;
+		data->plane->y = 0.66;
+	}
+	else if (data->direction == 'S')
+	{
 		data->player->direction->x = 0.0;
 		data->player->direction->y = 1.0;
-		data->plane->x = 0.66;
+		data->plane->x = -0.66;
 		data->plane->y = 0.0;
 	}
-	else if (data->direction == 'W')
+	else if (data->direction == 'N')
 	{
 		data->player->direction->x = 0.0;
 		data->player->direction->y = -1.0;
-		data->plane->x = -0.66;
+		data->plane->x = 0.66;
 		data->plane->y = 0.0;
 	}
 	data->player->position->x = data->init_pos->x;

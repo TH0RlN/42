@@ -6,13 +6,13 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 18:30:02 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/02 18:45:16 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/03 17:15:17 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	rot_lf(t_data *data)
+void	rot_rt(t_data *data)
 {
 	double	olddir;
 	double	oldplane;
@@ -29,7 +29,7 @@ void	rot_lf(t_data *data)
 	data->plane->y * cos(ROT_SPEED);
 }
 
-void	rot_rt(t_data *data)
+void	rot_lf(t_data *data)
 {
 	double	olddir;
 	double	oldplane;

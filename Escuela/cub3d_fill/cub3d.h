@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 17:22:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/02 19:19:20 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/03 19:16:03 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # define W_KEY 13
 # define RT_KEY 124
 # define LF_KEY 123
+# define UP_KEY 126
+# define DW_KEY 125
 # define ESC_KEY 53
 # define MOVE_SPEED 0.1
 # define ROT_SPEED 0.05
@@ -106,8 +108,13 @@ typedef	struct	s_data
 	char		*text_ea;
 	char		*text_sp;
 	char		*line;
+	int			*info_ptr;
+	void		*img_ptr;
 	void		*mlx_ptr;
 	void		*win_ptr;
+	int			bpp;
+	int			ls;
+	int			endian;
 	double		camara_x;
 	t_keys		*keys;
 	t_player	*player;
