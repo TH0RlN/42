@@ -1,8 +1,8 @@
 R 1920 1080
-NO ./cosas.cub
-SO ./cosas.cub
-WE ./cosas.cub
-EA ./cosas.cub
+NO ./wood.xpm
+SO ./colorstone.xpm
+WE ./greystone.xpm
+EA ./redbrick.xpm
 S ./cosas.cub
 F 220,100,0
 C 225,30,0

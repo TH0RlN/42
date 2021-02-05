@@ -6,7 +6,7 @@
 #    By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/09 18:11:48 by rarias-p          #+#    #+#              #
-#    Updated: 2021/02/02 19:17:53 by rarias-p         ###   ########.fr        #
+#    Updated: 2021/02/04 15:47:13 by rarias-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ BFLAGS=-L /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit
 
 RM=rm -f
 
-SRC= gnl/get_next_line_bonus.c gnl/get_next_line_utils_bonus.c archives.c cub3d.c errors.c roto.c file_reader.c map_checker.c keys_manage.c move.c print_errors.c mapper.c utils.c error_numbers.c start_visual.c engine.c
+SRC= gnl/get_next_line_bonus.c gnl/get_next_line_utils_bonus.c archives.c cub3d.c errors.c roto.c file_reader.c map_checker.c keys_manage.c move.c print_errors.c mapper.c textures.c utils.c error_numbers.c start_visual.c engine.c
 
 SANI= -g -fsanitize=address
 
@@ -44,4 +44,4 @@ sanitize:
 
 .PHONY: all clean fclean re
 
-#-Wall -Wextra -Werror -I /usr/local/inlude libft.a gnl/get_next_line_bonus.c gnl/get_next_line_utils_bonus.c archives.c cub3d.c errors.c keys_manage.c print_errors.c roto.c move.c file_reader.c map_checker.c mapper.c utils.c error_numbers.c start_visual.c engine.c -L /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit
+#-Wall -Wextra -Werror -I /usr/local/inlude libft.a gnl/get_next_line_bonus.c gnl/get_next_line_utils_bonus.c archives.c cub3d.c errors.c keys_manage.c print_errors.c textures.c roto.c move.c file_reader.c map_checker.c mapper.c utils.c error_numbers.c start_visual.c engine.c -L /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit

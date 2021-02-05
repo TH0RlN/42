@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 17:22:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/03 19:16:03 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/05 18:24:28 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,10 +112,28 @@ typedef	struct	s_data
 	void		*img_ptr;
 	void		*mlx_ptr;
 	void		*win_ptr;
+	int			*n_info0;
+	int			*n_info1;
+	int			*n_info2;
+	int			*n_info3;
+	int			*n_info4;
+	int			**texture;
+	int			*n_text0;
+	int			*n_text1;
+	int			*n_text2;
+	int			*n_text3;
+	int			*n_text4;
 	int			bpp;
 	int			ls;
 	int			endian;
+	int			tex_x;
+	int			tex_y;
+	int			text_width;
+	int			text_height;
+	double		wall_x;
 	double		camara_x;
+	double		tex_pos;
+	double		step;
 	t_keys		*keys;
 	t_player	*player;
 	t_vector	*ray;
@@ -137,6 +155,8 @@ void			move_lf			(t_data *data);
 void			move_fwd		(t_data *data);
 void			move_back		(t_data *data);
 int				salida			(t_data *data);
+void			load_images		(t_data *data);
+void			draw_text		(t_data *data);
 void			print_errors	(t_data *data);
 void			error_resolution(t_data *data, int i);
 void			error_color		(t_data *data, int i);

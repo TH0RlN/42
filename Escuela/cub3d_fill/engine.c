@@ -6,13 +6,13 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 18:09:03 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/03 19:15:33 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/05 18:07:22 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	engine5(t_data *data, t_player *player)
+void	engine5(t_data *data)
 {
 	int x;
 
@@ -22,14 +22,8 @@ void	engine5(t_data *data, t_player *player)
 	x--;
 	while (++x < data->resy)
 		data->info_ptr[x * data->resx + data->x] = 0x87440C;
-	x = data->draw_start;
-	while (x <= data->draw_end)
-	{
-		data->info_ptr[x * data->resx + data->x] = player->side == 1 ?
-		0x00FF00 : 0x0000FF;
-		//mlx_pixel_put(data->mlx_ptr, data->win_ptr, data->x, x, player->side == 1 ? 0x00FF00 : 0x0000FF);
-		x++;
-	}
+	load_images(data);
+	draw_text(data);
 }
 
 void	engine4(t_data *data, t_player *player, t_vector *ray)
@@ -51,7 +45,7 @@ void	engine4(t_data *data, t_player *player, t_vector *ray)
 	data->draw_end = player->line_height / 2 + data->resy / 2;
 	if (data->draw_end >= data->resy)
 		data->draw_end = data->resy - 1;
-	engine5(data, data->player);
+	engine5(data);
 }
 
 void	engine3(t_data *data, t_player *player, t_vector *ray)
@@ -110,7 +104,8 @@ void	engine(t_data *data, t_player *player, t_vector *ray, t_vector *plane)
 {
 	mlx_clear_window(data->mlx_ptr, data->win_ptr);
 	data->img_ptr = mlx_new_image(data->mlx_ptr, data->resx, data->resy);
-	data->info_ptr = (int *)mlx_get_data_addr(data->img_ptr, &data->bpp, &data->ls, &data->endian);
+	data->info_ptr = (int *)mlx_get_data_addr(data->img_ptr,
+	&data->bpp, &data->ls, &data->endian);
 	data->x = 0;
 	while (data->x < data->resx)
 	{
@@ -145,3 +140,13 @@ void	engine(t_data *data, t_player *player, t_vector *ray, t_vector *plane)
 		//	player->delta_dist->x = fabs(1 / ray->x);
 		//	player->delta_dist->y = fabs(1 / ray->y);
 		//}
+
+
+
+	//x = data->draw_start;
+	//while (x <= data->draw_end)
+	//{
+	//	data->info_ptr[x * data->resx + data->x] = data->player->side == 1 ?
+	//	0x00FF00 : 0x0000FF;
+	//	x++;
+	//}
