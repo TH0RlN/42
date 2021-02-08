@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 18:09:03 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/05 18:07:22 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/08 16:35:20 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	engine5(t_data *data)
 	x--;
 	while (++x < data->resy)
 		data->info_ptr[x * data->resx + data->x] = 0x87440C;
-	load_images(data);
 	draw_text(data);
 }
 
@@ -106,6 +105,7 @@ void	engine(t_data *data, t_player *player, t_vector *ray, t_vector *plane)
 	data->img_ptr = mlx_new_image(data->mlx_ptr, data->resx, data->resy);
 	data->info_ptr = (int *)mlx_get_data_addr(data->img_ptr,
 	&data->bpp, &data->ls, &data->endian);
+	load_images(data);
 	data->x = 0;
 	while (data->x < data->resx)
 	{
