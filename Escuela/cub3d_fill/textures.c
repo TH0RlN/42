@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 15:46:34 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/08 16:32:43 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/08 17:03:50 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,18 +56,18 @@ void	choose_text(t_data *data, int y)
 	if (data->player->side == 1 && data->player->int_pos_y >
 	data->player->position->y)
 		data->info_ptr[y * data->resx + data->x] =
-		data->n_info0[data->text_height * data->tex_y + data->tex_x];
+		data->n_info1[data->text_height * data->tex_y + data->tex_x];
 	else if (data->player->side == 1 && data->player->int_pos_y <
 	data->player->position->y)
 		data->info_ptr[y * data->resx + data->x] =
-		data->n_info1[data->text_height * data->tex_y + data->tex_x];
+		data->n_info0[data->text_height * data->tex_y + data->tex_x];
 	else if (data->player->side == 0 && data->player->int_pos_x >
 	data->player->position->x)
 		data->info_ptr[y * data->resx + data->x] =
-		data->n_info2[data->text_height * data->tex_y + data->tex_x];
+		data->n_info3[data->text_height * data->tex_y + data->tex_x];
 	else
 		data->info_ptr[y * data->resx + data->x] =
-		data->n_info3[data->text_height * data->tex_y + data->tex_x];
+		data->n_info2[data->text_height * data->tex_y + data->tex_x];
 }
 
 void	draw_text2(t_data *data)

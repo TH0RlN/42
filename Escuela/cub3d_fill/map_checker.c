@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 18:28:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/02 19:21:08 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/08 17:39:03 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,11 @@ void	remove2(t_data *data)
 	int		i;
 	int		j;
 
-	i = 0;
-	j = 0;
-	while (j < data->lines_map)
+	j = -1;
+	while (++j < data->lines_map)
 	{
-		i = 0;
-		while (data->fill_map[j][i] != '\0')
+		i = -1;
+		while (data->fill_map[j][++i] != '\0')
 		{
 			if (data->fill_map[j][i] == 'N' || data->fill_map[j][i] == 'S'
 			|| data->fill_map[j][i] == 'E' || data->fill_map[j][i] == 'W')
@@ -78,10 +77,11 @@ void	remove2(t_data *data)
 					initial_pos(data, i, j);
 			}
 			else if (data->fill_map[j][i] == '2')
+			{
 				data->fill_map[j][i] = '0';
-			i++;
+				data->n_of_2s++;
+			}
 		}
-		j++;
 	}
 }
 

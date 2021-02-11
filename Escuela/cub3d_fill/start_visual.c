@@ -6,17 +6,11 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 18:41:52 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/08 16:31:40 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/10 16:54:44 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-int		salida(t_data *data)
-{
-	go_dark(data);
-	exit(EXIT_SUCCESS);
-}
 
 int		drawer(t_data *data)
 {
@@ -62,6 +56,7 @@ void	start_direction(t_data *data)
 
 void	main_loop(t_data *data)
 {
+	data->z_buffrer = malloc((sizeof(double)) * data->resx + 1);
 	start_direction(data);
 	data->mlx_ptr = mlx_init();
 	data->win_ptr = mlx_new_window(data->mlx_ptr, data->resx, data->resy,

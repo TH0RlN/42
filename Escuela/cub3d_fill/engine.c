@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 18:09:03 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/08 16:35:20 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/11 16:51:51 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ void	engine3(t_data *data, t_player *player, t_vector *ray)
 			player->side = 1;
 		}
 		if (!(player->int_pos_x >= 0 && player->int_pos_y >= 0) ||
+		!(((int)ft_strlen(data->matrix_map[player->int_pos_y])) >=
+		player->int_pos_x) ||
 		(data->int_map[player->int_pos_y][player->int_pos_x] == 1))
 			player->hit = 1;
 	}
@@ -118,8 +120,10 @@ void	engine(t_data *data, t_player *player, t_vector *ray, t_vector *plane)
 		player->delta_dist->y = fabs(1 / ray->y);
 		player->hit = 0;
 		engine2(data, player, ray);
+		data->z_buffrer[data->x] = data->player->perp_wall_dist;
 		data->x++;
 	}
+	sprites(data);
 	mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->img_ptr, 0, 0);
 	mlx_destroy_image(data->mlx_ptr, data->img_ptr);
 }

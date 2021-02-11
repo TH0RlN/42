@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 17:45:40 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/02 19:20:26 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/10 16:53:21 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	init(t_data *data)
 	data->player->int_pos_y = 0;
 	data->draw_end = 0;
 	data->draw_start = 0;
+	data->n_of_2s = 0;
 	data->keys->a = 0;
 	data->keys->s = 0;
 	data->keys->d = 0;

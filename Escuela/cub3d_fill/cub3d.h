@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 17:22:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/08 16:27:26 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/11 18:51:04 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,10 @@ typedef	struct	s_data
 	int			lines_map;
 	int			draw_start;
 	int			draw_end;
+	int			draw_start_x;
+	int			draw_end_x;
+	int			draw_start_y;
+	int			draw_end_y;
 	int			**int_map;
 	char		direction;
 	char		*map;
@@ -130,10 +134,27 @@ typedef	struct	s_data
 	int			tex_y;
 	int			text_width;
 	int			text_height;
+	int			n_of_2s;
+	int			d;
+	int			sprite_texx;
+	int			sprite_texy;
+	int			sprite_screen_x;
+	int			sprite_height;
+	int			sprite_width;
+	int			*sprite_order;
+	double		*sprite_distance;	
+	double		*sprite_x;
+	double		*sprite_y;
+	double		sprite_pos_x;
+	double		sprite_pos_y;
+	double		transform_x;
+	double		transform_y;
+	double		invdet;
 	double		wall_x;
 	double		camara_x;
 	double		tex_pos;
 	double		step;
+	double		*z_buffrer;	
 	t_keys		*keys;
 	t_player	*player;
 	t_vector	*ray;
@@ -145,6 +166,8 @@ typedef	struct	s_data
 	t_errors	*errors;
 }				t_data;
 
+
+void			sprites			(t_data *data);
 int				keys_released	(int key, t_data *data);
 int				keys_press		(int key, t_data *data);
 void			keys_change		(t_data *data, t_keys *keys);
