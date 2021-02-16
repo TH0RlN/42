@@ -6,7 +6,7 @@
 #    By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/09 18:11:48 by rarias-p          #+#    #+#              #
-#    Updated: 2021/02/10 16:58:27 by rarias-p         ###   ########.fr        #
+#    Updated: 2021/02/16 17:11:49 by rarias-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,12 +36,13 @@ clean:
 	
 fclean: clean
 		@$(RM) $(NAME)
+		@$(RM) sanitize.out
 
 re: fclean all
 
 sanitize:
 		@$(CC) -I /usr/local/inlude $(SRC) libft.a $(BFLAGS) $(SANI) -o sanitize.out;
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean all
 
 #-Wall -Wextra -Werror -I /usr/local/inlude libft.a gnl/get_next_line_bonus.c gnl/get_next_line_utils_bonus.c archives.c cub3d.c errors.c keys_manage.c print_errors.c textures.c sprites.c roto.c move.c file_reader.c map_checker.c mapper.c utils.c error_numbers.c start_visual.c engine.c -L /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit

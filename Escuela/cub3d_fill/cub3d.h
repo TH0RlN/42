@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 17:22:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/11 18:51:04 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/16 17:33:54 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,6 +185,7 @@ void			error_resolution(t_data *data, int i);
 void			error_color		(t_data *data, int i);
 int				fill			(t_data *data, int i, int j);
 int				start_fill		(t_data *data);
+void			save_2s			(t_data *data, int n_of_2s);
 void			remove2			(t_data *data);
 void			mapper			(t_data *data);
 void			check_map		(t_data *data);

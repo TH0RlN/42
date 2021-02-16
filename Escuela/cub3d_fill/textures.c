@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 15:46:34 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/08 17:03:50 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/12 17:12:42 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void		array_image(t_data *data)
 	data->texture[1] = data->n_info1;
 	data->texture[2] = data->n_info2;
 	data->texture[3] = data->n_info3;
-	//data->texture[4] = data->n_info4;
+	data->texture[4] = data->n_info4;
 }
 
 void	load_images(t_data *data)
@@ -37,8 +37,8 @@ void	load_images(t_data *data)
 	&width, &height);
 	data->n_text3 = mlx_xpm_file_to_image(data->mlx_ptr, data->text_ea,
 	&width, &height);
-	//data->n_text4 = mlx_xpm_file_to_image(data->mlx_ptr, data->text_sp,
-	//&width, &height);
+	data->n_text4 = mlx_xpm_file_to_image(data->mlx_ptr, data->text_sp,
+	&width, &height);
 	data->n_info0 = (int *)mlx_get_data_addr(data->n_text0, &data->bpp,
 	&data->ls, &data->endian);
 	data->n_info1 = (int *)mlx_get_data_addr(data->n_text1, &data->bpp,
@@ -47,8 +47,8 @@ void	load_images(t_data *data)
 	&data->ls, &data->endian);
 	data->n_info3 = (int *)mlx_get_data_addr(data->n_text3, &data->bpp,
 	&data->ls, &data->endian);
-	//data->n_info4 = (int *)mlx_get_data_addr(data->n_text4, &data->bpp,
-	//&data->ls, &data->endian);
+	data->n_info4 = (int *)mlx_get_data_addr(data->n_text4, &data->bpp,
+	&data->ls, &data->endian);
 }
 
 void	choose_text(t_data *data, int y)

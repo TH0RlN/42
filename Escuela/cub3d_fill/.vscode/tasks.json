@@ -1,97 +1,96 @@
 {
-// Vea https://go.microsoft.com/fwlink/?LinkId=733558
-	// para la documentación acerca del formato tasks.json
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"type": "shell",
-			"label": "clang build active file",
-			"command": "/usr/bin/clang",
-			"args": [
-				"-g",
-				"${file}",
-				"-o",
-				"${fileDirname}/${fileBasenameNoExtension}"
-			],
-			"options": {
-				"cwd": "/usr/bin"
-			},
-			"problemMatcher": [
-				"$gcc"
-			],
-			"group": "build"
-		},
-		{
-			"type": "shell",
-			"label": "todos",
-			"command": "/usr/bin/gcc",
-			"args": [
-					"-I",
-					"/usr/local/inlude",
-					"-g",
-					"${fileDirname}/file_reader.c",
-					"${fileDirname}/gnl/get_next_line_bonus.c",
-					"${fileDirname}/gnl/get_next_line_utils_bonus.c",
-					"${fileDirname}/libft.a",
-					"${fileDirname}/mapper.c",
-					"${fileDirname}/archives.c",
-					"${fileDirname}/utils.c",
-					"${fileDirname}/cub3d.c",
-					"${fileDirname}/map_checker.c",
-					"${fileDirname}/errors.c",
-					"${fileDirname}/error_numbers.c",
-					"${fileDirname}/start_visual.c",
-					"${fileDirname}/engine.c",
-					"${fileDirname}/keys_manage.c",
-					"${fileDirname}/move.c",
-					"${fileDirname}/roto.c",
-					"${fileDirname}/textures.c",
-					"${fileDirname}/print_errors.c",
-					"-L",
-					"/usr/local/lib/",
-					"-lmlx",
-					"-framework",
-					"OpenGL",
-					"-framework",
-					"AppKit",
-					"-o",
-					"${fileDirname}/cub3d.out"
-			],
-			"options": {
-					"cwd": "/usr/bin"
-			},
-			"problemMatcher": [
-					"$gcc"
-			],
-			"group": "build"
-		},
-		{
-			"type": "shell",
-			"label": "gcc build active file",
-			"command": "/usr/bin/gcc",
-			"args": [
-				"-I",
-				"/usr/local/include/",
-				"main.c",
-				"-L",
-				"/usr/local/lib",
-				"-lmlx",
-				"-framework",
-				"OpenGL",
-				"-framework",
-				"AppKit",
-				"-g",
-				"${file}",
-				"-o",
-				"${fileDirname}/${fileBasenameNoExtension}"
-			],
-			"options": {
-				"cwd": "/usr/bin"
-			},
-			"problemMatcher": [
-				"$gcc"
-			],
-			"group": "build"
-		}
-	]
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "clang build active file",
+            "command": "/usr/bin/clang",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "/usr/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "todos",
+            "command": "/usr/bin/gcc",
+            "args": [
+                "-I",
+                "/usr/local/inlude",
+                "-g",
+                "${fileDirname}/file_reader.c",
+                "${fileDirname}/gnl/get_next_line_bonus.c",
+                "${fileDirname}/gnl/get_next_line_utils_bonus.c",
+                "${fileDirname}/libft.a",
+                "${fileDirname}/mapper.c",
+                "${fileDirname}/archives.c",
+                "${fileDirname}/utils.c",
+                "${fileDirname}/cub3d.c",
+                "${fileDirname}/map_checker.c",
+                "${fileDirname}/errors.c",
+                "${fileDirname}/error_numbers.c",
+                "${fileDirname}/start_visual.c",
+                "${fileDirname}/engine.c",
+                "${fileDirname}/keys_manage.c",
+                "${fileDirname}/move.c",
+                "${fileDirname}/roto.c",
+                "${fileDirname}/textures.c",
+                "${fileDirname}/sprites.c",
+                "${fileDirname}/print_errors.c",
+                "-L",
+                "/usr/local/lib/",
+                "-lmlx",
+                "-framework",
+                "OpenGL",
+                "-framework",
+                "AppKit",
+                "-o",
+                "${fileDirname}/cub3d.out"
+            ],
+            "options": {
+                "cwd": "/usr/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "gcc build active file",
+            "command": "/usr/bin/gcc",
+            "args": [
+                "-I",
+                "/usr/local/include/",
+                "main.c",
+                "-L",
+                "/usr/local/lib",
+                "-lmlx",
+                "-framework",
+                "OpenGL",
+                "-framework",
+                "AppKit",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "/usr/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        }
+    ]
 }

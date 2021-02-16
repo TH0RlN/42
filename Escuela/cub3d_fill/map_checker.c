@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 18:28:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/08 17:39:03 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/16 17:25:55 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ void	remove2(t_data *data)
 			}
 		}
 	}
+	save_2s(data, data->n_of_2s);
 }
 
 void	check_map(t_data *data)

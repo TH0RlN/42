@@ -6,15 +6,36 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 17:50:10 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/11 19:07:50 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/16 17:40:07 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	sort_sprites(t_data *data)
+void	sort_sprites(t_data *data, int i)
 {
-	
+	int temp;
+
+	while (i < (data->n_of_2s - 1))
+	{
+		if (data->sprite_distance[i] < data->sprite_distance[i + 1])
+		{
+			temp = data->sprite_distance[i];
+			data->sprite_distance[i] = data->sprite_distance[i + 1];
+			data->sprite_distance[i + 1] = temp;
+			temp = data->sprite_order[i];
+			data->sprite_order[i] = data->sprite_order[i + 1];
+			data->sprite_order[i + 1] = temp;
+			temp = data->sprite_x[i];
+			data->sprite_x[i] = data->sprite_x[i + 1];
+			data->sprite_x[i + 1] = temp;
+			temp = data->sprite_y[i];
+			data->sprite_y[i] = data->sprite_y[i + 1];
+			data->sprite_y[i + 1] = temp;
+		}
+		else
+			i++;
+	}
 }
 
 void	sprites4(t_data *data)
@@ -29,16 +50,16 @@ void	sprites4(t_data *data)
 		data->sprite_screen_x)) * data->text_width / data->sprite_width) / 256;
 		y = data->draw_start_y - 1;
 		if (data->transform_y > 0 && stripe > 0 && stripe < data->resx
-		&& data->transform_y < data->z_buffrer[stripe])
+		/*&& data->transform_y < data->z_buffrer[stripe]*/)
 			while (++y < data->draw_end_y)
 			{
 				data->d = y * 256 - data->resy * 128 + data->sprite_height
 				* 128;
 				data->sprite_texy = ((data->d * data->text_height)
 				/ data->sprite_height) / 256;
-				if (data->texture[4][data->text_width * data->sprite_texy
+				if (data->n_info4[data->text_width * data->sprite_texy
 				+ data->sprite_texx] != 0)
-					data->info_ptr[y * data->resx + stripe] = data->texture[4]
+					data->info_ptr[y * data->resx + stripe] = data->n_info4
 					[data->text_width * data->sprite_texy + data->sprite_texx];
 			}
 	}
@@ -90,6 +111,8 @@ void	sprites(t_data *data)
 {
 	int i;
 
+	data->sprite_order = malloc(sizeof(int *) * data->n_of_2s);
+	data->sprite_distance = malloc(sizeof(int *) * data->n_of_2s);
 	i = -1;
 	while (++i < data->n_of_2s)
 	{
@@ -100,6 +123,6 @@ void	sprites(t_data *data)
 		data->sprite_y[i])
 		* (data->player->position->y - data->sprite_y[i]));
 	}
-	sort_sprites(); //TO DO
+	sort_sprites(data, 0);
 	sprites2(data);
 }
