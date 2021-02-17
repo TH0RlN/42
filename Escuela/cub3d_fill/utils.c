@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/08 19:25:52 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/17 16:37:16 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/17 19:07:10 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,20 +55,20 @@ void	save_2s(t_data *data, int n_of_2s)
 
 	j = 0;
 	k = 0;
-	data->sprite_x = malloc(sizeof(int *) * data->n_of_2s);
-	data->sprite_y = malloc(sizeof(int *) * data->n_of_2s);
+	data->sprite_x = malloc(sizeof(int *) * n_of_2s);
+	data->sprite_y = malloc(sizeof(int *) * n_of_2s);
 	while (j < data->lines_map && k < n_of_2s)
 	{
 		i = 0;
-		while (data->fill_map[j][i] != '\0' && k < n_of_2s)
+		while (data->matrix_map[j][i] != '\0' && k < n_of_2s)
 		{
-			if (data->fill_map[j][i] == '2')
+			if (data->matrix_map[j][i] == '2')
 			{
 				data->sprite_x[k] = i;
 				data->sprite_y[k++] = j;
 			}
 			i++;
 		}
-		j++
+		j++;
 	}
 }

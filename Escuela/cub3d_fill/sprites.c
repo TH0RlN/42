@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 17:50:10 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/16 18:21:43 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/17 18:37:57 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,18 @@ void	sort_sprites(t_data *data, int i)
 	{
 		if (data->sprite_distance[i] < data->sprite_distance[i + 1])
 		{
-			temp = data->sprite_distance[i];
-			data->sprite_distance[i] = data->sprite_distance[i + 1];
-			data->sprite_distance[i + 1] = temp;
 			temp = data->sprite_order[i];
 			data->sprite_order[i] = data->sprite_order[i + 1];
 			data->sprite_order[i + 1] = temp;
-			temp = data->sprite_x[i];
-			data->sprite_x[i] = data->sprite_x[i + 1];
-			data->sprite_x[i + 1] = temp;
-			temp = data->sprite_y[i];
-			data->sprite_y[i] = data->sprite_y[i + 1];
-			data->sprite_y[i + 1] = temp;
+			temp = data->sprite_distance[i];
+			data->sprite_distance[i] = data->sprite_distance[i + 1];
+			data->sprite_distance[i + 1] = temp;
+			//temp = data->sprite_x[i];
+			//data->sprite_x[i] = data->sprite_x[i + 1];
+			//data->sprite_x[i + 1] = temp;
+			//temp = data->sprite_y[i];
+			//data->sprite_y[i] = data->sprite_y[i + 1];
+			//data->sprite_y[i + 1] = temp;
 		}
 		else
 			i++;
@@ -50,7 +50,7 @@ void	sprites4(t_data *data)
 		data->sprite_screen_x)) * data->text_width / data->sprite_width) / 256;
 		y = data->draw_start_y - 1;
 		if (data->transform_y > 0 && stripe > 0 && stripe < data->resx
-		/*&& data->transform_y < data->z_buffrer[stripe]*/)
+		&& data->transform_y < data->z_buffrer[stripe])
 			while (++y < data->draw_end_y)
 			{
 				data->d = y * 256 - data->resy * 128 + data->sprite_height
@@ -92,15 +92,15 @@ void	sprites2(t_data *data)
 	while (++i < data->n_of_2s)
 	{
 		data->sprite_pos_x = data->sprite_x[data->sprite_order[i]]
-		- data->player->position->x;
+		- data->player->position->x + 0.5;
 		data->sprite_pos_y = data->sprite_y[data->sprite_order[i]]
-		- data->player->position->y;
+		- data->player->position->y + 0.5;
 		data->invdet = 1.0 / (data->plane->x * data->player->direction->y
-		- data->plane->y * data->player->direction->x);
+		- data->player->direction->x * data->plane->y);
 		data->transform_x = data->invdet * (data->player->direction->y
 		* data->sprite_pos_x - data->player->direction->x * data->sprite_pos_y);
-		data->transform_y = (-data->plane->y * data->sprite_pos_x +
-		data->plane->x * data->sprite_pos_y);
+		data->transform_y = data->invdet * (-data->plane->y * data->sprite_pos_x
+		+ data->plane->x * data->sprite_pos_y);
 		data->sprite_screen_x = (int)((data->resx / 2) *
 		(1 + data->transform_x / data->transform_y));
 		sprites3(data);
@@ -112,7 +112,7 @@ void	sprites(t_data *data)
 	int i;
 
 	data->sprite_order = malloc(sizeof(int *) * data->n_of_2s);
-	data->sprite_distance = malloc(sizeof(int *) * data->n_of_2s);
+	data->sprite_distance = malloc(sizeof(double *) * data->n_of_2s);
 	i = -1;
 	while (++i < data->n_of_2s)
 	{
