@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 17:22:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/16 17:33:54 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/19 17:26:24 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -200,6 +200,7 @@ void			color_ceiling	(t_data *data, int i);
 int				btwsp			(t_data *data, int i);
 int				errors			(t_data *data);
 void			main_loop		(t_data *data);
+void			init			(t_data *data);
 void			go_dark			(t_data *data);
 /*
 ** **************************************************************************
@@ -221,6 +222,7 @@ int				ft_checker		(int fd, char **line, char **file, int ret);
 */
 void			*ft_bzero		(void *s, size_t n);
 int				ft_atoi			(const char *str);
+int				ft_strcmp		(const char *s1, const char *s2);
 int				ft_strncmp		(const char *s1, const char *s2, size_t n);
 #endif
 

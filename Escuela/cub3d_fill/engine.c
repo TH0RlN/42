@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 18:09:03 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/15 16:51:12 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/19 17:06:43 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,29 +128,13 @@ void	engine(t_data *data, t_player *player, t_vector *ray, t_vector *plane)
 	mlx_destroy_image(data->mlx_ptr, data->img_ptr);
 }
 
-
-		//if (ray->y == 0)
-		//{
-		//	player->delta_dist->x = 0;
-		//	player->delta_dist->y = (ray->x == 0) ? 0 : 1;
-		//}
-		//else if (ray->x == 0)
-		//{
-		//	player->delta_dist->y = 0;
-		//	player->delta_dist->x = 1;
-		//}
-		//else
-		//{
-		//	player->delta_dist->x = fabs(1 / ray->x);
-		//	player->delta_dist->y = fabs(1 / ray->y);
-		//}
-
-
-
-	//x = data->draw_start;
-	//while (x <= data->draw_end)
-	//{
-	//	data->info_ptr[x * data->resx + data->x] = data->player->side == 1 ?
-	//	0x00FF00 : 0x0000FF;
-	//	x++;
-	//}
+/*
+** For an untextured raycaster you can use this piece of code
+** 	x = data->draw_start;
+** 	while (x <= data->draw_end)
+** 	{
+** 		data->info_ptr[x * data->resx + data->x] = data->player->side == 1 ?
+** 		0x00FF00 : 0x0000FF;
+** 		x++;
+** 	}
+*/

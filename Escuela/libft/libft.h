@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 17:08:02 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/09/07 19:54:09 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/19 17:24:06 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ char			*ft_strjoin		(char const *s1, char const *s2);
 size_t			ft_strlcat		(char *dst, const char *src, size_t dstsize);
 size_t			ft_strlcpy		(char *dest, const char *src, size_t size);
 size_t			ft_strlen		(const char *str);
+int				ft_strcmp		(const char *s1, const char *s2);
 int				ft_strncmp		(const char *s1, const char *s2, size_t n);
 char			*ft_strnstr		(const char *haystack,
 				const char *needle, size_t len);
