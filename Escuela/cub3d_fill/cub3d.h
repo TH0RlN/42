@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 17:22:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/22 17:27:43 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/22 19:20:07 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,7 +142,7 @@ typedef	struct	s_data
 	int			sprite_height;
 	int			sprite_width;
 	int			*sprite_order;
-	double		*sprite_distance;	
+	double		*sprite_distance;
 	double		*sprite_x;
 	double		*sprite_y;
 	double		sprite_pos_x;
@@ -154,7 +154,7 @@ typedef	struct	s_data
 	double		camara_x;
 	double		tex_pos;
 	double		step;
-	double		*z_buffrer;	
+	double		*z_buffrer;
 	t_keys		*keys;
 	t_player	*player;
 	t_vector	*ray;
