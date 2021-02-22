@@ -6,28 +6,32 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/19 17:41:55 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/19 18:07:18 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/22 17:38:41 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int bmp_data(t_data *data)
+int		bmp_data(t_data *data, int fd)
 {
 	int h;
 	int w;
 	int color;
-	
+
 	h = 0;
 	while (h < data->resy)
 	{
 		w = 0;
 		while (w < data->resx)
 		{
-			color = data->
+			color = data->info_ptr[data->resx * (data->resy - 1 - h) + w];
+			if (write(fd, &color, 4) < 0)
+				return (1);
+			w++;
 		}
-		
+		h++;
 	}
+	return (0);
 }
 
 void	header_dib(t_data *data, int fd, int hex)
@@ -77,15 +81,21 @@ void	save_bmp(t_data *data)
 {
 	int		fd;
 
+	data->z_buffrer = malloc((sizeof(double)) * data->resx + 1);
+	start_direction(data);
+	data->mlx_ptr = mlx_init();
+	data->win_ptr = mlx_new_window(data->mlx_ptr, data->resx, data->resy,
+	"");
 	drawer(data);
 	if (!(fd = open("save.bmp", O_WRONLY | O_TRUNC | O_APPEND | O_CREAT,
-	066)))
+	0444)))
 	{
 		close(fd);
 		go_dark(data);
 	}
-	headers(data, fd);
-	if (bmp_data(data))
+	header_bmp(data, fd);
+	if (bmp_data(data, fd))
 		go_dark(data);
+	mlx_destroy_window(data->mlx_ptr, data->win_ptr);
 	close(fd);
 }

@@ -6,33 +6,14 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/19 16:54:00 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/19 16:54:44 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/22 17:57:59 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	init(t_data *data)
+void	init2(t_data *data)
 {
-	data->init_pos = malloc(sizeof(t_vector));
-	data->ceiling = malloc(sizeof(t_color));
-	data->errors = malloc(sizeof(t_errors));
-	data->floor = malloc(sizeof(t_color));
-	data->keys = malloc(sizeof(t_keys));
-	data->ray = malloc(sizeof(t_vector));
-	data->plane = malloc(sizeof(t_vector));
-	data->player = malloc(sizeof(t_player));
-	data->player->position = malloc(sizeof(t_vector));
-	data->player->side_dist = malloc(sizeof(t_vector));
-	data->player->direction = malloc(sizeof(t_vector));
-	data->player->delta_dist = malloc(sizeof(t_vector));
-	data->player->line_height = 0;
-	data->plane->x = 0;
-	data->plane->y = 0;
-	data->check = 0;
-	data->resx = 0;
-	data->counter = 0;
-	data->resy = 0;
 	data->errors->map = 0;
 	data->errors->colors = 0;
 	data->errors->general = 0;
@@ -55,6 +36,30 @@ void	init(t_data *data)
 	data->keys->rt = 0;
 	data->keys->lf = 0;
 	data->keys->esc = 0;
+}
+
+void	init(t_data *data)
+{
+	data->init_pos = malloc(sizeof(t_vector));
+	data->ceiling = malloc(sizeof(t_color));
+	data->errors = malloc(sizeof(t_errors));
+	data->floor = malloc(sizeof(t_color));
+	data->keys = malloc(sizeof(t_keys));
+	data->ray = malloc(sizeof(t_vector));
+	data->plane = malloc(sizeof(t_vector));
+	data->player = malloc(sizeof(t_player));
+	data->player->position = malloc(sizeof(t_vector));
+	data->player->side_dist = malloc(sizeof(t_vector));
+	data->player->direction = malloc(sizeof(t_vector));
+	data->player->delta_dist = malloc(sizeof(t_vector));
+	data->player->line_height = 0;
+	data->plane->x = 0;
+	data->plane->y = 0;
+	data->check = 0;
+	data->resx = 0;
+	data->counter = 0;
+	data->resy = 0;
+	init2(data);
 }
 
 void	go_dark(t_data *data)
@@ -97,4 +102,3 @@ void	go_dark(t_data *data)
 	//free(data);
 	write(1, "GOING DARK \n", 13);
 }
-

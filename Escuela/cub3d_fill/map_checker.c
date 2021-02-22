@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 18:28:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/16 17:25:55 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/22 17:49:15 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,11 +99,4 @@ void	check_map(t_data *data)
 		data->errors->map++;
 		data->errors->general++;
 	}
-	//printf("\n\n");
-	//while (i < data->lines_map)
-	//	printf("%s\n", data->fill_map[i++]);
-	//if (check == 1)
-	//	printf("\n\nMapa no válido\n");
-	//else
-	//	printf("\n\nMapa válido\n");
 }

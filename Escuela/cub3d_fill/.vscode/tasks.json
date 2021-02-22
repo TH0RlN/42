@@ -46,6 +46,7 @@
                 "${fileDirname}/textures.c",
                 "${fileDirname}/sprites.c",
                 "${fileDirname}/print_errors.c",
+                "${fileDirname}/save_bmp.c",
                 "${fileDirname}/in_and_out.c",
                 "-L",
                 "/usr/local/lib/",

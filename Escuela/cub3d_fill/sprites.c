@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 17:50:10 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/17 18:37:57 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/22 17:50:12 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,6 @@ void	sort_sprites(t_data *data, int i)
 			temp = data->sprite_distance[i];
 			data->sprite_distance[i] = data->sprite_distance[i + 1];
 			data->sprite_distance[i + 1] = temp;
-			//temp = data->sprite_x[i];
-			//data->sprite_x[i] = data->sprite_x[i + 1];
-			//data->sprite_x[i + 1] = temp;
-			//temp = data->sprite_y[i];
-			//data->sprite_y[i] = data->sprite_y[i + 1];
-			//data->sprite_y[i + 1] = temp;
 		}
 		else
 			i++;
@@ -74,7 +68,7 @@ void	sprites3(t_data *data)
 	data->draw_end_y = data->sprite_height / 2 + data->resy / 2;
 	if (data->draw_end_y >= data->resy)
 		data->draw_end_y = data->resy - 1;
-	data->sprite_width = abs((int)(data->resy / data->transform_y)); //Está bien? resx transform_x
+	data->sprite_width = abs((int)(data->resy / data->transform_y));
 	data->draw_start_x = -data->sprite_width / 2 + data->sprite_screen_x;
 	if (data->draw_start_x < 0)
 		data->draw_start_x = 0;

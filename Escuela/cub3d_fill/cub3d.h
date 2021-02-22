@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 17:22:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/19 17:26:24 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/22 17:27:43 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,7 +166,7 @@ typedef	struct	s_data
 	t_errors	*errors;
 }				t_data;
 
-
+void			save_bmp		(t_data *data);
 void			sprites			(t_data *data);
 int				keys_released	(int key, t_data *data);
 int				keys_press		(int key, t_data *data);
@@ -192,7 +192,9 @@ void			check_map		(t_data *data);
 void			copy_map		(t_data *data);
 void			get_data		(t_data *data);
 void			resolution		(t_data *data, int i);
+void			start_direction	(t_data *data);
 void			text			(t_data *data, char *dir, int i);
+int				drawer			(t_data *data);
 void			engine			(t_data *data, t_player *player,
 								t_vector *ray, t_vector *plane);
 void			color			(t_data *data, char dir, int i);
