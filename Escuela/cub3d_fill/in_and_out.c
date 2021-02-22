@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/19 16:54:00 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/22 17:57:59 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/22 19:15:08 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,43 +62,41 @@ void	init(t_data *data)
 	init2(data);
 }
 
+void	go_dark2(t_data *data)
+{
+	free(data->matrix_map);
+	free(data->map);
+	free(data->player->delta_dist);
+	free(data->player->direction);
+	free(data->player->side_dist);
+	free(data->player->position);
+	free(data->player);
+	free(data->plane);
+	free(data->ray);
+	free(data->keys);
+	free(data->floor);
+	free(data->errors);
+	free(data->ceiling);
+	free(data->init_pos);
+	free(data);
+	write(1, "GOING DARK \n", 13);
+}
+
 void	go_dark(t_data *data)
 {
-	//ft_bzero(data->ray, sizeof(t_vector));
-	//ft_bzero(data->plane, sizeof(t_vector));
-	//ft_bzero(data->player->position, sizeof(t_vector));
-	//ft_bzero(data->player->side_dist, sizeof(t_vector));
-	//ft_bzero(data->player->direction, sizeof(t_vector));
-	//ft_bzero(data->player->delta_dist, sizeof(t_vector));
-	//ft_bzero(data->player, sizeof(t_player));
-	//free(data->ray);
-	//free(data->plane);
-	//free(data->player->position);
-	//free(data->player->side_dist);
-	//free(data->player->direction);
-	//free(data->player->delta_dist);
-	//free(data->player);
-	//free(data->init_pos);
-	//free(data->line);
-	//free(data->ceiling);
-	//free(data->floor);
-	//free(data->errors);
-	//free(data->text_no);
-	//free(data->text_so);
-	//free(data->text_ea);
-	//free(data->text_we);
-	//free(data->text_sp);
-	//free(data->map);
-	//free(data->player->position);
-	//free(data->player->direction);
-	//free(data->player);
-	//while (data->counter < data->lines_map)
-	//	free(data->matrix_map[data->counter++]);
-	//free(data->matrix_map);
+	free(data->win_ptr);
+	free(data->mlx_ptr);
+	free(data->z_buffrer);
 	data->counter = 0;
-	//while (data->counter < data->lines_map)
-	//	free(data->fill_map[data->counter++]);
-	//free(data->fill_map);
-	//free(data);
-	write(1, "GOING DARK \n", 13);
+	while (data->counter < data->lines_map)
+		free(data->fill_map[data->counter++]);
+	free(data->fill_map);
+	data->counter = 0;
+	while (data->counter < data->lines_map)
+		free(data->int_map[data->counter++]);
+	free(data->int_map);
+	data->counter = 0;
+	while (data->counter < data->lines_map)
+		free(data->matrix_map[data->counter++]);
+	go_dark2(data);
 }

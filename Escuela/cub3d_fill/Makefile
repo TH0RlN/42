@@ -6,7 +6,7 @@
 #    By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/09 18:11:48 by rarias-p          #+#    #+#              #
-#    Updated: 2021/02/22 17:20:36 by rarias-p         ###   ########.fr        #
+#    Updated: 2021/02/22 19:15:30 by rarias-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,9 @@ fclean: clean
 		@$(RM) sanitize.out
 
 re: fclean all
+
+valgrind:
+		@$(CC) -g $(CFLAGS) $(SRC) libft.a $(BFLAGS) -o debug.out;
 
 sanitize:
 		@$(CC) -I /usr/local/inlude $(SRC) libft.a $(BFLAGS) $(SANI) -o sanitize.out;
