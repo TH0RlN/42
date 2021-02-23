@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 18:42:49 by rarias-p          #+#    #+#             */
-/*   Updated: 2020/11/30 19:05:47 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/23 17:30:51 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,16 @@ int		texture_err2(t_data *data, int fd)
 	if (0 > (fd = open(data->text_so, O_RDONLY)))
 		return (1);
 	else
-	{
 		close(fd);
-		return (0);
-	}
 	if (0 > (fd = open(data->text_sp, O_RDONLY)))
 		return (1);
 	else
-	{
 		close(fd);
-		return (0);
-	}
 	if (0 > (fd = open(data->text_we, O_RDONLY)))
 		return (1);
 	else
-	{
 		close(fd);
-		return (0);
-	}
+	return (0);
 }
 
 int		texture_err(t_data *data)
