@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/02 19:06:01 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/02 19:19:11 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/23 19:05:14 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	print_errors(t_data *data)
 {
-	int i;
-
-	i = 0;
 	write(1, "Error\n", 7);
 	write(1, "Bad file formating\n", 20);
 	if (data->errors->map)
@@ -27,5 +24,13 @@ void	print_errors(t_data *data)
 		write(1, "\tInvalid texture\n", 18);
 	if (data->errors->resolution)
 		write(1, "\tInvalid resolution\n", 21);
+	exit(0);
+}
+
+void	arg_error(t_data *data)
+{
+	data->counter = 0;
+	write(1, "Error\n", 7);
+	write(1, "Not a valid flag\n", 18);
 	exit(0);
 }

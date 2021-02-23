@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/07 20:04:14 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/22 17:49:39 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/23 19:43:05 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,5 @@ void	mapper(t_data *data)
 	data->lines_map++;
 	string_to_matrix(data);
 	mtrx_2_imtrx(data);
+	rgb_to_hex(data);
 }

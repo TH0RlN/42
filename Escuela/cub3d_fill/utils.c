@@ -6,11 +6,19 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/08 19:25:52 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/17 19:07:10 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/23 19:40:08 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+void	rgb_to_hex(t_data *data)
+{
+	data->ceiling_color = data->ceiling->r * pow(16, 4)
+	+ data->ceiling->g * pow(16, 2) + data->ceiling->b;
+	data->floor_color = data->floor->r * pow(16, 4)
+	+ data->floor->g * pow(16, 2) + data->floor->b;
+}
 
 int		btwsp(t_data *data, int i)
 {

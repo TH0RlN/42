@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 17:45:40 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/22 17:47:48 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/23 18:03:46 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int		main(int argc, char const *argv[])
 		main_loop(data);
 	else if (!(errors(data)) && !(ft_strcmp("--save", argv[2])))
 		save_bmp(data);
+	else if (!(errors(data)) && (ft_strcmp("--save", argv[2])))
+		arg_error(data);
 	else
 		print_errors(data);
 	return (0);

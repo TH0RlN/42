@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 17:22:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/22 19:20:07 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/23 19:40:50 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,82 +88,84 @@ typedef struct	s_player
 
 typedef	struct	s_data
 {
-	int			x;
-	int			fd;
-	int			resx;
-	int			resy;
-	int			check;
-	int			counter;
-	int			lines_map;
-	int			draw_start;
-	int			draw_end;
-	int			draw_start_x;
-	int			draw_end_x;
-	int			draw_start_y;
-	int			draw_end_y;
-	int			**int_map;
-	char		direction;
-	char		*map;
-	char		**matrix_map;
-	char		**fill_map;
-	char		*text_no;
-	char		*text_so;
-	char		*text_we;
-	char		*text_ea;
-	char		*text_sp;
-	char		*line;
-	int			*info_ptr;
-	void		*img_ptr;
-	void		*mlx_ptr;
-	void		*win_ptr;
-	int			*n_info0;
-	int			*n_info1;
-	int			*n_info2;
-	int			*n_info3;
-	int			*n_info4;
-	int			**texture;
-	int			*n_text0;
-	int			*n_text1;
-	int			*n_text2;
-	int			*n_text3;
-	int			*n_text4;
-	int			bpp;
-	int			ls;
-	int			endian;
-	int			tex_x;
-	int			tex_y;
-	int			text_width;
-	int			text_height;
-	int			n_of_2s;
-	int			d;
-	int			sprite_texx;
-	int			sprite_texy;
-	int			sprite_screen_x;
-	int			sprite_height;
-	int			sprite_width;
-	int			*sprite_order;
-	double		*sprite_distance;
-	double		*sprite_x;
-	double		*sprite_y;
-	double		sprite_pos_x;
-	double		sprite_pos_y;
-	double		transform_x;
-	double		transform_y;
-	double		invdet;
-	double		wall_x;
-	double		camara_x;
-	double		tex_pos;
-	double		step;
-	double		*z_buffrer;
-	t_keys		*keys;
-	t_player	*player;
-	t_vector	*ray;
-	t_vector	*plane;
-	t_vector	*init_pos;
-	t_color		*act_wall;
-	t_color		*ceiling;
-	t_color		*floor;
-	t_errors	*errors;
+	unsigned int	ceiling_color;
+	unsigned int	floor_color;
+	int				x;
+	int				fd;
+	int				resx;
+	int				resy;
+	int				check;
+	int				counter;
+	int				lines_map;
+	int				draw_start;
+	int				draw_end;
+	int				draw_start_x;
+	int				draw_end_x;
+	int				draw_start_y;
+	int				draw_end_y;
+	int				**int_map;
+	char			direction;
+	char			*map;
+	char			**matrix_map;
+	char			**fill_map;
+	char			*text_no;
+	char			*text_so;
+	char			*text_we;
+	char			*text_ea;
+	char			*text_sp;
+	char			*line;
+	int				*info_ptr;
+	void			*img_ptr;
+	void			*mlx_ptr;
+	void			*win_ptr;
+	int				*n_info0;
+	int				*n_info1;
+	int				*n_info2;
+	int				*n_info3;
+	int				*n_info4;
+	int				**texture;
+	int				*n_text0;
+	int				*n_text1;
+	int				*n_text2;
+	int				*n_text3;
+	int				*n_text4;
+	int				bpp;
+	int				ls;
+	int				endian;
+	int				tex_x;
+	int				tex_y;
+	int				text_width;
+	int				text_height;
+	int				n_of_2s;
+	int				d;
+	int				sprite_texx;
+	int				sprite_texy;
+	int				sprite_screen_x;
+	int				sprite_height;
+	int				sprite_width;
+	int				*sprite_order;
+	double			*sprite_distance;
+	double			*sprite_x;
+	double			*sprite_y;
+	double			sprite_pos_x;
+	double			sprite_pos_y;
+	double			transform_x;
+	double			transform_y;
+	double			invdet;
+	double			wall_x;
+	double			camara_x;
+	double			tex_pos;
+	double			step;
+	double			*z_buffrer;
+	t_keys			*keys;
+	t_player		*player;
+	t_vector		*ray;
+	t_vector		*plane;
+	t_vector		*init_pos;
+	t_color			*act_wall;
+	t_color			*ceiling;
+	t_color			*floor;
+	t_errors		*errors;
 }				t_data;
 
 void			save_bmp		(t_data *data);
@@ -181,6 +183,7 @@ int				salida			(t_data *data);
 void			load_images		(t_data *data);
 void			draw_text		(t_data *data);
 void			print_errors	(t_data *data);
+void			arg_error		(t_data *data);
 void			error_resolution(t_data *data, int i);
 void			error_color		(t_data *data, int i);
 int				fill			(t_data *data, int i, int j);
@@ -197,6 +200,7 @@ void			text			(t_data *data, char *dir, int i);
 int				drawer			(t_data *data);
 void			engine			(t_data *data, t_player *player,
 								t_vector *ray, t_vector *plane);
+void			rgb_to_hex		(t_data *data);
 void			color			(t_data *data, char dir, int i);
 void			color_ceiling	(t_data *data, int i);
 int				btwsp			(t_data *data, int i);
@@ -226,6 +230,8 @@ void			*ft_bzero		(void *s, size_t n);
 int				ft_atoi			(const char *str);
 int				ft_strcmp		(const char *s1, const char *s2);
 int				ft_strncmp		(const char *s1, const char *s2, size_t n);
+char			*ft_strnstr		(const char *haystack, const char *needle,
+								size_t len);
 #endif
 
 #	ifndef BUFFER_SIZE

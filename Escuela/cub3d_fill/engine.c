@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 18:09:03 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/19 17:06:43 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/23 19:39:42 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	engine5(t_data *data)
 
 	x = -1;
 	while (++x < data->resy / 2)
-		data->info_ptr[x * data->resx + data->x] = 0x79DAF7;
+		data->info_ptr[x * data->resx + data->x] = data->ceiling_color;
 	x--;
 	while (++x < data->resy)
-		data->info_ptr[x * data->resx + data->x] = 0x87440C;
+		data->info_ptr[x * data->resx + data->x] = data->floor_color;
 	draw_text(data);
 }
 
