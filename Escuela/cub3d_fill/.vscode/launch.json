@@ -4,6 +4,7 @@
 	// Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
 	"version": "0.2.0",
 	"configurations": [
+	
 		{
 			"name": "pruebas",
             "type": "cppdbg",
@@ -16,6 +17,19 @@
             "externalConsole": false,
             "MIMode": "lldb",
             "preLaunchTask": "todos"
+		},
+		{
+			"name": "tester",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/cub3d.out",
+            "args": ["invalid_RGB_000.cub"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "tester"
 		}
 	]
 }
