@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/10 18:28:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/22 17:49:15 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/24 20:17:43 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int		start_fill(t_data *data)
 
 void	initial_pos(t_data *data, int i, int j)
 {
+	data->is_pos++;
 	data->init_pos->x = i;
 	data->init_pos->y = j;
 	if (data->fill_map[j][i] == 'N')
@@ -92,6 +93,9 @@ void	check_map(t_data *data)
 	int check;
 
 	i = 0;
+	data->is_pos = 0;
+	if (!data->map)
+		no_map();
 	copy_map(data);
 	remove2(data);
 	if ((check = start_fill(data)))

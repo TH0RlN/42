@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 17:50:10 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/22 17:50:12 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/24 17:42:40 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	sort_sprites(t_data *data, int i)
 			temp = data->sprite_distance[i];
 			data->sprite_distance[i] = data->sprite_distance[i + 1];
 			data->sprite_distance[i + 1] = temp;
+			i = 0;
 		}
 		else
 			i++;

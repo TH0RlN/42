@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 18:42:49 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/23 19:14:30 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/24 18:38:18 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,10 @@ int		errors(t_data *data)
 		data->errors->texture++;
 	}
 	return (data->errors->general > 0 ? 1 : 0);
+}
+
+void	low_res(t_data *data)
+{
+	write(1, "Error\nToo low resolution\n", 26);
+	salida(data);
 }

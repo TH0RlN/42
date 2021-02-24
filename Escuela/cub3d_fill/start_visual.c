@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 18:41:52 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/22 17:44:12 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/24 20:16:17 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,10 @@ void	main_loop(t_data *data)
 	data->mlx_ptr = mlx_init();
 	data->win_ptr = mlx_new_window(data->mlx_ptr, data->resx, data->resy,
 	"CUB3D");
+	if (data->resy < 50 || data->resx < 50)
+		low_res(data);
+	if (!(data->is_pos == 1))
+		no_map();
 	mlx_loop_hook(data->mlx_ptr, drawer, data);
 	mlx_hook(data->win_ptr, 17, 0, salida, (void *)data);
 	mlx_hook(data->win_ptr, 2, 0, keys_press, (void *)data);

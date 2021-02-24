@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/19 16:54:00 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/22 19:15:08 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/24 18:38:39 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ void	go_dark2(t_data *data)
 	free(data->ceiling);
 	free(data->init_pos);
 	free(data);
-	write(1, "GOING DARK \n", 13);
 }
 
 void	go_dark(t_data *data)

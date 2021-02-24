@@ -6,7 +6,7 @@
 /*   By: rarias-p <rarias-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 17:22:45 by rarias-p          #+#    #+#             */
-/*   Updated: 2021/02/23 19:40:50 by rarias-p         ###   ########.fr       */
+/*   Updated: 2021/02/24 20:17:16 by rarias-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,11 +157,12 @@ typedef	struct	s_data
 	double			tex_pos;
 	double			step;
 	double			*z_buffrer;
+	int				is_pos;
+	t_vector		*init_pos;
 	t_keys			*keys;
 	t_player		*player;
 	t_vector		*ray;
 	t_vector		*plane;
-	t_vector		*init_pos;
 	t_color			*act_wall;
 	t_color			*ceiling;
 	t_color			*floor;
@@ -183,6 +184,7 @@ int				salida			(t_data *data);
 void			load_images		(t_data *data);
 void			draw_text		(t_data *data);
 void			print_errors	(t_data *data);
+void			no_map			(void);
 void			arg_error		(t_data *data);
 void			error_resolution(t_data *data, int i);
 void			error_color		(t_data *data, int i);
@@ -204,6 +206,7 @@ void			rgb_to_hex		(t_data *data);
 void			color			(t_data *data, char dir, int i);
 void			color_ceiling	(t_data *data, int i);
 int				btwsp			(t_data *data, int i);
+void			low_res			(t_data *data);
 int				errors			(t_data *data);
 void			main_loop		(t_data *data);
 void			init			(t_data *data);

@@ -10,11 +10,11 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/cub3d.out",
-            "args": ["cosas4.cub", "--save"],
+            "args": ["cosas4.cub"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
-            "externalConsole": false,
+            "console": false,
             "MIMode": "lldb",
             "preLaunchTask": "todos"
 		},
